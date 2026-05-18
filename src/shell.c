@@ -48,15 +48,18 @@
 // Block SIGALRM while modifying shared state
 static sigset_t alarm_mask;
 
-static void block_alarm(void) {
+static void block_alarm(void)
+{
     sigprocmask(SIG_BLOCK, &alarm_mask, NULL);
 }
 
-static void unblock_alarm(void) {
+static void unblock_alarm(void)
+{
     sigprocmask(SIG_UNBLOCK, &alarm_mask, NULL);
 }
 
-static void cmd_help(void) {
+static void cmd_help(void)
+{
     printf("\nComandos disponibles:\n");
     printf("  run <binario>       Lanzar un proceso nuevo\n");
     printf("  ps                  Mostrar tabla de procesos\n");
@@ -71,29 +74,35 @@ static void cmd_help(void) {
     printf("\n");
 }
 
-static void cmd_slice(const char *arg) {
-    if (!arg || strlen(arg) == 0) {
+static void cmd_slice(const char *arg)
+{
+    if (!arg || strlen(arg) == 0)
+    {
         printf("Time slice actual: %d ms\n", timer_get_slice());
         return;
     }
 
     int ms = atoi(arg);
-    if (ms < 50 || ms > 5000) {
+    if (ms < 50 || ms > 5000)
+    {
         printf("Error: time slice debe estar entre 50 y 5000 ms\n");
         return;
     }
 
     int old_ms = timer_get_slice();
     timer_set_slice(ms);
-    if (scheduler_is_running()) {
+    if (scheduler_is_running())
+    {
         timer_start();
     }
     monitor_emit_slice_changed(old_ms, ms);
     printf("Time slice cambiado a %d ms\n", ms);
 }
 
-static void cmd_inspect(const char *arg) {
-    if (!arg || strlen(arg) == 0) {
+static void cmd_inspect(const char *arg)
+{
+    if (!arg || strlen(arg) == 0)
+    {
         printf("Uso: inspect <pid>\n");
         return;
     }
@@ -102,8 +111,10 @@ static void cmd_inspect(const char *arg) {
     block_alarm();
 
     int found = 0;
-    for (int i = 0; i < process_count; i++) {
-        if (process_table[i].pid == target_pid) {
+    for (int i = 0; i < process_count; i++)
+    {
+        if (process_table[i].pid == target_pid)
+        {
             found = 1;
             printf("\n=== PCB de PID %d (%s) ===\n", target_pid, process_table[i].name);
             printf("  Estado:           %s\n", pcb_state_name(process_table[i].state));
@@ -111,18 +122,24 @@ static void cmd_inspect(const char *arg) {
             printf("  Waiting Time:     %.1f ms\n", process_table[i].wait_time_ms);
             printf("  Context Switches: %d\n", process_table[i].context_switches);
 
-            if (platform_registers_available() && process_table[i].regs_valid) {
+            if (platform_registers_available() && process_table[i].regs_valid)
+            {
                 printf("\n  === Registros ===\n");
                 printf("  Program Counter: 0x%016llx\n", (unsigned long long)process_table[i].registers.program_counter);
                 printf("  Stack Pointer:   0x%016llx\n", (unsigned long long)process_table[i].registers.stack_pointer);
-                for (int r = 0; r < NUM_GENERAL_REGS; r++) {
+                for (int r = 0; r < NUM_GENERAL_REGS; r++)
+                {
                     printf("  Reg[%2d]:         0x%016llx\n", r,
                            (unsigned long long)process_table[i].registers.general_regs[r]);
                 }
-            } else if (!platform_registers_available()) {
+            }
+            else if (!platform_registers_available())
+            {
                 printf("\n  [Registros no disponibles -- SIP habilitado en macOS]\n");
                 printf("  Los registros estaran disponibles en WSL2/Linux.\n");
-            } else {
+            }
+            else
+            {
                 printf("\n  [Registros aun no capturados]\n");
             }
             printf("\n");
@@ -130,15 +147,18 @@ static void cmd_inspect(const char *arg) {
         }
     }
 
-    if (!found) {
+    if (!found)
+    {
         printf("Proceso PID %d no encontrado.\n", target_pid);
     }
 
     unblock_alarm();
 }
 
-static void cmd_runpair(const char *name) {
-    if (!name || strlen(name) == 0) {
+static void cmd_runpair(const char *name)
+{
+    if (!name || strlen(name) == 0)
+    {
         printf("Uso: runpair <nombre>\n");
         printf("  Pares disponibles: ping_pong, productor_consumidor\n");
         return;
@@ -146,25 +166,32 @@ static void cmd_runpair(const char *name) {
 
     char server_path[128], client_path[128], sock_path[128];
 
-    if (strcmp(name, "ping_pong") == 0) {
+    if (strcmp(name, "ping_pong") == 0)
+    {
         snprintf(server_path, sizeof(server_path), "programs/bin/ping_pong_server");
         snprintf(client_path, sizeof(client_path), "programs/bin/ping_pong_client");
         snprintf(sock_path, sizeof(sock_path), "/tmp/minios_pingpong.sock");
-    } else if (strcmp(name, "productor_consumidor") == 0) {
+    }
+    else if (strcmp(name, "productor_consumidor") == 0)
+    {
         snprintf(server_path, sizeof(server_path), "programs/bin/productor");
         snprintf(client_path, sizeof(client_path), "programs/bin/consumidor");
         snprintf(sock_path, sizeof(sock_path), "/tmp/minios_prodcons.sock");
-    } else {
+    }
+    else
+    {
         printf("Par desconocido: '%s'\n", name);
         printf("  Pares disponibles: ping_pong, productor_consumidor\n");
         return;
     }
 
-    if (access(server_path, X_OK) != 0) {
+    if (access(server_path, X_OK) != 0)
+    {
         printf("Error: '%s' no encontrado. Ejecuta 'make programs' primero.\n", server_path);
         return;
     }
-    if (access(client_path, X_OK) != 0) {
+    if (access(client_path, X_OK) != 0)
+    {
         printf("Error: '%s' no encontrado. Ejecuta 'make programs' primero.\n", client_path);
         return;
     }
@@ -173,16 +200,18 @@ static void cmd_runpair(const char *name) {
     printf("Lanzando par '%s' con socket %s\n", name, sock_path);
 
     int idx1 = scheduler_create_process(server_path, sock_path);
-    if (idx1 < 0) return;
+    if (idx1 < 0)
+        return;
 
     int idx2 = scheduler_create_process(client_path, sock_path);
-    if (idx2 < 0) return;
+    if (idx2 < 0)
+        return;
 
-    if (!scheduler_is_running()) {
+    if (!scheduler_is_running())
+    {
         scheduler_start(timer_get_slice());
     }
 }
-
 
 // ============================================================
 // [TODO 1/4] cmd_run
@@ -194,24 +223,52 @@ static void cmd_runpair(const char *name) {
 // Ejemplo de uso:
 //   miniOS> run programs/bin/countdown 10
 // ============================================================
-static void cmd_run(const char *path, const char *arg) {
-    // Paso 1. Si path es NULL o vacio, imprimir mensaje de uso y retornar:
-    //         "Uso: run <binario> [argumento]"
-
-    // Paso 2. Validar que el archivo existe y es ejecutable:
-    //         access(path, X_OK) == 0. Si no, imprimir error y retornar.
-
-    // Paso 3. Crear el proceso:
-    //         int idx = scheduler_create_process(path, arg);
-    //         Si idx < 0, retornar (el scheduler ya imprimio el error).
-
-    // Paso 4. Si el scheduler NO esta corriendo Y la ready queue NO esta vacia,
-    //         arrancar el scheduler con timer_get_slice() como slice:
-    //         scheduler_start(timer_get_slice());
-
-    (void)path; (void)arg;  // silence unused while unimplemented
+static void cmd_run(const char *path, const char *arg)
+{
+    // ---- PASO 1: Validar que se proporciono un path ----
+    if (path == NULL || strlen(path) == 0)
+    {
+        // Si el usuario escribio solo "run" sin argumento
+        printf("Uso: run <binario> [argumento]\n");
+        return;
+    }
+    // ---- PASO 2: Validar que el archivo existe y es ejecutable ----
+    // access(path, X_OK) verifica:
+    //   - El archivo existe (caso contrario retorna -1)
+    //   - El usuario tiene permiso de ejecucion (X_OK)
+    // 0 = exito, cualquier otro valor = error.
+    if (access(path, X_OK) != 0)
+    {
+        printf("Error: '%s' no encontrado o no es ejecutable.\n", path);
+        return;
+        // El error tipico: escribir mal la ruta o no haber hecho 'make'
+    }
+    // ---- PASO 3: Crear el proceso mediante el scheduler ----
+    int idx = scheduler_create_process(path, arg);
+    // scheduler_create_process() hace todo el trabajo pesado:
+    //   - fork() + execl()
+    //   - Detener con SIGSTOP
+    //   - Crear PCB
+    //   - Encolar en ready queue
+    // Retorna el indice en process_table, o -1 si fallo.
+    if (idx < 0)
+        return; // scheduler_create_process ya imprimio el error
+    // ---- PASO 4: Arrancar scheduler si es el primer proceso ----
+    // scheduler_is_running() verifica la variable global scheduler_active.
+    // rq_is_empty() verifica si la ready queue tiene procesos.
+    // Si el scheduler NO esta corriendo PERO hay procesos en cola
+    // (acabamos de meter uno), entonces lo arrancamos.
+    if (!scheduler_is_running() && !rq_is_empty())
+    {
+        // timer_get_slice() devuelve el time slice actual (default 500ms)
+        scheduler_start(timer_get_slice());
+        // scheduler_start() desencola el primer proceso, lo reanuda
+        // y arranca el timer periodico. A partir de aqui, todo
+        // es automatico: SIGALRM -> scheduler_tick -> context switch
+    }
+    (void)path;
+    (void)arg; // silence unused while unimplemented
 }
-
 
 // ============================================================
 // [TODO 2/4] cmd_ps
@@ -229,23 +286,46 @@ static void cmd_run(const char *path, const char *arg) {
 // Y tras la tabla, mostrar el contenido de la ready queue usando
 // rq_print() (que imprime algo como "Ready Queue: PID 1235 -> PID 1234").
 // ============================================================
-static void cmd_ps(void) {
-    // Paso 1. block_alarm() para proteger la lectura de process_table.
-
-    // Paso 2. Si process_count == 0: imprimir "No hay procesos." y retornar
-    //         (recuerda hacer unblock_alarm antes de retornar!).
-
-    // Paso 3. Imprimir un salto de linea + llamar pcb_print_table().
-
-    // Paso 4. Imprimir otro salto de linea + llamar rq_print().
-
-    // Paso 5. unblock_alarm() al terminar.
+static void cmd_ps(void)
+{
+    // ---- PASO 1: Bloquear SIGALRM ----
+    block_alarm();
+    // Mientras mostramos la tabla, NO queremos que scheduler_tick
+    // modifique process_table o la ready queue.
+    // Si SIGALRM llega mientras, queda pendiente y se entrega
+    // cuando llamemos unblock_alarm().
+    // ---- PASO 2: Si no hay procesos, mostrar mensaje ----
+    if (process_count == 0)
+    {
+        printf("No hay procesos.\n");
+        unblock_alarm(); // IMPORTANTE: desbloquear antes de retornar
+        return;
+    }
+    // ---- PASO 3: Mostrar la tabla de procesos ----
+    printf("\n");
+    pcb_print_table();
+    // pcb_print_table() imprime las columnas:
+    //   PID    NOMBRE           ESTADO     CPU(ms)  ESPERA(ms)  SWITCHES
+    //   -----------------------------------------------------------------
+    //   1234   countdown        RUNNING     1520.3      120.0         3
+    //   1235   primos           READY       1480.5      460.1         3
     //
-    // Pista: puedes implementar esto desde cero con tu propio formato
-    // si prefieres. Los campos del PCB estan en pcb_t (ver pcb.h):
-    //   pid, name, state, cpu_time_ms, wait_time_ms, context_switches
+    // El estado aparece con colores ANSI:
+    //   - READY:    amarillo
+    //   - RUNNING:  verde
+    //   - TERMINATED: gris
+    //   - BLOCKED:  rojo
+    // ---- PASO 4: Mostrar la ready queue ----
+    printf("\n");
+    rq_print();
+    // rq_print() imprime el contenido de la cola circular:
+    //   Ready Queue: PID 1234 -> PID 1235
+    // Muestra el orden en que los procesos recibiran CPU.
+    // El primero (izquierda) es el siguiente en ejecutar.
+    printf("\n");
+    // ---- PASO 5: Desbloquear SIGALRM ----
+    unblock_alarm();
 }
-
 
 // ============================================================
 // [TODO 3/4] cmd_kill_proc
@@ -258,30 +338,73 @@ static void cmd_ps(void) {
 // es recomendable hacer waitpid aqui tambien para liberar recursos
 // inmediatamente y que `ps` refleje el cambio al instante.
 // ============================================================
-static void cmd_kill_proc(const char *arg) {
-    // Paso 1. Si arg es NULL o vacio, imprimir "Uso: kill <pid>" y retornar.
+static void cmd_kill_proc(const char *arg)
+{
+    // ---- PASO 1: Validar argumento ----
+    if (arg == NULL || strlen(arg) == 0)
+    {
+        printf("Uso: kill <pid>\n");
+        return;
+    }
+    // ---- PASO 2: Convertir string a entero ----
+    int target_pid = atoi(arg);
+    // atoi() convierte "1234" a 1234.
+    // Si el string no es numerico, atoi retorna 0.
+    // Los PIDs siempre son > 0, asi que 0 es invalido.
+    if (target_pid <= 0)
+    {
+        printf("PID invalido.\n");
+        return;
+    }
+    // ---- PASO 3: Bloquear SIGALRM ----
+    block_alarm();
+    // Protegemos el acceso a process_table y ready queue.
+    // ---- PASO 4: Buscar y matar el proceso ----
+    int found = 0;
+    // Bandera para saber si encontramos el PID.
+    for (int i = 0; i < process_count; i++)
+    {
+        // Recorremos toda la process_table buscando el PID
+        if (process_table[i].pid == target_pid &&
+            process_table[i].state != PROC_TERMINATED)
+        {
+            // Solo si NO esta ya terminado
+            // 4a: Enviar SIGKILL
+            // SIGKILL es la señal de muerte FORZADA.
+            // El proceso NO puede ignorarla, capturarla ni bloquearla.
+            // El kernel lo elimina inmediatamente.
+            kill(target_pid, SIGKILL);
+            // 4b: waitpid() para evitar zombies
+            // Cuando un proceso muere, queda en estado ZOMBIE hasta
+            // que el padre llame waitpid() para recolectar su codigo
+            // de salida. Si no hacemos waitpid, el proceso queda como
+            // "defunct" en el sistema.
+            int status;
+            waitpid(target_pid, &status, 0);
+            // Flags=0: bloqueante. Espera a que el proceso sea recolectado.
+            // 4c: Actualizar PCB
+            process_table[i].state = PROC_TERMINATED;
+            // El proceso ya no esta activo en nuestro scheduler.
+            // 4d: Remover de la ready queue
+            rq_remove(i);
+            // Si el proceso estaba esperando en la cola, lo sacamos.
+            // Si era el RUNNING actual, el handler SIGCHLD ya se
+            // encargara de despachar al siguiente.
+            printf("Proceso PID %d terminado.\n", target_pid);
+            found = 1;
+            break; // Salir del for, ya encontramos el PID
+        }
+    }
+    // ---- PASO 5: Si no se encontro ----
+    if (!found)
+    {
+        printf("PID %d no encontrado o ya terminado.\n", target_pid);
+    }
+    // ---- PASO 6: Desbloquear SIGALRM ----
+    unblock_alarm();
 
-    // Paso 2. Convertir arg a entero con atoi. Si <= 0, imprimir "PID invalido"
-    //         y retornar.
-
-    // Paso 3. block_alarm() para proteger la lectura/modificacion.
-
-    // Paso 4. Buscar el PID en process_table (loop por process_count):
-    //         - Si process_table[i].pid == target_pid Y estado != PROC_TERMINATED:
-    //           a) kill(target_pid, SIGKILL);
-    //           b) waitpid(target_pid, &status, 0);  // limpiar zombie
-    //           c) process_table[i].state = PROC_TERMINATED;
-    //           d) rq_remove(i);  // sacar de la ready queue
-    //           e) imprimir "Proceso PID <pid> terminado."
-    //           f) break;
-
-    // Paso 5. Si no se encontro, imprimir mensaje de error.
-
-    // Paso 6. unblock_alarm() al terminar.
-
-    (void)arg;  // silence unused while unimplemented
+    (void)arg; // silence unused while unimplemented
 }
-
 
 // ============================================================
 // [TODO 4/4] cmd_stats
@@ -304,33 +427,59 @@ static void cmd_kill_proc(const char *arg) {
 //     Avg CPU por proceso:   1150.1 ms
 //     Avg espera:            230.5 ms
 // ============================================================
-static void cmd_stats(void) {
-    // Paso 1. block_alarm() para proteger la lectura.
-
-    // Paso 2. Declarar acumuladores:
-    //         int active = 0, terminated = 0;
-    //         double total_cpu = 0, total_wait = 0;
-    //         int total_switches = 0;
-
-    // Paso 3. Recorrer process_table sumando:
-    //         - Si state == PROC_TERMINATED: terminated++;  else active++;
-    //         - total_cpu += process_table[i].cpu_time_ms;
-    //         - total_wait += process_table[i].wait_time_ms;
-    //         - total_switches += process_table[i].context_switches;
-
-    // Paso 4. Imprimir las estadisticas con los campos arriba.
-    //         Usar timer_get_slice() para el slice actual.
-    //         Si process_count > 0, imprimir tambien los promedios
-    //         (total_cpu / process_count) y (total_wait / process_count).
-
-    // Paso 5. unblock_alarm().
+static void cmd_stats(void)
+{
+    // ---- PASO 1: Bloquear SIGALRM ----
+    block_alarm();
+    // ---- PASO 2: Declarar e inicializar acumuladores ----
+    int active = 0;         // Procesos en READY o RUNNING
+    int terminated = 0;     // Procesos que ya terminaron
+    double total_cpu = 0;   // CPU time acumulada de TODOS los procesos
+    double total_wait = 0;  // Wait time acumulado de TODOS los procesos
+    int total_switches = 0; // Context switches totales del sistema
+    // ---- PASO 3: Recorrer la process_table sumando ----
+    for (int i = 0; i < process_count; i++)
+    {
+        // Clasificar: activo o terminado
+        if (process_table[i].state == PROC_TERMINATED)
+            terminated++;
+        else
+            active++;
+        // Acumular metricas
+        total_cpu += process_table[i].cpu_time_ms;
+        total_wait += process_table[i].wait_time_ms;
+        total_switches += process_table[i].context_switches;
+    }
+    // ---- PASO 4: Imprimir las estadisticas ----
+    printf("\n=== Estadisticas del Scheduler ===\n");
+    printf("  Procesos activos:      %d\n", active);
+    // Procesos que aun estan en ejecucion o esperando turno.
+    printf("  Procesos terminados:   %d\n", terminated);
+    // Procesos que ya completaron su ejecucion.
+    printf("  Time slice actual:     %d ms\n", timer_get_slice());
+    // Cuanto dura cada turno de CPU (configurable con 'slice').
+    printf("  CPU total acumulado:   %.1f ms\n", total_cpu);
+    // Suma de todo el tiempo que todos los procesos han usado la CPU.
+    printf("  Context switches:      %d\n", total_switches);
+    // Cuantas veces se ha cambiado de proceso en la CPU.
+    if (process_count > 0)
+    {
+        // Promedios: solo si hay procesos (evitar division por cero)
+        printf("  Avg CPU por proceso:   %.1f ms\n", total_cpu / process_count);
+        // Tiempo promedio que cada proceso ha usado la CPU.
+        printf("  Avg espera:            %.1f ms\n", total_wait / process_count);
+        // Tiempo promedio que cada proceso ha esperado en la ready queue.
+    }
+    printf("\n");
+    // ---- PASO 5: Desbloquear SIGALRM ----
+    unblock_alarm();
 }
-
 
 // ============================================================
 // Main loop del shell — ya implementado, NO lo modifiques
 // ============================================================
-void shell_run(void) {
+void shell_run(void)
+{
     char line[MAX_LINE];
 
     // Setup alarm mask for sigprocmask
@@ -343,11 +492,13 @@ void shell_run(void) {
     printf("|   Escribe 'help' para ayuda      |\n");
     printf("+----------------------------------+\n\n");
 
-    while (1) {
+    while (1)
+    {
         printf("miniOS> ");
         fflush(stdout);
 
-        if (fgets(line, sizeof(line), stdin) == NULL) {
+        if (fgets(line, sizeof(line), stdin) == NULL)
+        {
             printf("\n");
             break;
         }
@@ -356,55 +507,85 @@ void shell_run(void) {
         if (len > 0 && line[len - 1] == '\n')
             line[len - 1] = '\0';
 
-        if (strlen(line) == 0) continue;
+        if (strlen(line) == 0)
+            continue;
 
         char *cmd = strtok(line, " \t");
         char *arg = strtok(NULL, " \t");
         char *arg2 = strtok(NULL, " \t");
 
-        if (!cmd) continue;
+        if (!cmd)
+            continue;
 
-        if (strcmp(cmd, "help") == 0) {
+        if (strcmp(cmd, "help") == 0)
+        {
             cmd_help();
-        } else if (strcmp(cmd, "run") == 0) {
+        }
+        else if (strcmp(cmd, "run") == 0)
+        {
             block_alarm();
             cmd_run(arg, arg2);
             unblock_alarm();
-        } else if (strcmp(cmd, "ps") == 0) {
+        }
+        else if (strcmp(cmd, "ps") == 0)
+        {
             cmd_ps();
-        } else if (strcmp(cmd, "kill") == 0) {
+        }
+        else if (strcmp(cmd, "kill") == 0)
+        {
             cmd_kill_proc(arg);
-        } else if (strcmp(cmd, "slice") == 0) {
+        }
+        else if (strcmp(cmd, "slice") == 0)
+        {
             cmd_slice(arg);
-        } else if (strcmp(cmd, "inspect") == 0) {
+        }
+        else if (strcmp(cmd, "inspect") == 0)
+        {
             cmd_inspect(arg);
-        } else if (strcmp(cmd, "runpair") == 0) {
+        }
+        else if (strcmp(cmd, "runpair") == 0)
+        {
             block_alarm();
             cmd_runpair(arg);
             unblock_alarm();
-        } else if (strcmp(cmd, "stats") == 0) {
+        }
+        else if (strcmp(cmd, "stats") == 0)
+        {
             cmd_stats();
-        } else if (strcmp(cmd, "log") == 0) {
-            if (!arg || strlen(arg) == 0) {
+        }
+        else if (strcmp(cmd, "log") == 0)
+        {
+            if (!arg || strlen(arg) == 0)
+            {
                 printf("Log esta %s. Uso: log on|off\n",
                        monitor_is_enabled() ? "activado" : "desactivado");
-            } else if (strcmp(arg, "on") == 0) {
+            }
+            else if (strcmp(arg, "on") == 0)
+            {
                 monitor_init(MONITOR_SOCKET_PATH);
                 monitor_set_enabled(1);
-            } else if (strcmp(arg, "off") == 0) {
+            }
+            else if (strcmp(arg, "off") == 0)
+            {
                 monitor_set_enabled(0);
                 printf("Log desactivado.\n");
-            } else {
+            }
+            else
+            {
                 printf("Uso: log on|off\n");
             }
-        } else if (strcmp(cmd, "exit") == 0) {
+        }
+        else if (strcmp(cmd, "exit") == 0)
+        {
             block_alarm();
             scheduler_stop();
             monitor_close();
             unblock_alarm();
             printf("Hasta luego.\n");
             break;
-        } else {
+        }
+        else
+        {
             printf("Comando desconocido: '%s'. Escribe 'help' para ver comandos.\n", cmd);
         }
     }
