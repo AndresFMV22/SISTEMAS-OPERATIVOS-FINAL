@@ -1,0 +1,268 @@
+Examen No. 1 - Topicos Avanzados de Bases de Datos - UPB 202620
+Andres Felipe Martinez - ID SIGAA 000549446 - PostgreSQL 18
+Etapa 4 - Consulta B
+Que lotes existen de cada medicamento y cuando vencen?
+
+                 medicamento                  | lote_codigo | fecha_fabricacion | fecha_vencimiento 
+----------------------------------------------+-------------+-------------------+-------------------
+ Adalimumab Jeringa prellenada                | L72518      | 2023-08-16        | 2025-08-05
+ Adalimumab Jeringa prellenada                | L54092      | 2023-10-01        | 2026-09-15
+ Adalimumab Jeringa prellenada                | L84963      | 2025-08-08        | 2027-07-29
+ Adalimumab Jeringa prellenada                | L15075      | 2026-03-24        | 2027-09-15
+ Adalimumab Jeringa prellenada                | L52906      | 2024-10-10        | 2027-09-25
+ Adalimumab Suspensión inyectable             | L99687      | 2024-04-07        | 2025-04-02
+ Adalimumab Suspensión inyectable             | L96951      | 2024-03-03        | 2025-08-25
+ Adalimumab Suspensión inyectable             | L61116      | 2025-12-09        | 2027-06-02
+ Adalimumab Suspensión inyectable             | L86931      | 2026-05-02        | 2027-10-24
+ Bevacizumab Jarabe                           | L69460      | 2025-07-02        | 2026-12-24
+ Bevacizumab Jarabe                           | L43065      | 2024-01-18        | 2027-01-02
+ Bevacizumab Jarabe                           | L95841      | 2024-02-22        | 2027-02-06
+ Bevacizumab Jarabe                           | L74251      | 2024-03-07        | 2027-02-20
+ Bevacizumab Jarabe                           | L92544      | 2024-09-05        | 2027-08-21
+ Bevacizumab Jeringa prellenada               | L68138      | 2024-01-01        | 2024-12-26
+ Bevacizumab Jeringa prellenada               | L79066      | 2025-04-26        | 2026-04-21
+ Bevacizumab Jeringa prellenada               | L13804      | 2025-10-08        | 2027-09-28
+ Bevacizumab Jeringa prellenada               | L38760      | 2025-02-12        | 2028-01-28
+ Bevacizumab Jeringa prellenada               | L89570      | 2026-01-25        | 2029-01-09
+ Calcitonina Ampolla                          | L82848      | 2023-08-24        | 2025-02-14
+ Calcitonina Ampolla                          | L15778      | 2023-08-11        | 2025-07-31
+ Calcitonina Ampolla                          | L15965      | 2023-11-23        | 2025-11-12
+ Calcitonina Ampolla                          | L67654      | 2024-01-09        | 2025-12-29
+ Calcitonina Ampolla                          | L78327      | 2026-04-22        | 2027-10-14
+ Calcitonina Ampolla                          | L85248      | 2024-11-09        | 2027-10-25
+ Calcitonina Ampolla                          | L69087      | 2024-12-15        | 2027-11-30
+ Calcitonina Ampolla                          | L33788      | 2026-01-12        | 2028-12-27
+ Calcitonina Ampolla                          | L56025      | 2026-06-12        | 2029-05-27
+ Desmopresina Jarabe                          | L29313      | 2023-09-23        | 2024-09-17
+ Desmopresina Jarabe                          | L19961      | 2024-12-13        | 2025-12-08
+ Desmopresina Jarabe                          | L70332      | 2025-07-20        | 2027-07-10
+ Desmopresina Jeringa prellenada              | L50768      | 2024-03-12        | 2025-03-07
+ Desmopresina Suspensión inyectable           | L39949      | 2025-11-28        | 2027-11-18
+ Desmopresina Suspensión inyectable           | L80592      | 2026-04-21        | 2028-04-10
+ Desmopresina Tableta                         | L61717      | 2023-09-01        | 2025-08-21
+ Desmopresina Tableta                         | L40005      | 2023-09-15        | 2025-09-04
+ Desmopresina Tableta                         | L51224      | 2025-01-01        | 2026-12-22
+ Desmopresina Tableta                         | L21188      | 2024-02-10        | 2027-01-25
+ Desmopresina Tableta                         | L39451      | 2024-03-23        | 2027-03-08
+ Desmopresina Tableta                         | L79531      | 2024-10-17        | 2027-10-02
+ Desmopresina Tableta                         | L48680      | 2025-06-03        | 2028-05-18
+ Desmopresina Tableta                         | L71605      | 2025-07-16        | 2028-06-30
+ Enoxaparina Ampolla                          | L80702      | 2023-11-18        | 2025-11-07
+ Enoxaparina Ampolla                          | L32838      | 2025-01-28        | 2026-01-23
+ Enoxaparina Ampolla                          | L22196      | 2025-03-28        | 2026-09-19
+ Enoxaparina Ampolla                          | L16629      | 2025-06-17        | 2026-12-09
+ Enoxaparina Jarabe                           | L10800      | 2024-08-09        | 2026-01-31
+ Enoxaparina Jarabe                           | L66349      | 2024-03-18        | 2026-03-08
+ Enoxaparina Jarabe                           | L79827      | 2025-12-28        | 2027-12-18
+ Enoxaparina Suspensión inyectable            | L66450      | 2024-05-28        | 2025-11-19
+ Enoxaparina Suspensión inyectable            | L50846      | 2025-05-29        | 2026-05-24
+ Enoxaparina Suspensión inyectable            | L30006      | 2026-04-01        | 2027-03-27
+ Enoxaparina Suspensión inyectable            | L86350      | 2024-06-02        | 2027-05-18
+ Enoxaparina Suspensión inyectable            | L47353      | 2024-06-22        | 2027-06-07
+ Enoxaparina Tableta                          | L19508      | 2023-08-23        | 2026-08-07
+ Enoxaparina Tableta                          | L26334      | 2025-04-10        | 2027-03-31
+ Enoxaparina Tableta                          | L65936      | 2025-05-05        | 2027-04-25
+ Enoxaparina Tableta                          | L67199      | 2026-06-16        | 2027-06-11
+ Enoxaparina Tableta                          | L41285      | 2025-01-28        | 2028-01-13
+ Eritropoyetina Jarabe                        | L86435      | 2024-05-23        | 2025-11-14
+ Eritropoyetina Jarabe                        | L14852      | 2024-04-18        | 2026-04-08
+ Eritropoyetina Jarabe                        | L62383      | 2024-12-15        | 2026-06-08
+ Etanercept Tableta                           | L14278      | 2024-11-20        | 2026-11-10
+ Etanercept Tableta                           | L12875      | 2025-10-22        | 2027-10-12
+ Etanercept Tableta                           | L76698      | 2025-02-13        | 2028-01-29
+ Filgrastim Ampolla                           | L45818      | 2025-04-27        | 2027-04-17
+ Filgrastim Jarabe                            | L76317      | 2025-07-02        | 2026-06-27
+ Filgrastim Jarabe                            | L62521      | 2026-05-07        | 2027-05-02
+ Filgrastim Jarabe                            | L64377      | 2025-11-15        | 2027-11-05
+ Filgrastim Jarabe                            | L46208      | 2025-11-30        | 2027-11-20
+ Filgrastim Jarabe                            | L72422      | 2026-02-07        | 2028-01-28
+ Filgrastim Jarabe                            | L93283      | 2026-03-11        | 2028-02-29
+ Filgrastim Jeringa prellenada                | L84000      | 2024-09-27        | 2025-09-22
+ Filgrastim Jeringa prellenada                | L93507      | 2025-01-21        | 2026-07-15
+ Filgrastim Jeringa prellenada                | L15482      | 2025-04-26        | 2027-04-16
+ Filgrastim Jeringa prellenada                | L93606      | 2026-05-05        | 2027-04-30
+ Filgrastim Jeringa prellenada                | L65176      | 2026-07-16        | 2027-07-11
+ Filgrastim Jeringa prellenada                | L98039      | 2025-04-09        | 2028-03-24
+ Filgrastim Jeringa prellenada                | L46046      | 2025-05-30        | 2028-05-14
+ Filgrastim Jeringa prellenada                | L35144      | 2025-12-12        | 2028-11-26
+ Filgrastim Jeringa prellenada                | L47752      | 2026-01-17        | 2029-01-01
+ Filgrastim Suspensión inyectable             | L60277      | 2024-08-28        | 2026-02-19
+ Filgrastim Suspensión inyectable             | L27038      | 2024-12-29        | 2026-06-22
+ Heparina Sódica Jarabe                       | L69600      | 2024-02-07        | 2025-07-31
+ Heparina Sódica Jarabe                       | L13783      | 2024-12-06        | 2026-05-30
+ Heparina Sódica Jarabe                       | L94896      | 2024-06-14        | 2027-05-30
+ Heparina Sódica Jarabe                       | L71433      | 2025-04-17        | 2028-04-01
+ Heparina Sódica Tableta                      | L58843      | 2024-04-26        | 2025-04-21
+ Heparina Sódica Tableta                      | L92242      | 2023-10-23        | 2025-10-12
+ Heparina Sódica Tableta                      | L19602      | 2024-10-13        | 2026-10-03
+ Heparina Sódica Tableta                      | L67711      | 2024-02-24        | 2027-02-08
+ Heparina Sódica Tableta                      | L93066      | 2024-02-25        | 2027-02-09
+ Heparina Sódica Tableta                      | L40775      | 2024-05-07        | 2027-04-22
+ Heparina Sódica Tableta                      | L24996      | 2024-10-17        | 2027-10-02
+ Infliximab Suspensión inyectable             | L97012      | 2025-06-20        | 2026-06-15
+ Infliximab Suspensión inyectable             | L87812      | 2024-03-14        | 2027-02-27
+ Infliximab Tableta                           | L44970      | 2024-06-25        | 2025-06-20
+ Infliximab Tableta                           | L72277      | 2023-12-31        | 2026-12-15
+ Infliximab Tableta                           | L25906      | 2026-02-23        | 2027-08-17
+ Infliximab Vial                              | L16764      | 2024-09-23        | 2026-09-13
+ Infliximab Vial                              | L82309      | 2025-12-26        | 2026-12-21
+ Infliximab Vial                              | L14373      | 2025-08-20        | 2027-02-11
+ Infliximab Vial                              | L67954      | 2024-10-14        | 2027-09-29
+ Infliximab Vial                              | L48974      | 2025-12-29        | 2027-12-19
+ Infliximab Vial                              | L55293      | 2025-04-07        | 2028-03-22
+ Insulina NPH Ampolla                         | L86019      | 2025-05-24        | 2028-05-08
+ Insulina NPH Ampolla                         | L33086      | 2026-07-07        | 2028-06-26
+ Insulina NPH Jarabe                          | L42951      | 2024-11-18        | 2025-11-13
+ Insulina NPH Jarabe                          | L82199      | 2023-09-01        | 2026-08-16
+ Insulina NPH Jarabe                          | L85470      | 2025-09-10        | 2028-08-25
+ Insulina NPH Suspensión inyectable           | L67154      | 2023-08-07        | 2025-01-28
+ Insulina NPH Suspensión inyectable           | L56898      | 2024-10-07        | 2026-03-31
+ Insulina NPH Suspensión inyectable           | L91183      | 2024-01-18        | 2027-01-02
+ Insulina NPH Suspensión inyectable           | L32962      | 2026-03-24        | 2029-03-08
+ Insulina NPH Vial                            | L51467      | 2025-01-19        | 2026-07-13
+ Rituximab Ampolla                            | L29340      | 2023-08-09        | 2025-07-29
+ Rituximab Ampolla                            | L52081      | 2024-03-05        | 2025-08-27
+ Rituximab Ampolla                            | L97819      | 2024-04-10        | 2027-03-26
+ Rituximab Ampolla                            | L56112      | 2026-02-18        | 2028-02-08
+ Rituximab Ampolla                            | L63955      | 2026-05-14        | 2028-05-03
+ Rituximab Ampolla                            | L82340      | 2025-09-14        | 2028-08-29
+ Rituximab Jarabe                             | L33819      | 2023-11-14        | 2025-11-03
+ Rituximab Jarabe                             | L93611      | 2025-01-05        | 2027-12-21
+ Rituximab Jarabe                             | L97500      | 2025-05-14        | 2028-04-28
+ Rituximab Suspensión inyectable              | L49507      | 2024-10-09        | 2026-04-02
+ Rituximab Suspensión inyectable              | L86858      | 2024-10-19        | 2026-04-12
+ Rituximab Suspensión inyectable              | L65069      | 2025-10-09        | 2026-10-04
+ Rituximab Suspensión inyectable              | L93130      | 2025-01-25        | 2028-01-10
+ Somatostatina Suspensión inyectable          | L94323      | 2023-10-06        | 2024-09-30
+ Somatostatina Suspensión inyectable          | L62262      | 2025-12-02        | 2026-11-27
+ Somatostatina Suspensión inyectable          | L58629      | 2025-12-09        | 2027-06-02
+ Somatostatina Vial                           | L61807      | 2023-11-24        | 2024-11-18
+ Somatostatina Vial                           | L95215      | 2023-12-22        | 2024-12-16
+ Somatostatina Vial                           | L98647      | 2025-10-25        | 2027-10-15
+ Somatostatina Vial                           | L78494      | 2025-09-21        | 2028-09-05
+ Somatropina Ampolla                          | L71537      | 2025-01-27        | 2027-01-17
+ Toxina Botulínica Jarabe                     | L25292      | 2024-05-16        | 2025-05-11
+ Toxina Botulínica Jarabe                     | L46666      | 2023-10-10        | 2025-09-29
+ Toxina Botulínica Jarabe                     | L52753      | 2025-11-05        | 2027-10-26
+ Toxina Botulínica Jeringa prellenada         | L39219      | 2023-09-21        | 2025-03-14
+ Toxina Botulínica Jeringa prellenada         | L63841      | 2023-11-01        | 2025-10-21
+ Toxina Botulínica Jeringa prellenada         | L60205      | 2024-06-11        | 2025-12-03
+ Toxina Botulínica Tableta                    | L49893      | 2026-05-08        | 2027-05-03
+ Trastuzumab Tableta                          | L55890      | 2025-08-25        | 2026-08-20
+ Trastuzumab Tableta                          | L56357      | 2025-11-13        | 2027-05-07
+ Trastuzumab Tableta                          | L98452      | 2024-11-24        | 2027-11-09
+ Trastuzumab Tableta                          | L85748      | 2026-06-08        | 2027-11-30
+ Trastuzumab Tableta                          | L88193      | 2026-01-09        | 2027-12-30
+ Vacuna COVID-19 Ampolla                      | L49829      | 2025-03-13        | 2026-09-04
+ Vacuna COVID-19 Ampolla                      | L23970      | 2025-12-21        | 2027-06-14
+ Vacuna COVID-19 Ampolla                      | L63545      | 2026-02-11        | 2029-01-26
+ Vacuna COVID-19 Jarabe                       | L32782      | 2024-01-04        | 2025-06-27
+ Vacuna COVID-19 Jarabe                       | L62923      | 2024-04-05        | 2025-09-27
+ Vacuna COVID-19 Jarabe                       | L98184      | 2025-04-30        | 2026-10-22
+ Vacuna COVID-19 Jarabe                       | L45614      | 2025-06-21        | 2027-06-11
+ Vacuna COVID-19 Jarabe                       | L31299      | 2024-07-31        | 2027-07-16
+ Vacuna COVID-19 Jarabe                       | L72402      | 2026-05-05        | 2029-04-19
+ Vacuna COVID-19 Suspensión inyectable        | L28643      | 2023-12-28        | 2024-12-22
+ Vacuna COVID-19 Suspensión inyectable        | L52245      | 2024-12-18        | 2025-12-13
+ Vacuna COVID-19 Suspensión inyectable        | L46930      | 2024-10-08        | 2026-09-28
+ Vacuna COVID-19 Suspensión inyectable        | L38255      | 2026-06-18        | 2027-06-13
+ Vacuna COVID-19 Suspensión inyectable        | L75597      | 2026-05-11        | 2029-04-25
+ Vacuna DPT Suspensión inyectable             | L44687      | 2024-01-17        | 2025-07-10
+ Vacuna DPT Suspensión inyectable             | L68115      | 2026-01-30        | 2027-07-24
+ Vacuna DPT Tableta                           | L25129      | 2024-03-10        | 2025-09-01
+ Vacuna DPT Tableta                           | L33405      | 2025-01-28        | 2026-01-23
+ Vacuna DPT Tableta                           | L91927      | 2024-09-12        | 2027-08-28
+ Vacuna DPT Tableta                           | L86619      | 2025-09-22        | 2027-09-12
+ Vacuna Fiebre Amarilla Ampolla               | L49618      | 2023-09-01        | 2025-02-22
+ Vacuna Fiebre Amarilla Ampolla               | L36318      | 2024-04-30        | 2026-04-20
+ Vacuna Fiebre Amarilla Ampolla               | L77889      | 2026-03-12        | 2027-03-07
+ Vacuna Fiebre Amarilla Ampolla               | L20350      | 2025-09-25        | 2027-03-19
+ Vacuna Fiebre Amarilla Ampolla               | L90676      | 2025-04-11        | 2028-03-26
+ Vacuna Fiebre Amarilla Jarabe                | L84177      | 2023-11-12        | 2026-10-27
+ Vacuna Fiebre Amarilla Jarabe                | L56955      | 2024-12-03        | 2026-11-23
+ Vacuna Fiebre Amarilla Jarabe                | L28894      | 2025-11-20        | 2027-05-14
+ Vacuna Fiebre Amarilla Jarabe                | L85243      | 2025-03-08        | 2028-02-21
+ Vacuna Fiebre Amarilla Jeringa prellenada    | L30392      | 2024-06-21        | 2025-06-16
+ Vacuna Fiebre Amarilla Jeringa prellenada    | L29887      | 2024-06-04        | 2026-05-25
+ Vacuna Fiebre Amarilla Jeringa prellenada    | L43092      | 2026-04-08        | 2027-04-03
+ Vacuna Fiebre Amarilla Suspensión inyectable | L49251      | 2023-10-02        | 2024-09-26
+ Vacuna Fiebre Amarilla Suspensión inyectable | L96356      | 2024-01-24        | 2026-01-13
+ Vacuna Fiebre Amarilla Suspensión inyectable | L50319      | 2025-03-17        | 2028-03-01
+ Vacuna Fiebre Amarilla Tableta               | L95175      | 2024-01-15        | 2026-01-04
+ Vacuna Hepatitis B Ampolla                   | L96646      | 2023-09-25        | 2025-03-18
+ Vacuna Hepatitis B Ampolla                   | L19862      | 2024-06-04        | 2025-05-30
+ Vacuna Hepatitis B Ampolla                   | L71385      | 2024-01-05        | 2025-06-28
+ Vacuna Hepatitis B Ampolla                   | L81376      | 2024-11-06        | 2026-04-30
+ Vacuna Hepatitis B Ampolla                   | L62976      | 2026-06-22        | 2027-06-17
+ Vacuna Hepatitis B Ampolla                   | L83920      | 2024-10-23        | 2027-10-08
+ Vacuna Hepatitis B Suspensión inyectable     | L19120      | 2024-05-20        | 2025-05-15
+ Vacuna Hepatitis B Suspensión inyectable     | L53025      | 2025-02-24        | 2026-02-19
+ Vacuna Hepatitis B Suspensión inyectable     | L82102      | 2023-10-18        | 2026-10-02
+ Vacuna Hepatitis B Suspensión inyectable     | L41890      | 2025-04-22        | 2027-04-12
+ Vacuna Hepatitis B Suspensión inyectable     | L31632      | 2026-03-18        | 2027-09-09
+ Vacuna Hepatitis B Tableta                   | L14705      | 2023-12-22        | 2025-06-14
+ Vacuna Hepatitis B Tableta                   | L20561      | 2024-05-13        | 2025-11-04
+ Vacuna Hepatitis B Tableta                   | L70552      | 2025-11-27        | 2026-11-22
+ Vacuna Hepatitis B Tableta                   | L71069      | 2025-12-02        | 2026-11-27
+ Vacuna Hepatitis B Tableta                   | L49651      | 2026-07-22        | 2027-07-17
+ Vacuna Influenza Ampolla                     | L42411      | 2024-09-15        | 2025-09-10
+ Vacuna Influenza Ampolla                     | L89822      | 2025-02-01        | 2026-01-27
+ Vacuna Influenza Ampolla                     | L91205      | 2025-06-05        | 2026-11-27
+ Vacuna Influenza Ampolla                     | L33509      | 2025-06-14        | 2028-05-29
+ Vacuna Meningococo Jarabe                    | L68991      | 2025-01-15        | 2026-07-09
+ Vacuna Meningococo Jarabe                    | L59968      | 2025-10-02        | 2027-03-26
+ Vacuna Meningococo Jarabe                    | L82544      | 2025-07-08        | 2028-06-22
+ Vacuna Meningococo Tableta                   | L62640      | 2025-12-24        | 2026-12-19
+ Vacuna Meningococo Tableta                   | L67733      | 2025-07-01        | 2026-12-23
+ Vacuna Meningococo Tableta                   | L71894      | 2024-12-15        | 2027-11-30
+ Vacuna Neumococo Tableta                     | L58351      | 2024-07-12        | 2025-07-07
+ Vacuna Neumococo Tableta                     | L97404      | 2023-08-23        | 2026-08-07
+ Vacuna Neumococo Tableta                     | L69878      | 2025-04-13        | 2026-10-05
+ Vacuna Neumococo Tableta                     | L16658      | 2024-02-09        | 2027-01-24
+ Vacuna Neumococo Tableta                     | L73156      | 2025-03-30        | 2027-03-20
+ Vacuna Neumococo Vial                        | L45018      | 2023-08-09        | 2025-07-29
+ Vacuna Neumococo Vial                        | L39038      | 2023-10-31        | 2025-10-20
+ Vacuna Neumococo Vial                        | L65933      | 2026-02-02        | 2027-07-27
+ Vacuna Papiloma Humano Tableta               | L97207      | 2025-12-17        | 2026-12-12
+ Vacuna Papiloma Humano Tableta               | L43862      | 2025-07-01        | 2027-06-21
+ Vacuna Polio Inactivada Jarabe               | L53404      | 2023-09-29        | 2024-09-23
+ Vacuna Polio Inactivada Jarabe               | L13534      | 2025-10-18        | 2026-10-13
+ Vacuna Polio Inactivada Jarabe               | L26199      | 2026-02-20        | 2028-02-10
+ Vacuna Polio Inactivada Jarabe               | L59808      | 2025-05-13        | 2028-04-27
+ Vacuna Polio Inactivada Jarabe               | L73372      | 2026-03-13        | 2029-02-25
+ Vacuna Polio Inactivada Jeringa prellenada   | L73335      | 2024-03-09        | 2025-08-31
+ Vacuna Polio Inactivada Jeringa prellenada   | L85574      | 2024-08-27        | 2026-08-17
+ Vacuna Polio Inactivada Tableta              | L66531      | 2023-12-25        | 2025-12-14
+ Vacuna Polio Inactivada Tableta              | L23022      | 2025-08-25        | 2027-08-15
+ Vacuna Polio Inactivada Tableta              | L93307      | 2026-03-02        | 2027-08-24
+ Vacuna Rotavirus Vial                        | L88385      | 2023-10-24        | 2026-10-08
+ Vacuna Rotavirus Vial                        | L42530      | 2024-04-02        | 2027-03-18
+ Vacuna Rotavirus Vial                        | L94246      | 2025-12-28        | 2027-06-21
+ Vacuna Rotavirus Vial                        | L41635      | 2025-11-13        | 2028-10-28
+ Vacuna Rotavirus Vial                        | L45665      | 2026-01-27        | 2029-01-11
+ Vacuna Triple Viral Jeringa prellenada       | L98815      | 2024-06-22        | 2025-06-17
+ Vacuna Triple Viral Jeringa prellenada       | L69510      | 2023-12-27        | 2025-06-19
+ Vacuna Triple Viral Jeringa prellenada       | L40162      | 2025-07-25        | 2027-01-16
+ Vacuna Triple Viral Jeringa prellenada       | L39817      | 2024-02-05        | 2027-01-20
+ Vacuna Triple Viral Jeringa prellenada       | L88696      | 2025-05-04        | 2027-04-24
+ Vacuna Triple Viral Suspensión inyectable    | L89905      | 2024-02-23        | 2025-08-16
+ Vacuna Triple Viral Suspensión inyectable    | L62184      | 2025-02-19        | 2026-08-13
+ Vacuna Triple Viral Tableta                  | L41266      | 2024-04-18        | 2027-04-03
+ Vacuna Triple Viral Tableta                  | L96079      | 2026-04-17        | 2027-10-09
+ Vacuna Varicela Ampolla                      | L64008      | 2024-08-06        | 2026-01-28
+ Vacuna Varicela Ampolla                      | L88222      | 2025-03-05        | 2026-02-28
+ Vacuna Varicela Ampolla                      | L75771      | 2025-02-12        | 2026-08-06
+ Vacuna Varicela Ampolla                      | L48652      | 2026-02-18        | 2029-02-02
+ Vacuna Varicela Jarabe                       | L51359      | 2024-04-04        | 2025-09-26
+ Vacuna Varicela Jarabe                       | L91381      | 2024-12-29        | 2026-06-22
+ Vacuna Varicela Jarabe                       | L48829      | 2024-11-11        | 2026-11-01
+ Vacuna Varicela Jarabe                       | L38361      | 2026-04-21        | 2028-04-10
+ Vacuna Varicela Jarabe                       | L77952      | 2025-08-13        | 2028-07-28
+ Vacuna Varicela Jeringa prellenada           | L89730      | 2024-06-02        | 2025-05-28
+ Vacuna Varicela Jeringa prellenada           | L89129      | 2024-12-28        | 2025-12-23
+ Vacuna Varicela Jeringa prellenada           | L17355      | 2025-03-26        | 2027-03-16
+ Vacuna Varicela Jeringa prellenada           | L54236      | 2025-09-18        | 2027-09-08
+ Vacuna Varicela Jeringa prellenada           | L33834      | 2026-04-28        | 2027-10-20
+ Vacuna Varicela Jeringa prellenada           | L34727      | 2024-12-05        | 2027-11-20
+(259 rows)
+

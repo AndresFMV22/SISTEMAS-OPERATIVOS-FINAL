@@ -1,0 +1,1009 @@
+Examen No. 1 - Topicos Avanzados de Bases de Datos - UPB 202620
+Andres Felipe Martinez - ID SIGAA 000549446 - PostgreSQL 18
+Etapa 4 - Consulta C
+En que almacenes hay unidades disponibles de cada lote y cuantas?
+
+            almacen             |    ciudad     |      tipo_almacen      | lote_codigo |                 medicamento                  | cantidad_disponible 
+--------------------------------+---------------+------------------------+-------------+----------------------------------------------+---------------------
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L13804      | Bevacizumab Jeringa prellenada               |                3387
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L14705      | Vacuna Hepatitis B Tableta                   |                1146
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L19602      | Heparina Sódica Tableta                      |                1742
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L20350      | Vacuna Fiebre Amarilla Ampolla               |                1071
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L20561      | Vacuna Hepatitis B Tableta                   |                 332
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L23970      | Vacuna COVID-19 Ampolla                      |                2525
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L25906      | Infliximab Tableta                           |                 440
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L29313      | Desmopresina Jarabe                          |                 357
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                 909
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L32962      | Insulina NPH Suspensión inyectable           |                 647
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L33509      | Vacuna Influenza Ampolla                     |                3174
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L33819      | Rituximab Jarabe                             |                4649
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L39219      | Toxina Botulínica Jeringa prellenada         |                2157
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L41285      | Enoxaparina Tableta                          |                1682
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L46046      | Filgrastim Jeringa prellenada                |                2586
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L48680      | Desmopresina Tableta                         |                3793
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L48974      | Infliximab Vial                              |                1953
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L49507      | Rituximab Suspensión inyectable              |                1111
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L49651      | Vacuna Hepatitis B Tableta                   |                4775
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L50768      | Desmopresina Jeringa prellenada              |                2451
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L50846      | Enoxaparina Suspensión inyectable            |                3406
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L54236      | Vacuna Varicela Jeringa prellenada           |                3498
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L58351      | Vacuna Neumococo Tableta                     |                  43
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L58629      | Somatostatina Suspensión inyectable          |                4750
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L60205      | Toxina Botulínica Jeringa prellenada         |                3060
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L63841      | Toxina Botulínica Jeringa prellenada         |                2672
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L64377      | Filgrastim Jarabe                            |                 113
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L67199      | Enoxaparina Tableta                          |                1805
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L67711      | Heparina Sódica Tableta                      |                 928
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L69087      | Calcitonina Ampolla                          |                 161
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L69460      | Bevacizumab Jarabe                           |                 516
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L72518      | Adalimumab Jeringa prellenada                |                4637
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L73372      | Vacuna Polio Inactivada Jarabe               |                3966
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L76698      | Etanercept Tableta                           |                 808
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L78494      | Somatostatina Vial                           |                3195
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L83920      | Vacuna Hepatitis B Ampolla                   |                4508
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L84000      | Filgrastim Jeringa prellenada                |                3180
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L84963      | Adalimumab Jeringa prellenada                |                3094
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L87812      | Infliximab Suspensión inyectable             |                 574
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L90676      | Vacuna Fiebre Amarilla Ampolla               |                1464
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L91183      | Insulina NPH Suspensión inyectable           |                1639
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L93307      | Vacuna Polio Inactivada Tableta              |                4979
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L94323      | Somatostatina Suspensión inyectable          |                2494
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L95175      | Vacuna Fiebre Amarilla Tableta               |                4804
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L97012      | Infliximab Suspensión inyectable             |                1151
+ CEDI Bogotá 13                 | Bogotá        | Centro de distribución | L98452      | Trastuzumab Tableta                          |                1672
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L12875      | Etanercept Tableta                           |                3625
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L14373      | Infliximab Vial                              |                2767
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L23970      | Vacuna COVID-19 Ampolla                      |                4875
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L31299      | Vacuna COVID-19 Jarabe                       |                2077
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L33834      | Vacuna Varicela Jeringa prellenada           |                1714
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L34727      | Vacuna Varicela Jeringa prellenada           |                4299
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                4807
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L47752      | Filgrastim Jeringa prellenada                |                2812
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L48680      | Desmopresina Tableta                         |                2639
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L56898      | Insulina NPH Suspensión inyectable           |                3806
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L58351      | Vacuna Neumococo Tableta                     |                 956
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L59808      | Vacuna Polio Inactivada Jarabe               |                1095
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L60277      | Filgrastim Suspensión inyectable             |                2460
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L62383      | Eritropoyetina Jarabe                        |                3743
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L63545      | Vacuna COVID-19 Ampolla                      |                 344
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L64008      | Vacuna Varicela Ampolla                      |                4797
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L67711      | Heparina Sódica Tableta                      |                2950
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L68138      | Bevacizumab Jeringa prellenada               |                  66
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L69087      | Calcitonina Ampolla                          |                2982
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L69460      | Bevacizumab Jarabe                           |                1529
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L70332      | Desmopresina Jarabe                          |                1285
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L70552      | Vacuna Hepatitis B Tableta                   |                1927
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L73156      | Vacuna Neumococo Tableta                     |                4944
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L73372      | Vacuna Polio Inactivada Jarabe               |                2252
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L78327      | Calcitonina Ampolla                          |                2810
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L78494      | Somatostatina Vial                           |                2204
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L79066      | Bevacizumab Jeringa prellenada               |                1367
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L80702      | Enoxaparina Ampolla                          |                4043
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L83920      | Vacuna Hepatitis B Ampolla                   |                 228
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L84963      | Adalimumab Jeringa prellenada                |                3502
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L86619      | Vacuna DPT Tableta                           |                1759
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L95175      | Vacuna Fiebre Amarilla Tableta               |                2239
+ CEDI Cartagena 1               | Cartagena     | Centro de distribución | L97500      | Rituximab Jarabe                             |                1033
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L10800      | Enoxaparina Jarabe                           |                3900
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L14705      | Vacuna Hepatitis B Tableta                   |                2134
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L19602      | Heparina Sódica Tableta                      |                2592
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L26334      | Enoxaparina Tableta                          |                1092
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L39219      | Toxina Botulínica Jeringa prellenada         |                4156
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L40775      | Heparina Sódica Tableta                      |                 688
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L48652      | Vacuna Varicela Ampolla                      |                3047
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L49651      | Vacuna Hepatitis B Tableta                   |                2136
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L49893      | Toxina Botulínica Tableta                    |                3897
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L50846      | Enoxaparina Suspensión inyectable            |                2738
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L54092      | Adalimumab Jeringa prellenada                |                2670
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L60277      | Filgrastim Suspensión inyectable             |                3430
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L61116      | Adalimumab Suspensión inyectable             |                 787
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L64008      | Vacuna Varicela Ampolla                      |                1506
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L66450      | Enoxaparina Suspensión inyectable            |                 382
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L66531      | Vacuna Polio Inactivada Tableta              |                 245
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L68138      | Bevacizumab Jeringa prellenada               |                3662
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L71433      | Heparina Sódica Jarabe                       |                 162
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L74251      | Bevacizumab Jarabe                           |                4167
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L75771      | Vacuna Varicela Ampolla                      |                4814
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L77952      | Vacuna Varicela Jarabe                       |                2663
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L78494      | Somatostatina Vial                           |                2451
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L82544      | Vacuna Meningococo Jarabe                    |                3356
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L85243      | Vacuna Fiebre Amarilla Jarabe                |                 655
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L86435      | Eritropoyetina Jarabe                        |                3673
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L86858      | Rituximab Suspensión inyectable              |                3133
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L89730      | Vacuna Varicela Jeringa prellenada           |                1436
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L90676      | Vacuna Fiebre Amarilla Ampolla               |                1839
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L91927      | Vacuna DPT Tableta                           |                1954
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L93066      | Heparina Sódica Tableta                      |                3557
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L93611      | Rituximab Jarabe                             |                2265
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L94246      | Vacuna Rotavirus Vial                        |                4427
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L94323      | Somatostatina Suspensión inyectable          |                1745
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L95841      | Bevacizumab Jarabe                           |                2826
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L96079      | Vacuna Triple Viral Tableta                  |                3441
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L97012      | Infliximab Suspensión inyectable             |                4379
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L98184      | Vacuna COVID-19 Jarabe                       |                2807
+ CEDI Cartagena 12              | Cartagena     | Centro de distribución | L99687      | Adalimumab Suspensión inyectable             |                3622
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L12875      | Etanercept Tableta                           |                 356
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L13534      | Vacuna Polio Inactivada Jarabe               |                2369
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L15482      | Filgrastim Jeringa prellenada                |                3398
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L25292      | Toxina Botulínica Jarabe                     |                2346
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L29313      | Desmopresina Jarabe                          |                1707
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L31299      | Vacuna COVID-19 Jarabe                       |                2403
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L39038      | Vacuna Neumococo Vial                        |                4282
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L40005      | Desmopresina Tableta                         |                2564
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L40775      | Heparina Sódica Tableta                      |                2764
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L41890      | Vacuna Hepatitis B Suspensión inyectable     |                 125
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L46208      | Filgrastim Jarabe                            |                4606
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L46666      | Toxina Botulínica Jarabe                     |                 872
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L48680      | Desmopresina Tableta                         |                4167
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L49618      | Vacuna Fiebre Amarilla Ampolla               |                 795
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L49651      | Vacuna Hepatitis B Tableta                   |                 255
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L55890      | Trastuzumab Tableta                          |                2747
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L58843      | Heparina Sódica Tableta                      |                3251
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L59808      | Vacuna Polio Inactivada Jarabe               |                3389
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L59968      | Vacuna Meningococo Jarabe                    |                1801
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L62383      | Eritropoyetina Jarabe                        |                4421
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L66349      | Enoxaparina Jarabe                           |                4478
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L69460      | Bevacizumab Jarabe                           |                4835
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L71069      | Vacuna Hepatitis B Tableta                   |                4430
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L71385      | Vacuna Hepatitis B Ampolla                   |                1863
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L75771      | Vacuna Varicela Ampolla                      |                2028
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L77889      | Vacuna Fiebre Amarilla Ampolla               |                2670
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L79827      | Enoxaparina Jarabe                           |                3553
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L86019      | Insulina NPH Ampolla                         |                2954
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L86350      | Enoxaparina Suspensión inyectable            |                 895
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L87812      | Infliximab Suspensión inyectable             |                2930
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L90676      | Vacuna Fiebre Amarilla Ampolla               |                3659
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L96079      | Vacuna Triple Viral Tableta                  |                3743
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L96951      | Adalimumab Suspensión inyectable             |                3915
+ CEDI Ibagué 17                 | Ibagué        | Centro de distribución | L97500      | Rituximab Jarabe                             |                3480
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L13804      | Bevacizumab Jeringa prellenada               |                4581
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L15965      | Calcitonina Ampolla                          |                1711
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L16629      | Enoxaparina Ampolla                          |                 957
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L19961      | Desmopresina Jarabe                          |                2366
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L24996      | Heparina Sódica Tableta                      |                4107
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L29340      | Rituximab Ampolla                            |                4429
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L31299      | Vacuna COVID-19 Jarabe                       |                 190
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L32838      | Enoxaparina Ampolla                          |                1618
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L32962      | Insulina NPH Suspensión inyectable           |                3876
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L33086      | Insulina NPH Ampolla                         |                2571
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L33834      | Vacuna Varicela Jeringa prellenada           |                4441
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L39219      | Toxina Botulínica Jeringa prellenada         |                4370
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L42411      | Vacuna Influenza Ampolla                     |                 162
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L43862      | Vacuna Papiloma Humano Tableta               |                1635
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L44687      | Vacuna DPT Suspensión inyectable             |                2715
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L45665      | Vacuna Rotavirus Vial                        |                2198
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L48680      | Desmopresina Tableta                         |                4250
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L48974      | Infliximab Vial                              |                2448
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L49618      | Vacuna Fiebre Amarilla Ampolla               |                2387
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L50319      | Vacuna Fiebre Amarilla Suspensión inyectable |                 788
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L55890      | Trastuzumab Tableta                          |                1633
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L56025      | Calcitonina Ampolla                          |                 974
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L56955      | Vacuna Fiebre Amarilla Jarabe                |                 822
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L58629      | Somatostatina Suspensión inyectable          |                4852
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L60277      | Filgrastim Suspensión inyectable             |                2006
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L63955      | Rituximab Ampolla                            |                1498
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L64008      | Vacuna Varicela Ampolla                      |                2942
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L65069      | Rituximab Suspensión inyectable              |                 713
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L67154      | Insulina NPH Suspensión inyectable           |                1593
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L67199      | Enoxaparina Tableta                          |                 219
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L67654      | Calcitonina Ampolla                          |                4429
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L67954      | Infliximab Vial                              |                4954
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L68138      | Bevacizumab Jeringa prellenada               |                3862
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L69600      | Heparina Sódica Jarabe                       |                3804
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L71894      | Vacuna Meningococo Tableta                   |                 136
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L73335      | Vacuna Polio Inactivada Jeringa prellenada   |                 695
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L75771      | Vacuna Varicela Ampolla                      |                4961
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L81376      | Vacuna Hepatitis B Ampolla                   |                 739
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L82848      | Calcitonina Ampolla                          |                2816
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L85470      | Insulina NPH Jarabe                          |                3528
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L85748      | Trastuzumab Tableta                          |                2170
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L86619      | Vacuna DPT Tableta                           |                 356
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L86858      | Rituximab Suspensión inyectable              |                3642
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L86931      | Adalimumab Suspensión inyectable             |                 189
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L89570      | Bevacizumab Jeringa prellenada               |                4135
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L89822      | Vacuna Influenza Ampolla                     |                 291
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L93307      | Vacuna Polio Inactivada Tableta              |                4807
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L94896      | Heparina Sódica Jarabe                       |                3375
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L97500      | Rituximab Jarabe                             |                 522
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L97819      | Rituximab Ampolla                            |                1898
+ CEDI Medellín 16               | Medellín      | Centro de distribución | L98039      | Filgrastim Jeringa prellenada                |                1118
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L14705      | Vacuna Hepatitis B Tableta                   |                 412
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L19508      | Enoxaparina Tableta                          |                2945
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L24996      | Heparina Sódica Tableta                      |                1715
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L25906      | Infliximab Tableta                           |                1604
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L28643      | Vacuna COVID-19 Suspensión inyectable        |                4391
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                 427
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L35144      | Filgrastim Jeringa prellenada                |                1608
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L38760      | Bevacizumab Jeringa prellenada               |                1421
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L39949      | Desmopresina Suspensión inyectable           |                3497
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L40775      | Heparina Sódica Tableta                      |                3692
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L41285      | Enoxaparina Tableta                          |                3142
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L43065      | Bevacizumab Jarabe                           |                 255
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L45818      | Filgrastim Ampolla                           |                4897
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L49251      | Vacuna Fiebre Amarilla Suspensión inyectable |                4002
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L50319      | Vacuna Fiebre Amarilla Suspensión inyectable |                3127
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L62976      | Vacuna Hepatitis B Ampolla                   |                2104
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L68115      | Vacuna DPT Suspensión inyectable             |                1548
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L70552      | Vacuna Hepatitis B Tableta                   |                 555
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L71894      | Vacuna Meningococo Tableta                   |                1424
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L72422      | Filgrastim Jarabe                            |                3449
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L75597      | Vacuna COVID-19 Suspensión inyectable        |                4511
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L78327      | Calcitonina Ampolla                          |                 496
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L79827      | Enoxaparina Jarabe                           |                 776
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L84963      | Adalimumab Jeringa prellenada                |                 675
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L86858      | Rituximab Suspensión inyectable              |                 167
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L90676      | Vacuna Fiebre Amarilla Ampolla               |                1146
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L91927      | Vacuna DPT Tableta                           |                3259
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L93066      | Heparina Sódica Tableta                      |                2024
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L93283      | Filgrastim Jarabe                            |                3644
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L93507      | Filgrastim Jeringa prellenada                |                1841
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L95215      | Somatostatina Vial                           |                 684
+ CEDI Medellín 9                | Medellín      | Centro de distribución | L97207      | Vacuna Papiloma Humano Tableta               |                4364
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L15778      | Calcitonina Ampolla                          |                3517
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L21188      | Desmopresina Tableta                         |                 703
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L23022      | Vacuna Polio Inactivada Tableta              |                1335
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L24996      | Heparina Sódica Tableta                      |                4662
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L25906      | Infliximab Tableta                           |                4555
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L30006      | Enoxaparina Suspensión inyectable            |                2444
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L33405      | Vacuna DPT Tableta                           |                3527
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L38361      | Vacuna Varicela Jarabe                       |                1642
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L38760      | Bevacizumab Jeringa prellenada               |                1436
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L39817      | Vacuna Triple Viral Jeringa prellenada       |                3244
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L40775      | Heparina Sódica Tableta                      |                 989
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L41266      | Vacuna Triple Viral Tableta                  |                 555
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L41890      | Vacuna Hepatitis B Suspensión inyectable     |                1610
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                2889
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L43862      | Vacuna Papiloma Humano Tableta               |                3960
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L45818      | Filgrastim Ampolla                           |                1921
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L51467      | Insulina NPH Vial                            |                3820
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L61717      | Desmopresina Tableta                         |                1530
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L62184      | Vacuna Triple Viral Suspensión inyectable    |                3460
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L62383      | Eritropoyetina Jarabe                        |                2962
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L67954      | Infliximab Vial                              |                3824
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L68991      | Vacuna Meningococo Jarabe                    |                2046
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L71894      | Vacuna Meningococo Tableta                   |                4941
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L72518      | Adalimumab Jeringa prellenada                |                2953
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L73156      | Vacuna Neumococo Tableta                     |                3606
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L73372      | Vacuna Polio Inactivada Jarabe               |                4486
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L77952      | Vacuna Varicela Jarabe                       |                4483
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L78327      | Calcitonina Ampolla                          |                1390
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L79531      | Desmopresina Tableta                         |                4767
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L82340      | Rituximab Ampolla                            |                 707
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L82544      | Vacuna Meningococo Jarabe                    |                1042
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L83920      | Vacuna Hepatitis B Ampolla                   |                4732
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L88193      | Trastuzumab Tableta                          |                 728
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L91381      | Vacuna Varicela Jarabe                       |                 681
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L92544      | Bevacizumab Jarabe                           |                3970
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L93307      | Vacuna Polio Inactivada Tableta              |                 487
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L93611      | Rituximab Jarabe                             |                3837
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L96356      | Vacuna Fiebre Amarilla Suspensión inyectable |                4345
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L97500      | Rituximab Jarabe                             |                2643
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L98039      | Filgrastim Jeringa prellenada                |                  11
+ CEDI Villavicencio 11          | Villavicencio | Centro de distribución | L98452      | Trastuzumab Tableta                          |                3460
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L13534      | Vacuna Polio Inactivada Jarabe               |                   1
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L14373      | Infliximab Vial                              |                4189
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L15075      | Adalimumab Jeringa prellenada                |                4602
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L15482      | Filgrastim Jeringa prellenada                |                1203
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L19120      | Vacuna Hepatitis B Suspensión inyectable     |                4988
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L20350      | Vacuna Fiebre Amarilla Ampolla               |                4115
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L25129      | Vacuna DPT Tableta                           |                 263
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L25292      | Toxina Botulínica Jarabe                     |                 838
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L25906      | Infliximab Tableta                           |                 827
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L28894      | Vacuna Fiebre Amarilla Jarabe                |                 800
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L31299      | Vacuna COVID-19 Jarabe                       |                1420
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L32782      | Vacuna COVID-19 Jarabe                       |                4469
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L40005      | Desmopresina Tableta                         |                4086
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L45018      | Vacuna Neumococo Vial                        |                4010
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L46930      | Vacuna COVID-19 Suspensión inyectable        |                2530
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L49251      | Vacuna Fiebre Amarilla Suspensión inyectable |                 337
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L49893      | Toxina Botulínica Tableta                    |                1781
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L50319      | Vacuna Fiebre Amarilla Suspensión inyectable |                 669
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L51224      | Desmopresina Tableta                         |                2849
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L52081      | Rituximab Ampolla                            |                4797
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L56898      | Insulina NPH Suspensión inyectable           |                1469
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L59968      | Vacuna Meningococo Jarabe                    |                1036
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L60205      | Toxina Botulínica Jeringa prellenada         |                4385
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L65176      | Filgrastim Jeringa prellenada                |                3956
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L67733      | Vacuna Meningococo Tableta                   |                4920
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L70332      | Desmopresina Jarabe                          |                4274
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L71385      | Vacuna Hepatitis B Ampolla                   |                2522
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L73156      | Vacuna Neumococo Tableta                     |                  13
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L73335      | Vacuna Polio Inactivada Jeringa prellenada   |                 231
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L78327      | Calcitonina Ampolla                          |                1636
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L79827      | Enoxaparina Jarabe                           |                4528
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L80592      | Desmopresina Suspensión inyectable           |                1662
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L85243      | Vacuna Fiebre Amarilla Jarabe                |                1220
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L85470      | Insulina NPH Jarabe                          |                 470
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L91927      | Vacuna DPT Tableta                           |                1465
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L93606      | Filgrastim Jeringa prellenada                |                3181
+ CEDI Villavicencio 19          | Villavicencio | Centro de distribución | L94896      | Heparina Sódica Jarabe                       |                1582
+ Planta Bogotá 2                | Bogotá        | Planta                 | L14278      | Etanercept Tableta                           |                 973
+ Planta Bogotá 2                | Bogotá        | Planta                 | L20561      | Vacuna Hepatitis B Tableta                   |                1659
+ Planta Bogotá 2                | Bogotá        | Planta                 | L21188      | Desmopresina Tableta                         |                1376
+ Planta Bogotá 2                | Bogotá        | Planta                 | L23022      | Vacuna Polio Inactivada Tableta              |                2271
+ Planta Bogotá 2                | Bogotá        | Planta                 | L25129      | Vacuna DPT Tableta                           |                2026
+ Planta Bogotá 2                | Bogotá        | Planta                 | L33509      | Vacuna Influenza Ampolla                     |                2304
+ Planta Bogotá 2                | Bogotá        | Planta                 | L35144      | Filgrastim Jeringa prellenada                |                1126
+ Planta Bogotá 2                | Bogotá        | Planta                 | L39451      | Desmopresina Tableta                         |                3024
+ Planta Bogotá 2                | Bogotá        | Planta                 | L39949      | Desmopresina Suspensión inyectable           |                4062
+ Planta Bogotá 2                | Bogotá        | Planta                 | L40775      | Heparina Sódica Tableta                      |                3242
+ Planta Bogotá 2                | Bogotá        | Planta                 | L43862      | Vacuna Papiloma Humano Tableta               |                2199
+ Planta Bogotá 2                | Bogotá        | Planta                 | L44687      | Vacuna DPT Suspensión inyectable             |                2002
+ Planta Bogotá 2                | Bogotá        | Planta                 | L47353      | Enoxaparina Suspensión inyectable            |                2779
+ Planta Bogotá 2                | Bogotá        | Planta                 | L51359      | Vacuna Varicela Jarabe                       |                1514
+ Planta Bogotá 2                | Bogotá        | Planta                 | L53404      | Vacuna Polio Inactivada Jarabe               |                3091
+ Planta Bogotá 2                | Bogotá        | Planta                 | L56025      | Calcitonina Ampolla                          |                2726
+ Planta Bogotá 2                | Bogotá        | Planta                 | L61807      | Somatostatina Vial                           |                3487
+ Planta Bogotá 2                | Bogotá        | Planta                 | L62976      | Vacuna Hepatitis B Ampolla                   |                3864
+ Planta Bogotá 2                | Bogotá        | Planta                 | L63545      | Vacuna COVID-19 Ampolla                      |                4690
+ Planta Bogotá 2                | Bogotá        | Planta                 | L65936      | Enoxaparina Tableta                          |                2403
+ Planta Bogotá 2                | Bogotá        | Planta                 | L67711      | Heparina Sódica Tableta                      |                 230
+ Planta Bogotá 2                | Bogotá        | Planta                 | L69878      | Vacuna Neumococo Tableta                     |                2374
+ Planta Bogotá 2                | Bogotá        | Planta                 | L70552      | Vacuna Hepatitis B Tableta                   |                1322
+ Planta Bogotá 2                | Bogotá        | Planta                 | L71537      | Somatropina Ampolla                          |                  85
+ Planta Bogotá 2                | Bogotá        | Planta                 | L71605      | Desmopresina Tableta                         |                3808
+ Planta Bogotá 2                | Bogotá        | Planta                 | L76698      | Etanercept Tableta                           |                3684
+ Planta Bogotá 2                | Bogotá        | Planta                 | L78494      | Somatostatina Vial                           |                1693
+ Planta Bogotá 2                | Bogotá        | Planta                 | L84177      | Vacuna Fiebre Amarilla Jarabe                |                 909
+ Planta Bogotá 2                | Bogotá        | Planta                 | L84963      | Adalimumab Jeringa prellenada                |                4092
+ Planta Bogotá 2                | Bogotá        | Planta                 | L86858      | Rituximab Suspensión inyectable              |                2499
+ Planta Bogotá 2                | Bogotá        | Planta                 | L88385      | Vacuna Rotavirus Vial                        |                3876
+ Planta Bogotá 2                | Bogotá        | Planta                 | L89822      | Vacuna Influenza Ampolla                     |                4176
+ Planta Bogotá 2                | Bogotá        | Planta                 | L91205      | Vacuna Influenza Ampolla                     |                 682
+ Planta Bogotá 2                | Bogotá        | Planta                 | L92544      | Bevacizumab Jarabe                           |                1398
+ Planta Bogotá 2                | Bogotá        | Planta                 | L94323      | Somatostatina Suspensión inyectable          |                1547
+ Planta Bogotá 2                | Bogotá        | Planta                 | L96951      | Adalimumab Suspensión inyectable             |                 948
+ Planta Bogotá 2                | Bogotá        | Planta                 | L98452      | Trastuzumab Tableta                          |                2734
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L27038      | Filgrastim Suspensión inyectable             |                1472
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L29313      | Desmopresina Jarabe                          |                2460
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L34727      | Vacuna Varicela Jeringa prellenada           |                3183
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L41266      | Vacuna Triple Viral Tableta                  |                4031
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L42530      | Vacuna Rotavirus Vial                        |                1902
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L44687      | Vacuna DPT Suspensión inyectable             |                1996
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L45614      | Vacuna COVID-19 Jarabe                       |                3347
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L45665      | Vacuna Rotavirus Vial                        |                1601
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L48652      | Vacuna Varicela Ampolla                      |                2171
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L48974      | Infliximab Vial                              |                3694
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L49651      | Vacuna Hepatitis B Tableta                   |                4792
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L49893      | Toxina Botulínica Tableta                    |                2022
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L51359      | Vacuna Varicela Jarabe                       |                3396
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L53025      | Vacuna Hepatitis B Suspensión inyectable     |                1776
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L54092      | Adalimumab Jeringa prellenada                |                 957
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L56898      | Insulina NPH Suspensión inyectable           |                3675
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L56955      | Vacuna Fiebre Amarilla Jarabe                |                 829
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L59808      | Vacuna Polio Inactivada Jarabe               |                2504
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L62262      | Somatostatina Suspensión inyectable          |                3709
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L62976      | Vacuna Hepatitis B Ampolla                   |                 973
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L64377      | Filgrastim Jarabe                            |                1682
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L65176      | Filgrastim Jeringa prellenada                |                2233
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L69510      | Vacuna Triple Viral Jeringa prellenada       |                1249
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L72518      | Adalimumab Jeringa prellenada                |                3552
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L79066      | Bevacizumab Jeringa prellenada               |                3840
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L82199      | Insulina NPH Jarabe                          |                1894
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L82340      | Rituximab Ampolla                            |                2774
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L82544      | Vacuna Meningococo Jarabe                    |                3629
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L85243      | Vacuna Fiebre Amarilla Jarabe                |                2070
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L89129      | Vacuna Varicela Jeringa prellenada           |                1272
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L89570      | Bevacizumab Jeringa prellenada               |                1806
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L89730      | Vacuna Varicela Jeringa prellenada           |                2913
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L91927      | Vacuna DPT Tableta                           |                2916
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L93130      | Rituximab Suspensión inyectable              |                3887
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L97207      | Vacuna Papiloma Humano Tableta               |                2712
+ Planta Bucaramanga 20          | Bucaramanga   | Planta                 | L98815      | Vacuna Triple Viral Jeringa prellenada       |                4409
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L10800      | Enoxaparina Jarabe                           |                 253
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L14852      | Eritropoyetina Jarabe                        |                3410
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L16658      | Vacuna Neumococo Tableta                     |                1211
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L16764      | Infliximab Vial                              |                4894
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L19120      | Vacuna Hepatitis B Suspensión inyectable     |                3584
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L20561      | Vacuna Hepatitis B Tableta                   |                4245
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L21188      | Desmopresina Tableta                         |                1717
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L28894      | Vacuna Fiebre Amarilla Jarabe                |                 945
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L31299      | Vacuna COVID-19 Jarabe                       |                 594
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L41635      | Vacuna Rotavirus Vial                        |                4489
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L42951      | Insulina NPH Jarabe                          |                4777
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                 430
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L43862      | Vacuna Papiloma Humano Tableta               |                2768
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L45614      | Vacuna COVID-19 Jarabe                       |                1741
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L45818      | Filgrastim Ampolla                           |                 655
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L48680      | Desmopresina Tableta                         |                 870
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L51359      | Vacuna Varicela Jarabe                       |                4005
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L52245      | Vacuna COVID-19 Suspensión inyectable        |                2706
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L53404      | Vacuna Polio Inactivada Jarabe               |                1558
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L54092      | Adalimumab Jeringa prellenada                |                1100
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L54236      | Vacuna Varicela Jeringa prellenada           |                3309
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L55890      | Trastuzumab Tableta                          |                 979
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L58843      | Heparina Sódica Tableta                      |                 259
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L62184      | Vacuna Triple Viral Suspensión inyectable    |                3051
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L62640      | Vacuna Meningococo Tableta                   |                2828
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L62923      | Vacuna COVID-19 Jarabe                       |                4692
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L62976      | Vacuna Hepatitis B Ampolla                   |                2036
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L63545      | Vacuna COVID-19 Ampolla                      |                3585
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L67199      | Enoxaparina Tableta                          |                1779
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L69600      | Heparina Sódica Jarabe                       |                3636
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L70332      | Desmopresina Jarabe                          |                2490
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L71894      | Vacuna Meningococo Tableta                   |                4487
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L72422      | Filgrastim Jarabe                            |                2820
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L75771      | Vacuna Varicela Ampolla                      |                3065
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L77889      | Vacuna Fiebre Amarilla Ampolla               |                 413
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L78327      | Calcitonina Ampolla                          |                1118
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L78494      | Somatostatina Vial                           |                2379
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L79066      | Bevacizumab Jeringa prellenada               |                2547
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L82199      | Insulina NPH Jarabe                          |                3616
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L82544      | Vacuna Meningococo Jarabe                    |                1080
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L91381      | Vacuna Varicela Jarabe                       |                 477
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L91927      | Vacuna DPT Tableta                           |                 555
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L97404      | Vacuna Neumococo Tableta                     |                3424
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L98039      | Filgrastim Jeringa prellenada                |                2157
+ Planta Bucaramanga 23          | Bucaramanga   | Planta                 | L98184      | Vacuna COVID-19 Jarabe                       |                4736
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L15075      | Adalimumab Jeringa prellenada                |                2039
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L19508      | Enoxaparina Tableta                          |                3133
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L21188      | Desmopresina Tableta                         |                4502
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L22196      | Enoxaparina Ampolla                          |                3632
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L24996      | Heparina Sódica Tableta                      |                2495
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L26334      | Enoxaparina Tableta                          |                 762
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L28894      | Vacuna Fiebre Amarilla Jarabe                |                2589
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L33509      | Vacuna Influenza Ampolla                     |                2719
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L36318      | Vacuna Fiebre Amarilla Ampolla               |                2095
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L38760      | Bevacizumab Jeringa prellenada               |                2848
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L45018      | Vacuna Neumococo Vial                        |                4223
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L48652      | Vacuna Varicela Ampolla                      |                3313
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L49651      | Vacuna Hepatitis B Tableta                   |                4228
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L52753      | Toxina Botulínica Jarabe                     |                 739
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L55293      | Infliximab Vial                              |                2476
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L58351      | Vacuna Neumococo Tableta                     |                3366
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L59968      | Vacuna Meningococo Jarabe                    |                 607
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L61116      | Adalimumab Suspensión inyectable             |                1418
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L62262      | Somatostatina Suspensión inyectable          |                4620
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L62923      | Vacuna COVID-19 Jarabe                       |                 579
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L64377      | Filgrastim Jarabe                            |                2356
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L66531      | Vacuna Polio Inactivada Tableta              |                3783
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L69460      | Bevacizumab Jarabe                           |                 156
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L71385      | Vacuna Hepatitis B Ampolla                   |                4603
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L72422      | Filgrastim Jarabe                            |                 590
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L74251      | Bevacizumab Jarabe                           |                3499
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L79066      | Bevacizumab Jeringa prellenada               |                1381
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L85243      | Vacuna Fiebre Amarilla Jarabe                |                4632
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L85748      | Trastuzumab Tableta                          |                1217
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L90676      | Vacuna Fiebre Amarilla Ampolla               |                 259
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L91927      | Vacuna DPT Tableta                           |                4453
+ Planta Cúcuta 21               | Cúcuta        | Planta                 | L92544      | Bevacizumab Jarabe                           |                3764
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L10800      | Enoxaparina Jarabe                           |                3996
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L12875      | Etanercept Tableta                           |                 999
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L13783      | Heparina Sódica Jarabe                       |                2828
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L14852      | Eritropoyetina Jarabe                        |                2846
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L15075      | Adalimumab Jeringa prellenada                |                1784
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L15778      | Calcitonina Ampolla                          |                3646
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L16658      | Vacuna Neumococo Tableta                     |                1070
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L17355      | Vacuna Varicela Jeringa prellenada           |                4897
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L25292      | Toxina Botulínica Jarabe                     |                1738
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L26199      | Vacuna Polio Inactivada Jarabe               |                4919
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L27038      | Filgrastim Suspensión inyectable             |                4167
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                1396
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L38255      | Vacuna COVID-19 Suspensión inyectable        |                2905
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L39949      | Desmopresina Suspensión inyectable           |                4048
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L40775      | Heparina Sódica Tableta                      |                4535
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L41285      | Enoxaparina Tableta                          |                4771
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                1693
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L45614      | Vacuna COVID-19 Jarabe                       |                1886
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L48829      | Vacuna Varicela Jarabe                       |                3475
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L50846      | Enoxaparina Suspensión inyectable            |                4536
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L51359      | Vacuna Varicela Jarabe                       |                 663
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L52245      | Vacuna COVID-19 Suspensión inyectable        |                2749
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L52753      | Toxina Botulínica Jarabe                     |                4417
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L55890      | Trastuzumab Tableta                          |                3010
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L58629      | Somatostatina Suspensión inyectable          |                2618
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L64377      | Filgrastim Jarabe                            |                1112
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L65936      | Enoxaparina Tableta                          |                4395
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L68115      | Vacuna DPT Suspensión inyectable             |                4090
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L69510      | Vacuna Triple Viral Jeringa prellenada       |                1975
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L73335      | Vacuna Polio Inactivada Jeringa prellenada   |                3757
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L76317      | Filgrastim Jarabe                            |                2436
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L77889      | Vacuna Fiebre Amarilla Ampolla               |                3653
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L79827      | Enoxaparina Jarabe                           |                4573
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L82848      | Calcitonina Ampolla                          |                 517
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L84963      | Adalimumab Jeringa prellenada                |                2561
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L85243      | Vacuna Fiebre Amarilla Jarabe                |                4379
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L89822      | Vacuna Influenza Ampolla                     |                2177
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L89905      | Vacuna Triple Viral Suspensión inyectable    |                3605
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L91927      | Vacuna DPT Tableta                           |                4986
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L93130      | Rituximab Suspensión inyectable              |                2471
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L93507      | Filgrastim Jeringa prellenada                |                3434
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L94323      | Somatostatina Suspensión inyectable          |                 879
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L95841      | Bevacizumab Jarabe                           |                4930
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L97500      | Rituximab Jarabe                             |                4885
+ Planta Cúcuta 22               | Cúcuta        | Planta                 | L99687      | Adalimumab Suspensión inyectable             |                3118
+ Planta Ibagué 14               | Ibagué        | Planta                 | L16764      | Infliximab Vial                              |                 104
+ Planta Ibagué 14               | Ibagué        | Planta                 | L25906      | Infliximab Tableta                           |                4377
+ Planta Ibagué 14               | Ibagué        | Planta                 | L29313      | Desmopresina Jarabe                          |                2036
+ Planta Ibagué 14               | Ibagué        | Planta                 | L32838      | Enoxaparina Ampolla                          |                4646
+ Planta Ibagué 14               | Ibagué        | Planta                 | L33834      | Vacuna Varicela Jeringa prellenada           |                1358
+ Planta Ibagué 14               | Ibagué        | Planta                 | L35144      | Filgrastim Jeringa prellenada                |                 915
+ Planta Ibagué 14               | Ibagué        | Planta                 | L49251      | Vacuna Fiebre Amarilla Suspensión inyectable |                3695
+ Planta Ibagué 14               | Ibagué        | Planta                 | L52081      | Rituximab Ampolla                            |                1432
+ Planta Ibagué 14               | Ibagué        | Planta                 | L54092      | Adalimumab Jeringa prellenada                |                4952
+ Planta Ibagué 14               | Ibagué        | Planta                 | L56112      | Rituximab Ampolla                            |                4110
+ Planta Ibagué 14               | Ibagué        | Planta                 | L56357      | Trastuzumab Tableta                          |                2984
+ Planta Ibagué 14               | Ibagué        | Planta                 | L61717      | Desmopresina Tableta                         |                2021
+ Planta Ibagué 14               | Ibagué        | Planta                 | L62184      | Vacuna Triple Viral Suspensión inyectable    |                2992
+ Planta Ibagué 14               | Ibagué        | Planta                 | L62976      | Vacuna Hepatitis B Ampolla                   |                1727
+ Planta Ibagué 14               | Ibagué        | Planta                 | L63955      | Rituximab Ampolla                            |                3084
+ Planta Ibagué 14               | Ibagué        | Planta                 | L64008      | Vacuna Varicela Ampolla                      |                4891
+ Planta Ibagué 14               | Ibagué        | Planta                 | L65936      | Enoxaparina Tableta                          |                1402
+ Planta Ibagué 14               | Ibagué        | Planta                 | L67154      | Insulina NPH Suspensión inyectable           |                 318
+ Planta Ibagué 14               | Ibagué        | Planta                 | L70332      | Desmopresina Jarabe                          |                2816
+ Planta Ibagué 14               | Ibagué        | Planta                 | L71385      | Vacuna Hepatitis B Ampolla                   |                4465
+ Planta Ibagué 14               | Ibagué        | Planta                 | L74251      | Bevacizumab Jarabe                           |                2040
+ Planta Ibagué 14               | Ibagué        | Planta                 | L77889      | Vacuna Fiebre Amarilla Ampolla               |                4839
+ Planta Ibagué 14               | Ibagué        | Planta                 | L77952      | Vacuna Varicela Jarabe                       |                3899
+ Planta Ibagué 14               | Ibagué        | Planta                 | L78327      | Calcitonina Ampolla                          |                3772
+ Planta Ibagué 14               | Ibagué        | Planta                 | L78494      | Somatostatina Vial                           |                 747
+ Planta Ibagué 14               | Ibagué        | Planta                 | L82199      | Insulina NPH Jarabe                          |                3176
+ Planta Ibagué 14               | Ibagué        | Planta                 | L84963      | Adalimumab Jeringa prellenada                |                1263
+ Planta Ibagué 14               | Ibagué        | Planta                 | L85248      | Calcitonina Ampolla                          |                1366
+ Planta Ibagué 14               | Ibagué        | Planta                 | L85470      | Insulina NPH Jarabe                          |                 503
+ Planta Ibagué 14               | Ibagué        | Planta                 | L89905      | Vacuna Triple Viral Suspensión inyectable    |                4030
+ Planta Ibagué 14               | Ibagué        | Planta                 | L91183      | Insulina NPH Suspensión inyectable           |                 424
+ Planta Ibagué 14               | Ibagué        | Planta                 | L92544      | Bevacizumab Jarabe                           |                1096
+ Planta Ibagué 14               | Ibagué        | Planta                 | L93066      | Heparina Sódica Tableta                      |                4740
+ Planta Ibagué 14               | Ibagué        | Planta                 | L93507      | Filgrastim Jeringa prellenada                |                 122
+ Planta Ibagué 14               | Ibagué        | Planta                 | L93606      | Filgrastim Jeringa prellenada                |                4922
+ Planta Ibagué 14               | Ibagué        | Planta                 | L94896      | Heparina Sódica Jarabe                       |                 703
+ Planta Ibagué 14               | Ibagué        | Planta                 | L97207      | Vacuna Papiloma Humano Tableta               |                 950
+ Planta Medellín 25             | Medellín      | Planta                 | L12875      | Etanercept Tableta                           |                4421
+ Planta Medellín 25             | Medellín      | Planta                 | L13783      | Heparina Sódica Jarabe                       |                4699
+ Planta Medellín 25             | Medellín      | Planta                 | L14852      | Eritropoyetina Jarabe                        |                2990
+ Planta Medellín 25             | Medellín      | Planta                 | L15778      | Calcitonina Ampolla                          |                2610
+ Planta Medellín 25             | Medellín      | Planta                 | L17355      | Vacuna Varicela Jeringa prellenada           |                3758
+ Planta Medellín 25             | Medellín      | Planta                 | L21188      | Desmopresina Tableta                         |                1980
+ Planta Medellín 25             | Medellín      | Planta                 | L29887      | Vacuna Fiebre Amarilla Jeringa prellenada    |                 902
+ Planta Medellín 25             | Medellín      | Planta                 | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                4449
+ Planta Medellín 25             | Medellín      | Planta                 | L32962      | Insulina NPH Suspensión inyectable           |                1318
+ Planta Medellín 25             | Medellín      | Planta                 | L33819      | Rituximab Jarabe                             |                3262
+ Planta Medellín 25             | Medellín      | Planta                 | L35144      | Filgrastim Jeringa prellenada                |                3814
+ Planta Medellín 25             | Medellín      | Planta                 | L36318      | Vacuna Fiebre Amarilla Ampolla               |                1292
+ Planta Medellín 25             | Medellín      | Planta                 | L38361      | Vacuna Varicela Jarabe                       |                4686
+ Planta Medellín 25             | Medellín      | Planta                 | L38760      | Bevacizumab Jeringa prellenada               |                 688
+ Planta Medellín 25             | Medellín      | Planta                 | L39038      | Vacuna Neumococo Vial                        |                4172
+ Planta Medellín 25             | Medellín      | Planta                 | L40005      | Desmopresina Tableta                         |                 950
+ Planta Medellín 25             | Medellín      | Planta                 | L40162      | Vacuna Triple Viral Jeringa prellenada       |                1181
+ Planta Medellín 25             | Medellín      | Planta                 | L41285      | Enoxaparina Tableta                          |                4435
+ Planta Medellín 25             | Medellín      | Planta                 | L45818      | Filgrastim Ampolla                           |                3123
+ Planta Medellín 25             | Medellín      | Planta                 | L47752      | Filgrastim Jeringa prellenada                |                 387
+ Planta Medellín 25             | Medellín      | Planta                 | L49893      | Toxina Botulínica Tableta                    |                2716
+ Planta Medellín 25             | Medellín      | Planta                 | L50319      | Vacuna Fiebre Amarilla Suspensión inyectable |                2855
+ Planta Medellín 25             | Medellín      | Planta                 | L52245      | Vacuna COVID-19 Suspensión inyectable        |                1057
+ Planta Medellín 25             | Medellín      | Planta                 | L56112      | Rituximab Ampolla                            |                4433
+ Planta Medellín 25             | Medellín      | Planta                 | L56898      | Insulina NPH Suspensión inyectable           |                3615
+ Planta Medellín 25             | Medellín      | Planta                 | L59968      | Vacuna Meningococo Jarabe                    |                3328
+ Planta Medellín 25             | Medellín      | Planta                 | L62923      | Vacuna COVID-19 Jarabe                       |                3534
+ Planta Medellín 25             | Medellín      | Planta                 | L64377      | Filgrastim Jarabe                            |                1699
+ Planta Medellín 25             | Medellín      | Planta                 | L67199      | Enoxaparina Tableta                          |                3500
+ Planta Medellín 25             | Medellín      | Planta                 | L67711      | Heparina Sódica Tableta                      |                2318
+ Planta Medellín 25             | Medellín      | Planta                 | L69510      | Vacuna Triple Viral Jeringa prellenada       |                3217
+ Planta Medellín 25             | Medellín      | Planta                 | L70552      | Vacuna Hepatitis B Tableta                   |                3585
+ Planta Medellín 25             | Medellín      | Planta                 | L71537      | Somatropina Ampolla                          |                3275
+ Planta Medellín 25             | Medellín      | Planta                 | L72277      | Infliximab Tableta                           |                 626
+ Planta Medellín 25             | Medellín      | Planta                 | L72402      | Vacuna COVID-19 Jarabe                       |                1585
+ Planta Medellín 25             | Medellín      | Planta                 | L73372      | Vacuna Polio Inactivada Jarabe               |                 662
+ Planta Medellín 25             | Medellín      | Planta                 | L74251      | Bevacizumab Jarabe                           |                3806
+ Planta Medellín 25             | Medellín      | Planta                 | L76317      | Filgrastim Jarabe                            |                3858
+ Planta Medellín 25             | Medellín      | Planta                 | L80702      | Enoxaparina Ampolla                          |                 792
+ Planta Medellín 25             | Medellín      | Planta                 | L81376      | Vacuna Hepatitis B Ampolla                   |                3652
+ Planta Medellín 25             | Medellín      | Planta                 | L82102      | Vacuna Hepatitis B Suspensión inyectable     |                 511
+ Planta Medellín 25             | Medellín      | Planta                 | L85470      | Insulina NPH Jarabe                          |                4211
+ Planta Medellín 25             | Medellín      | Planta                 | L85748      | Trastuzumab Tableta                          |                4403
+ Planta Medellín 25             | Medellín      | Planta                 | L86350      | Enoxaparina Suspensión inyectable            |                1655
+ Planta Medellín 25             | Medellín      | Planta                 | L88385      | Vacuna Rotavirus Vial                        |                3708
+ Planta Medellín 25             | Medellín      | Planta                 | L89129      | Vacuna Varicela Jeringa prellenada           |                2132
+ Planta Medellín 25             | Medellín      | Planta                 | L91183      | Insulina NPH Suspensión inyectable           |                 186
+ Planta Medellín 25             | Medellín      | Planta                 | L93130      | Rituximab Suspensión inyectable              |                2795
+ Planta Medellín 25             | Medellín      | Planta                 | L95841      | Bevacizumab Jarabe                           |                 342
+ Planta Medellín 25             | Medellín      | Planta                 | L96356      | Vacuna Fiebre Amarilla Suspensión inyectable |                3798
+ Planta Medellín 25             | Medellín      | Planta                 | L96951      | Adalimumab Suspensión inyectable             |                2303
+ Planta Medellín 25             | Medellín      | Planta                 | L97500      | Rituximab Jarabe                             |                2033
+ Planta Pereira 4               | Pereira       | Planta                 | L15075      | Adalimumab Jeringa prellenada                |                4222
+ Planta Pereira 4               | Pereira       | Planta                 | L19508      | Enoxaparina Tableta                          |                3089
+ Planta Pereira 4               | Pereira       | Planta                 | L19602      | Heparina Sódica Tableta                      |                2039
+ Planta Pereira 4               | Pereira       | Planta                 | L21188      | Desmopresina Tableta                         |                1145
+ Planta Pereira 4               | Pereira       | Planta                 | L23970      | Vacuna COVID-19 Ampolla                      |                 522
+ Planta Pereira 4               | Pereira       | Planta                 | L28894      | Vacuna Fiebre Amarilla Jarabe                |                4271
+ Planta Pereira 4               | Pereira       | Planta                 | L29340      | Rituximab Ampolla                            |                2360
+ Planta Pereira 4               | Pereira       | Planta                 | L30392      | Vacuna Fiebre Amarilla Jeringa prellenada    |                1212
+ Planta Pereira 4               | Pereira       | Planta                 | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                1653
+ Planta Pereira 4               | Pereira       | Planta                 | L32838      | Enoxaparina Ampolla                          |                3142
+ Planta Pereira 4               | Pereira       | Planta                 | L33086      | Insulina NPH Ampolla                         |                 789
+ Planta Pereira 4               | Pereira       | Planta                 | L33788      | Calcitonina Ampolla                          |                3592
+ Planta Pereira 4               | Pereira       | Planta                 | L34727      | Vacuna Varicela Jeringa prellenada           |                3816
+ Planta Pereira 4               | Pereira       | Planta                 | L39949      | Desmopresina Suspensión inyectable           |                1000
+ Planta Pereira 4               | Pereira       | Planta                 | L40775      | Heparina Sódica Tableta                      |                3367
+ Planta Pereira 4               | Pereira       | Planta                 | L41266      | Vacuna Triple Viral Tableta                  |                1057
+ Planta Pereira 4               | Pereira       | Planta                 | L41635      | Vacuna Rotavirus Vial                        |                1222
+ Planta Pereira 4               | Pereira       | Planta                 | L47752      | Filgrastim Jeringa prellenada                |                4697
+ Planta Pereira 4               | Pereira       | Planta                 | L48652      | Vacuna Varicela Ampolla                      |                2813
+ Planta Pereira 4               | Pereira       | Planta                 | L49651      | Vacuna Hepatitis B Tableta                   |                3304
+ Planta Pereira 4               | Pereira       | Planta                 | L49829      | Vacuna COVID-19 Ampolla                      |                1371
+ Planta Pereira 4               | Pereira       | Planta                 | L54236      | Vacuna Varicela Jeringa prellenada           |                3678
+ Planta Pereira 4               | Pereira       | Planta                 | L56955      | Vacuna Fiebre Amarilla Jarabe                |                1903
+ Planta Pereira 4               | Pereira       | Planta                 | L61807      | Somatostatina Vial                           |                 491
+ Planta Pereira 4               | Pereira       | Planta                 | L67199      | Enoxaparina Tableta                          |                4736
+ Planta Pereira 4               | Pereira       | Planta                 | L67711      | Heparina Sódica Tableta                      |                 788
+ Planta Pereira 4               | Pereira       | Planta                 | L71605      | Desmopresina Tableta                         |                1085
+ Planta Pereira 4               | Pereira       | Planta                 | L74251      | Bevacizumab Jarabe                           |                 103
+ Planta Pereira 4               | Pereira       | Planta                 | L78327      | Calcitonina Ampolla                          |                1816
+ Planta Pereira 4               | Pereira       | Planta                 | L79531      | Desmopresina Tableta                         |                4851
+ Planta Pereira 4               | Pereira       | Planta                 | L82848      | Calcitonina Ampolla                          |                2708
+ Planta Pereira 4               | Pereira       | Planta                 | L84000      | Filgrastim Jeringa prellenada                |                3395
+ Planta Pereira 4               | Pereira       | Planta                 | L84963      | Adalimumab Jeringa prellenada                |                 156
+ Planta Pereira 4               | Pereira       | Planta                 | L85748      | Trastuzumab Tableta                          |                1126
+ Planta Pereira 4               | Pereira       | Planta                 | L86019      | Insulina NPH Ampolla                         |                1174
+ Planta Pereira 4               | Pereira       | Planta                 | L86931      | Adalimumab Suspensión inyectable             |                3737
+ Planta Pereira 4               | Pereira       | Planta                 | L94246      | Vacuna Rotavirus Vial                        |                 342
+ Planta Pereira 4               | Pereira       | Planta                 | L95215      | Somatostatina Vial                           |                2445
+ Planta Pereira 4               | Pereira       | Planta                 | L98039      | Filgrastim Jeringa prellenada                |                3530
+ Planta Pereira 7               | Pereira       | Planta                 | L13534      | Vacuna Polio Inactivada Jarabe               |                1695
+ Planta Pereira 7               | Pereira       | Planta                 | L14705      | Vacuna Hepatitis B Tableta                   |                1556
+ Planta Pereira 7               | Pereira       | Planta                 | L15482      | Filgrastim Jeringa prellenada                |                2685
+ Planta Pereira 7               | Pereira       | Planta                 | L15778      | Calcitonina Ampolla                          |                1620
+ Planta Pereira 7               | Pereira       | Planta                 | L16764      | Infliximab Vial                              |                 275
+ Planta Pereira 7               | Pereira       | Planta                 | L26199      | Vacuna Polio Inactivada Jarabe               |                4293
+ Planta Pereira 7               | Pereira       | Planta                 | L32838      | Enoxaparina Ampolla                          |                 870
+ Planta Pereira 7               | Pereira       | Planta                 | L33086      | Insulina NPH Ampolla                         |                 282
+ Planta Pereira 7               | Pereira       | Planta                 | L34727      | Vacuna Varicela Jeringa prellenada           |                3394
+ Planta Pereira 7               | Pereira       | Planta                 | L41285      | Enoxaparina Tableta                          |                3244
+ Planta Pereira 7               | Pereira       | Planta                 | L43862      | Vacuna Papiloma Humano Tableta               |                3651
+ Planta Pereira 7               | Pereira       | Planta                 | L47353      | Enoxaparina Suspensión inyectable            |                4282
+ Planta Pereira 7               | Pereira       | Planta                 | L49651      | Vacuna Hepatitis B Tableta                   |                4730
+ Planta Pereira 7               | Pereira       | Planta                 | L50846      | Enoxaparina Suspensión inyectable            |                1004
+ Planta Pereira 7               | Pereira       | Planta                 | L51224      | Desmopresina Tableta                         |                 184
+ Planta Pereira 7               | Pereira       | Planta                 | L52906      | Adalimumab Jeringa prellenada                |                1786
+ Planta Pereira 7               | Pereira       | Planta                 | L56955      | Vacuna Fiebre Amarilla Jarabe                |                3882
+ Planta Pereira 7               | Pereira       | Planta                 | L61116      | Adalimumab Suspensión inyectable             |                 179
+ Planta Pereira 7               | Pereira       | Planta                 | L61807      | Somatostatina Vial                           |                4691
+ Planta Pereira 7               | Pereira       | Planta                 | L62383      | Eritropoyetina Jarabe                        |                4164
+ Planta Pereira 7               | Pereira       | Planta                 | L62640      | Vacuna Meningococo Tableta                   |                3335
+ Planta Pereira 7               | Pereira       | Planta                 | L63545      | Vacuna COVID-19 Ampolla                      |                4418
+ Planta Pereira 7               | Pereira       | Planta                 | L63955      | Rituximab Ampolla                            |                 189
+ Planta Pereira 7               | Pereira       | Planta                 | L65933      | Vacuna Neumococo Vial                        |                2333
+ Planta Pereira 7               | Pereira       | Planta                 | L67711      | Heparina Sódica Tableta                      |                2337
+ Planta Pereira 7               | Pereira       | Planta                 | L69460      | Bevacizumab Jarabe                           |                 666
+ Planta Pereira 7               | Pereira       | Planta                 | L71433      | Heparina Sódica Jarabe                       |                1421
+ Planta Pereira 7               | Pereira       | Planta                 | L72422      | Filgrastim Jarabe                            |                1211
+ Planta Pereira 7               | Pereira       | Planta                 | L73372      | Vacuna Polio Inactivada Jarabe               |                2799
+ Planta Pereira 7               | Pereira       | Planta                 | L76698      | Etanercept Tableta                           |                1228
+ Planta Pereira 7               | Pereira       | Planta                 | L80702      | Enoxaparina Ampolla                          |                4265
+ Planta Pereira 7               | Pereira       | Planta                 | L82102      | Vacuna Hepatitis B Suspensión inyectable     |                4786
+ Planta Pereira 7               | Pereira       | Planta                 | L88222      | Vacuna Varicela Ampolla                      |                4476
+ Planta Pereira 7               | Pereira       | Planta                 | L89730      | Vacuna Varicela Jeringa prellenada           |                1684
+ Planta Pereira 7               | Pereira       | Planta                 | L89822      | Vacuna Influenza Ampolla                     |                1655
+ Planta Pereira 7               | Pereira       | Planta                 | L89905      | Vacuna Triple Viral Suspensión inyectable    |                4816
+ Planta Pereira 7               | Pereira       | Planta                 | L91205      | Vacuna Influenza Ampolla                     |                4017
+ Planta Pereira 7               | Pereira       | Planta                 | L91927      | Vacuna DPT Tableta                           |                1347
+ Planta Pereira 7               | Pereira       | Planta                 | L93130      | Rituximab Suspensión inyectable              |                1399
+ Planta Pereira 7               | Pereira       | Planta                 | L93307      | Vacuna Polio Inactivada Tableta              |                4666
+ Planta Pereira 7               | Pereira       | Planta                 | L93507      | Filgrastim Jeringa prellenada                |                 876
+ Planta Pereira 7               | Pereira       | Planta                 | L94246      | Vacuna Rotavirus Vial                        |                1028
+ Planta Pereira 7               | Pereira       | Planta                 | L95215      | Somatostatina Vial                           |                2702
+ Planta Pereira 7               | Pereira       | Planta                 | L96646      | Vacuna Hepatitis B Ampolla                   |                2845
+ Planta Pereira 7               | Pereira       | Planta                 | L98039      | Filgrastim Jeringa prellenada                |                4142
+ Planta Pereira 7               | Pereira       | Planta                 | L98452      | Trastuzumab Tableta                          |                2741
+ Planta Pereira 8               | Pereira       | Planta                 | L13534      | Vacuna Polio Inactivada Jarabe               |                2268
+ Planta Pereira 8               | Pereira       | Planta                 | L14278      | Etanercept Tableta                           |                1922
+ Planta Pereira 8               | Pereira       | Planta                 | L19602      | Heparina Sódica Tableta                      |                 173
+ Planta Pereira 8               | Pereira       | Planta                 | L20350      | Vacuna Fiebre Amarilla Ampolla               |                 849
+ Planta Pereira 8               | Pereira       | Planta                 | L25292      | Toxina Botulínica Jarabe                     |                1858
+ Planta Pereira 8               | Pereira       | Planta                 | L26199      | Vacuna Polio Inactivada Jarabe               |                2088
+ Planta Pereira 8               | Pereira       | Planta                 | L29887      | Vacuna Fiebre Amarilla Jeringa prellenada    |                3773
+ Planta Pereira 8               | Pereira       | Planta                 | L33086      | Insulina NPH Ampolla                         |                4225
+ Planta Pereira 8               | Pereira       | Planta                 | L43065      | Bevacizumab Jarabe                           |                 986
+ Planta Pereira 8               | Pereira       | Planta                 | L44687      | Vacuna DPT Suspensión inyectable             |                 415
+ Planta Pereira 8               | Pereira       | Planta                 | L45614      | Vacuna COVID-19 Jarabe                       |                1054
+ Planta Pereira 8               | Pereira       | Planta                 | L45665      | Vacuna Rotavirus Vial                        |                 680
+ Planta Pereira 8               | Pereira       | Planta                 | L46046      | Filgrastim Jeringa prellenada                |                4374
+ Planta Pereira 8               | Pereira       | Planta                 | L48652      | Vacuna Varicela Ampolla                      |                1154
+ Planta Pereira 8               | Pereira       | Planta                 | L51224      | Desmopresina Tableta                         |                 929
+ Planta Pereira 8               | Pereira       | Planta                 | L52753      | Toxina Botulínica Jarabe                     |                4080
+ Planta Pereira 8               | Pereira       | Planta                 | L53025      | Vacuna Hepatitis B Suspensión inyectable     |                 270
+ Planta Pereira 8               | Pereira       | Planta                 | L56898      | Insulina NPH Suspensión inyectable           |                1731
+ Planta Pereira 8               | Pereira       | Planta                 | L58843      | Heparina Sódica Tableta                      |                 219
+ Planta Pereira 8               | Pereira       | Planta                 | L62640      | Vacuna Meningococo Tableta                   |                2656
+ Planta Pereira 8               | Pereira       | Planta                 | L63841      | Toxina Botulínica Jeringa prellenada         |                2959
+ Planta Pereira 8               | Pereira       | Planta                 | L67654      | Calcitonina Ampolla                          |                4168
+ Planta Pereira 8               | Pereira       | Planta                 | L67711      | Heparina Sódica Tableta                      |                2472
+ Planta Pereira 8               | Pereira       | Planta                 | L68138      | Bevacizumab Jeringa prellenada               |                4537
+ Planta Pereira 8               | Pereira       | Planta                 | L69510      | Vacuna Triple Viral Jeringa prellenada       |                 586
+ Planta Pereira 8               | Pereira       | Planta                 | L69878      | Vacuna Neumococo Tableta                     |                4824
+ Planta Pereira 8               | Pereira       | Planta                 | L70332      | Desmopresina Jarabe                          |                4054
+ Planta Pereira 8               | Pereira       | Planta                 | L71605      | Desmopresina Tableta                         |                4549
+ Planta Pereira 8               | Pereira       | Planta                 | L71894      | Vacuna Meningococo Tableta                   |                4285
+ Planta Pereira 8               | Pereira       | Planta                 | L79531      | Desmopresina Tableta                         |                 497
+ Planta Pereira 8               | Pereira       | Planta                 | L82848      | Calcitonina Ampolla                          |                2285
+ Planta Pereira 8               | Pereira       | Planta                 | L84963      | Adalimumab Jeringa prellenada                |                   2
+ Planta Pereira 8               | Pereira       | Planta                 | L85243      | Vacuna Fiebre Amarilla Jarabe                |                4045
+ Planta Pereira 8               | Pereira       | Planta                 | L85470      | Insulina NPH Jarabe                          |                 631
+ Planta Pereira 8               | Pereira       | Planta                 | L86858      | Rituximab Suspensión inyectable              |                1130
+ Planta Pereira 8               | Pereira       | Planta                 | L87812      | Infliximab Suspensión inyectable             |                 622
+ Planta Pereira 8               | Pereira       | Planta                 | L89570      | Bevacizumab Jeringa prellenada               |                3044
+ Planta Pereira 8               | Pereira       | Planta                 | L89730      | Vacuna Varicela Jeringa prellenada           |                3554
+ Planta Pereira 8               | Pereira       | Planta                 | L94896      | Heparina Sódica Jarabe                       |                 743
+ Planta Pereira 8               | Pereira       | Planta                 | L97012      | Infliximab Suspensión inyectable             |                3538
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L12875      | Etanercept Tableta                           |                3620
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L14278      | Etanercept Tableta                           |                  52
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L15482      | Filgrastim Jeringa prellenada                |                4711
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L20350      | Vacuna Fiebre Amarilla Ampolla               |                3054
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L25129      | Vacuna DPT Tableta                           |                1922
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L25292      | Toxina Botulínica Jarabe                     |                3503
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L25906      | Infliximab Tableta                           |                3996
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L30392      | Vacuna Fiebre Amarilla Jeringa prellenada    |                 737
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L32962      | Insulina NPH Suspensión inyectable           |                2701
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L33834      | Vacuna Varicela Jeringa prellenada           |                2455
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L36318      | Vacuna Fiebre Amarilla Ampolla               |                1329
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L41285      | Enoxaparina Tableta                          |                2049
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L42411      | Vacuna Influenza Ampolla                     |                2170
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L42951      | Insulina NPH Jarabe                          |                1684
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L48680      | Desmopresina Tableta                         |                 702
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L51224      | Desmopresina Tableta                         |                2973
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L52081      | Rituximab Ampolla                            |                1290
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L52906      | Adalimumab Jeringa prellenada                |                 313
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L53025      | Vacuna Hepatitis B Suspensión inyectable     |                2618
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L55293      | Infliximab Vial                              |                4609
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L59808      | Vacuna Polio Inactivada Jarabe               |                4312
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L62262      | Somatostatina Suspensión inyectable          |                4927
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L62521      | Filgrastim Jarabe                            |                2461
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L63955      | Rituximab Ampolla                            |                1539
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L69878      | Vacuna Neumococo Tableta                     |                1921
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L71069      | Vacuna Hepatitis B Tableta                   |                4315
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L71894      | Vacuna Meningococo Tableta                   |                3135
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L80702      | Enoxaparina Ampolla                          |                1640
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L82309      | Infliximab Vial                              |                 550
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L84963      | Adalimumab Jeringa prellenada                |                2716
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L85243      | Vacuna Fiebre Amarilla Jarabe                |                 413
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L87812      | Infliximab Suspensión inyectable             |                 693
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L88385      | Vacuna Rotavirus Vial                        |                 729
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L92544      | Bevacizumab Jarabe                           |                3487
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L93606      | Filgrastim Jeringa prellenada                |                3917
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L97207      | Vacuna Papiloma Humano Tableta               |                2403
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L97500      | Rituximab Jarabe                             |                 865
+ Unidad de Salud Barranquilla 5 | Barranquilla  | Unidad de salud        | L98647      | Somatostatina Vial                           |                1466
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L16764      | Infliximab Vial                              |                1186
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L19862      | Vacuna Hepatitis B Ampolla                   |                3175
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L24996      | Heparina Sódica Tableta                      |                3252
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L30006      | Enoxaparina Suspensión inyectable            |                4694
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L30392      | Vacuna Fiebre Amarilla Jeringa prellenada    |                4618
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L33086      | Insulina NPH Ampolla                         |                 568
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L38760      | Bevacizumab Jeringa prellenada               |                4105
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L46930      | Vacuna COVID-19 Suspensión inyectable        |                3799
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L48652      | Vacuna Varicela Ampolla                      |                4827
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L51359      | Vacuna Varicela Jarabe                       |                2525
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L52906      | Adalimumab Jeringa prellenada                |                2623
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L54092      | Adalimumab Jeringa prellenada                |                 365
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L55890      | Trastuzumab Tableta                          |                4428
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L56898      | Insulina NPH Suspensión inyectable           |                4683
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L59808      | Vacuna Polio Inactivada Jarabe               |                4441
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L62976      | Vacuna Hepatitis B Ampolla                   |                4234
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L63545      | Vacuna COVID-19 Ampolla                      |                3016
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L64377      | Filgrastim Jarabe                            |                2440
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L66450      | Enoxaparina Suspensión inyectable            |                1836
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L67733      | Vacuna Meningococo Tableta                   |                2719
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L68115      | Vacuna DPT Suspensión inyectable             |                 894
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L68138      | Bevacizumab Jeringa prellenada               |                2491
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L69600      | Heparina Sódica Jarabe                       |                4619
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L77952      | Vacuna Varicela Jarabe                       |                4450
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L82199      | Insulina NPH Jarabe                          |                3015
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L82544      | Vacuna Meningococo Jarabe                    |                 738
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L84177      | Vacuna Fiebre Amarilla Jarabe                |                1210
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L85243      | Vacuna Fiebre Amarilla Jarabe                |                2863
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L85574      | Vacuna Polio Inactivada Jeringa prellenada   |                 470
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L88696      | Vacuna Triple Viral Jeringa prellenada       |                4199
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L89570      | Bevacizumab Jeringa prellenada               |                 807
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L89822      | Vacuna Influenza Ampolla                     |                2206
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L93066      | Heparina Sódica Tableta                      |                3391
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L93307      | Vacuna Polio Inactivada Tableta              |                4742
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L93606      | Filgrastim Jeringa prellenada                |                2927
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L94246      | Vacuna Rotavirus Vial                        |                3700
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L94323      | Somatostatina Suspensión inyectable          |                2308
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L95175      | Vacuna Fiebre Amarilla Tableta               |                 224
+ Unidad de Salud Bucaramanga 15 | Bucaramanga   | Unidad de salud        | L96079      | Vacuna Triple Viral Tableta                  |                2286
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L15778      | Calcitonina Ampolla                          |                2295
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L17355      | Vacuna Varicela Jeringa prellenada           |                 375
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L19120      | Vacuna Hepatitis B Suspensión inyectable     |                3572
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L19961      | Desmopresina Jarabe                          |                2642
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L23022      | Vacuna Polio Inactivada Tableta              |                4721
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L23970      | Vacuna COVID-19 Ampolla                      |                 343
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L25292      | Toxina Botulínica Jarabe                     |                3878
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L26199      | Vacuna Polio Inactivada Jarabe               |                3255
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L33819      | Rituximab Jarabe                             |                1669
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L33834      | Vacuna Varicela Jeringa prellenada           |                2409
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L38255      | Vacuna COVID-19 Suspensión inyectable        |                  47
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L42530      | Vacuna Rotavirus Vial                        |                 305
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L44970      | Infliximab Tableta                           |                3270
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L45665      | Vacuna Rotavirus Vial                        |                4184
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L48652      | Vacuna Varicela Ampolla                      |                 246
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L51359      | Vacuna Varicela Jarabe                       |                2662
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L55890      | Trastuzumab Tableta                          |                  72
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L62184      | Vacuna Triple Viral Suspensión inyectable    |                4005
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L62521      | Filgrastim Jarabe                            |                 499
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L62976      | Vacuna Hepatitis B Ampolla                   |                4616
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L63841      | Toxina Botulínica Jeringa prellenada         |                2659
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L63955      | Rituximab Ampolla                            |                2348
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L64008      | Vacuna Varicela Ampolla                      |                2902
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L67199      | Enoxaparina Tableta                          |                1677
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L71433      | Heparina Sódica Jarabe                       |                4709
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L72277      | Infliximab Tableta                           |                4751
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L74251      | Bevacizumab Jarabe                           |                1311
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L82102      | Vacuna Hepatitis B Suspensión inyectable     |                4188
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L82544      | Vacuna Meningococo Jarabe                    |                1258
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L84000      | Filgrastim Jeringa prellenada                |                 301
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L84963      | Adalimumab Jeringa prellenada                |                4688
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L86350      | Enoxaparina Suspensión inyectable            |                4123
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L88696      | Vacuna Triple Viral Jeringa prellenada       |                  68
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L89730      | Vacuna Varicela Jeringa prellenada           |                 717
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L92242      | Heparina Sódica Tableta                      |                1351
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L93307      | Vacuna Polio Inactivada Tableta              |                 322
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L95215      | Somatostatina Vial                           |                1439
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L97404      | Vacuna Neumococo Tableta                     |                2609
+ Unidad de Salud Medellín 18    | Medellín      | Unidad de salud        | L98039      | Filgrastim Jeringa prellenada                |                3773
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L14373      | Infliximab Vial                              |                3067
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L14852      | Eritropoyetina Jarabe                        |                4115
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L15965      | Calcitonina Ampolla                          |                3481
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L20350      | Vacuna Fiebre Amarilla Ampolla               |                1056
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L31632      | Vacuna Hepatitis B Suspensión inyectable     |                4291
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L32962      | Insulina NPH Suspensión inyectable           |                4048
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L33819      | Rituximab Jarabe                             |                3516
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L39219      | Toxina Botulínica Jeringa prellenada         |                3537
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L39451      | Desmopresina Tableta                         |                1372
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                1182
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L45614      | Vacuna COVID-19 Jarabe                       |                 933
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L48652      | Vacuna Varicela Ampolla                      |                2157
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L48829      | Vacuna Varicela Jarabe                       |                2172
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L49507      | Rituximab Suspensión inyectable              |                2978
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L49829      | Vacuna COVID-19 Ampolla                      |                3835
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L50319      | Vacuna Fiebre Amarilla Suspensión inyectable |                 739
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L52081      | Rituximab Ampolla                            |                4357
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L52906      | Adalimumab Jeringa prellenada                |                 344
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L61717      | Desmopresina Tableta                         |                2064
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L62262      | Somatostatina Suspensión inyectable          |                2163
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L64008      | Vacuna Varicela Ampolla                      |                3021
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L64377      | Filgrastim Jarabe                            |                 687
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L66450      | Enoxaparina Suspensión inyectable            |                4137
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L67954      | Infliximab Vial                              |                3330
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L70552      | Vacuna Hepatitis B Tableta                   |                1945
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L71069      | Vacuna Hepatitis B Tableta                   |                4655
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L71385      | Vacuna Hepatitis B Ampolla                   |                4537
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L75597      | Vacuna COVID-19 Suspensión inyectable        |                1804
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L76698      | Etanercept Tableta                           |                3734
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L79066      | Bevacizumab Jeringa prellenada               |                2259
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L79531      | Desmopresina Tableta                         |                2055
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L82199      | Insulina NPH Jarabe                          |                4691
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L84177      | Vacuna Fiebre Amarilla Jarabe                |                1716
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L88193      | Trastuzumab Tableta                          |                3261
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L89730      | Vacuna Varicela Jeringa prellenada           |                1480
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L89905      | Vacuna Triple Viral Suspensión inyectable    |                 320
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L91927      | Vacuna DPT Tableta                           |                2337
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L93130      | Rituximab Suspensión inyectable              |                3971
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L93283      | Filgrastim Jarabe                            |                 717
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L95215      | Somatostatina Vial                           |                3336
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L97012      | Infliximab Suspensión inyectable             |                 224
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L97404      | Vacuna Neumococo Tableta                     |                3210
+ Unidad de Salud Pereira 10     | Pereira       | Unidad de salud        | L98039      | Filgrastim Jeringa prellenada                |                3447
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L14705      | Vacuna Hepatitis B Tableta                   |                 401
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L14852      | Eritropoyetina Jarabe                        |                1667
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L15482      | Filgrastim Jeringa prellenada                |                2687
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L15965      | Calcitonina Ampolla                          |                 823
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L23970      | Vacuna COVID-19 Ampolla                      |                2686
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L29340      | Rituximab Ampolla                            |                3461
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L29887      | Vacuna Fiebre Amarilla Jeringa prellenada    |                3788
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L30392      | Vacuna Fiebre Amarilla Jeringa prellenada    |                4906
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L38255      | Vacuna COVID-19 Suspensión inyectable        |                2772
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L39219      | Toxina Botulínica Jeringa prellenada         |                2571
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L41890      | Vacuna Hepatitis B Suspensión inyectable     |                 417
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L43862      | Vacuna Papiloma Humano Tableta               |                2465
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L45818      | Filgrastim Ampolla                           |                2729
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L49507      | Rituximab Suspensión inyectable              |                3491
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L49893      | Toxina Botulínica Tableta                    |                 168
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L50846      | Enoxaparina Suspensión inyectable            |                3834
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L51467      | Insulina NPH Vial                            |                 155
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L53025      | Vacuna Hepatitis B Suspensión inyectable     |                3327
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L56025      | Calcitonina Ampolla                          |                3867
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L56357      | Trastuzumab Tableta                          |                1790
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L58629      | Somatostatina Suspensión inyectable          |                2862
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L62521      | Filgrastim Jarabe                            |                3619
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L62640      | Vacuna Meningococo Tableta                   |                4925
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L64008      | Vacuna Varicela Ampolla                      |                1188
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L64377      | Filgrastim Jarabe                            |                 935
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L65936      | Enoxaparina Tableta                          |                 908
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L71433      | Heparina Sódica Jarabe                       |                 939
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L72277      | Infliximab Tableta                           |                3422
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L73156      | Vacuna Neumococo Tableta                     |                2419
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L73335      | Vacuna Polio Inactivada Jeringa prellenada   |                4378
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L74251      | Bevacizumab Jarabe                           |                4818
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L75771      | Vacuna Varicela Ampolla                      |                3678
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L79827      | Enoxaparina Jarabe                           |                4094
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L82309      | Infliximab Vial                              |                 397
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L84177      | Vacuna Fiebre Amarilla Jarabe                |                3060
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L85248      | Calcitonina Ampolla                          |                1875
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L89730      | Vacuna Varicela Jeringa prellenada           |                3025
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L89905      | Vacuna Triple Viral Suspensión inyectable    |                4914
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L91205      | Vacuna Influenza Ampolla                     |                4848
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L93130      | Rituximab Suspensión inyectable              |                2899
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L93606      | Filgrastim Jeringa prellenada                |                3858
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L93611      | Rituximab Jarabe                             |                 366
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L95175      | Vacuna Fiebre Amarilla Tableta               |                3283
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L95841      | Bevacizumab Jarabe                           |                 648
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L98452      | Trastuzumab Tableta                          |                4449
+ Unidad de Salud Pereira 3      | Pereira       | Unidad de salud        | L99687      | Adalimumab Suspensión inyectable             |                2979
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L13534      | Vacuna Polio Inactivada Jarabe               |                4477
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L13804      | Bevacizumab Jeringa prellenada               |                3203
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L14278      | Etanercept Tableta                           |                 362
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L15482      | Filgrastim Jeringa prellenada                |                 746
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L16629      | Enoxaparina Ampolla                          |                2620
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L19961      | Desmopresina Jarabe                          |                2807
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L25292      | Toxina Botulínica Jarabe                     |                1131
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L25906      | Infliximab Tableta                           |                3129
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L27038      | Filgrastim Suspensión inyectable             |                4088
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L33788      | Calcitonina Ampolla                          |                1716
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L38361      | Vacuna Varicela Jarabe                       |                2816
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L39038      | Vacuna Neumococo Vial                        |                1580
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L39219      | Toxina Botulínica Jeringa prellenada         |                 579
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L41266      | Vacuna Triple Viral Tableta                  |                3578
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L43065      | Bevacizumab Jarabe                           |                2664
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L45614      | Vacuna COVID-19 Jarabe                       |                3923
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L45665      | Vacuna Rotavirus Vial                        |                4740
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L48974      | Infliximab Vial                              |                3643
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L49651      | Vacuna Hepatitis B Tableta                   |                2322
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L49829      | Vacuna COVID-19 Ampolla                      |                3477
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L51467      | Insulina NPH Vial                            |                 808
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L52906      | Adalimumab Jeringa prellenada                |                3960
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L56898      | Insulina NPH Suspensión inyectable           |                4502
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L62976      | Vacuna Hepatitis B Ampolla                   |                2953
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L66450      | Enoxaparina Suspensión inyectable            |                4851
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L67733      | Vacuna Meningococo Tableta                   |                4597
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L68991      | Vacuna Meningococo Jarabe                    |                3923
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L70552      | Vacuna Hepatitis B Tableta                   |                1551
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L77889      | Vacuna Fiebre Amarilla Ampolla               |                 429
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L82199      | Insulina NPH Jarabe                          |                4022
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L82309      | Infliximab Vial                              |                 447
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L85243      | Vacuna Fiebre Amarilla Jarabe                |                1195
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L86619      | Vacuna DPT Tableta                           |                1932
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L89905      | Vacuna Triple Viral Suspensión inyectable    |                4899
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L91183      | Insulina NPH Suspensión inyectable           |                1785
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L93283      | Filgrastim Jarabe                            |                 321
+ Unidad de Salud Santa Marta 24 | Santa Marta   | Unidad de salud        | L95215      | Somatostatina Vial                           |                3191
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L10800      | Enoxaparina Jarabe                           |                3032
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L14278      | Etanercept Tableta                           |                1605
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L14852      | Eritropoyetina Jarabe                        |                 726
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L16629      | Enoxaparina Ampolla                          |                1182
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L16658      | Vacuna Neumococo Tableta                     |                2674
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L16764      | Infliximab Vial                              |                1436
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L17355      | Vacuna Varicela Jeringa prellenada           |                2453
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L21188      | Desmopresina Tableta                         |                2312
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L25129      | Vacuna DPT Tableta                           |                 837
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L26199      | Vacuna Polio Inactivada Jarabe               |                  69
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L29340      | Rituximab Ampolla                            |                3986
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L39949      | Desmopresina Suspensión inyectable           |                3173
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L43065      | Bevacizumab Jarabe                           |                1184
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L43092      | Vacuna Fiebre Amarilla Jeringa prellenada    |                3696
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L44687      | Vacuna DPT Suspensión inyectable             |                 308
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L45665      | Vacuna Rotavirus Vial                        |                2371
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L46208      | Filgrastim Jarabe                            |                1326
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L46930      | Vacuna COVID-19 Suspensión inyectable        |                3618
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L47752      | Filgrastim Jeringa prellenada                |                3472
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L56955      | Vacuna Fiebre Amarilla Jarabe                |                  39
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L62383      | Eritropoyetina Jarabe                        |                2409
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L64008      | Vacuna Varicela Ampolla                      |                3075
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L67654      | Calcitonina Ampolla                          |                3058
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L67711      | Heparina Sódica Tableta                      |                3623
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L69087      | Calcitonina Ampolla                          |                3540
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L70332      | Desmopresina Jarabe                          |                2063
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L75597      | Vacuna COVID-19 Suspensión inyectable        |                3046
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L84000      | Filgrastim Jeringa prellenada                |                3391
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L85748      | Trastuzumab Tableta                          |                1697
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L88193      | Trastuzumab Tableta                          |                3598
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L88222      | Vacuna Varicela Ampolla                      |                1646
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L89822      | Vacuna Influenza Ampolla                     |                4294
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L91183      | Insulina NPH Suspensión inyectable           |                4684
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L91381      | Vacuna Varicela Jarabe                       |                3223
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L91927      | Vacuna DPT Tableta                           |                3192
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L96646      | Vacuna Hepatitis B Ampolla                   |                2899
+ Unidad de Salud Santa Marta 6  | Santa Marta   | Unidad de salud        | L98039      | Filgrastim Jeringa prellenada                |                3453
+(1000 rows)
+

@@ -1,0 +1,76 @@
+Examen No. 1 - Topicos Avanzados de Bases de Datos - UPB 202620
+Andres Felipe Martinez - ID SIGAA 000549446 - PostgreSQL 18
+Etapa 4 - Consulta A
+En que condiciones de temperatura debe conservarse cada medicamento?
+
+                 medicamento                  |  forma_farmaceutica   | temperatura_minima | temperatura_maxima 
+----------------------------------------------+-----------------------+--------------------+--------------------
+ Adalimumab Jeringa prellenada                | Jeringa prellenada    |             -25.00 |             -15.00
+ Adalimumab Suspensión inyectable             | Suspensión inyectable |              15.00 |              25.00
+ Bevacizumab Jarabe                           | Jarabe                |               2.00 |               8.00
+ Bevacizumab Jeringa prellenada               | Jeringa prellenada    |             -25.00 |             -15.00
+ Calcitonina Ampolla                          | Ampolla               |             -25.00 |             -15.00
+ Desmopresina Jarabe                          | Jarabe                |               2.00 |               8.00
+ Desmopresina Jeringa prellenada              | Jeringa prellenada    |              15.00 |              25.00
+ Desmopresina Suspensión inyectable           | Suspensión inyectable |              15.00 |              25.00
+ Desmopresina Tableta                         | Tableta               |             -25.00 |             -15.00
+ Enoxaparina Ampolla                          | Ampolla               |               2.00 |               8.00
+ Enoxaparina Jarabe                           | Jarabe                |              15.00 |              25.00
+ Enoxaparina Suspensión inyectable            | Suspensión inyectable |              15.00 |              25.00
+ Enoxaparina Tableta                          | Tableta               |              15.00 |              25.00
+ Eritropoyetina Jarabe                        | Jarabe                |               2.00 |               8.00
+ Etanercept Tableta                           | Tableta               |              15.00 |              25.00
+ Filgrastim Ampolla                           | Ampolla               |              15.00 |              25.00
+ Filgrastim Jarabe                            | Jarabe                |             -25.00 |             -15.00
+ Filgrastim Jeringa prellenada                | Jeringa prellenada    |               2.00 |               8.00
+ Filgrastim Suspensión inyectable             | Suspensión inyectable |              15.00 |              25.00
+ Heparina Sódica Jarabe                       | Jarabe                |             -25.00 |             -15.00
+ Heparina Sódica Tableta                      | Tableta               |              15.00 |              25.00
+ Infliximab Suspensión inyectable             | Suspensión inyectable |              15.00 |              25.00
+ Infliximab Tableta                           | Tableta               |             -25.00 |             -15.00
+ Infliximab Vial                              | Vial                  |             -25.00 |             -15.00
+ Insulina NPH Ampolla                         | Ampolla               |              15.00 |              25.00
+ Insulina NPH Jarabe                          | Jarabe                |               2.00 |               8.00
+ Insulina NPH Suspensión inyectable           | Suspensión inyectable |             -25.00 |             -15.00
+ Insulina NPH Vial                            | Vial                  |               2.00 |               8.00
+ Rituximab Ampolla                            | Ampolla               |              15.00 |              25.00
+ Rituximab Jarabe                             | Jarabe                |              15.00 |              25.00
+ Rituximab Suspensión inyectable              | Suspensión inyectable |              15.00 |              25.00
+ Somatostatina Suspensión inyectable          | Suspensión inyectable |               2.00 |               8.00
+ Somatostatina Vial                           | Vial                  |               2.00 |               8.00
+ Somatropina Ampolla                          | Ampolla               |               2.00 |               8.00
+ Toxina Botulínica Jarabe                     | Jarabe                |              15.00 |              25.00
+ Toxina Botulínica Jeringa prellenada         | Jeringa prellenada    |               2.00 |               8.00
+ Toxina Botulínica Tableta                    | Tableta               |              15.00 |              25.00
+ Trastuzumab Tableta                          | Tableta               |              15.00 |              25.00
+ Vacuna COVID-19 Ampolla                      | Ampolla               |               2.00 |               8.00
+ Vacuna COVID-19 Jarabe                       | Jarabe                |              15.00 |              25.00
+ Vacuna COVID-19 Suspensión inyectable        | Suspensión inyectable |             -25.00 |             -15.00
+ Vacuna DPT Suspensión inyectable             | Suspensión inyectable |              15.00 |              25.00
+ Vacuna DPT Tableta                           | Tableta               |              15.00 |              25.00
+ Vacuna Fiebre Amarilla Ampolla               | Ampolla               |             -25.00 |             -15.00
+ Vacuna Fiebre Amarilla Jarabe                | Jarabe                |              15.00 |              25.00
+ Vacuna Fiebre Amarilla Jeringa prellenada    | Jeringa prellenada    |               2.00 |               8.00
+ Vacuna Fiebre Amarilla Suspensión inyectable | Suspensión inyectable |               2.00 |               8.00
+ Vacuna Fiebre Amarilla Tableta               | Tableta               |               2.00 |               8.00
+ Vacuna Hepatitis B Ampolla                   | Ampolla               |             -25.00 |             -15.00
+ Vacuna Hepatitis B Suspensión inyectable     | Suspensión inyectable |               2.00 |               8.00
+ Vacuna Hepatitis B Tableta                   | Tableta               |              15.00 |              25.00
+ Vacuna Influenza Ampolla                     | Ampolla               |               2.00 |               8.00
+ Vacuna Meningococo Jarabe                    | Jarabe                |               2.00 |               8.00
+ Vacuna Meningococo Tableta                   | Tableta               |               2.00 |               8.00
+ Vacuna Neumococo Tableta                     | Tableta               |              15.00 |              25.00
+ Vacuna Neumococo Vial                        | Vial                  |             -25.00 |             -15.00
+ Vacuna Papiloma Humano Tableta               | Tableta               |             -25.00 |             -15.00
+ Vacuna Polio Inactivada Jarabe               | Jarabe                |              15.00 |              25.00
+ Vacuna Polio Inactivada Jeringa prellenada   | Jeringa prellenada    |               2.00 |               8.00
+ Vacuna Polio Inactivada Tableta              | Tableta               |               2.00 |               8.00
+ Vacuna Rotavirus Vial                        | Vial                  |               2.00 |               8.00
+ Vacuna Triple Viral Jeringa prellenada       | Jeringa prellenada    |              15.00 |              25.00
+ Vacuna Triple Viral Suspensión inyectable    | Suspensión inyectable |             -25.00 |             -15.00
+ Vacuna Triple Viral Tableta                  | Tableta               |               2.00 |               8.00
+ Vacuna Varicela Ampolla                      | Ampolla               |              15.00 |              25.00
+ Vacuna Varicela Jarabe                       | Jarabe                |             -25.00 |             -15.00
+ Vacuna Varicela Jeringa prellenada           | Jeringa prellenada    |               2.00 |               8.00
+(67 rows)
+
