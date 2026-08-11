@@ -1,0 +1,1001 @@
+fabricante_nombre;medicamento_nombre;forma_farmaceutica;temperatura_min_c;temperatura_max_c;lote_codigo;lote_fecha_fabricacion;lote_fecha_vencimiento;almacen_nombre;almacen_ciudad;almacen_tipo;existencia_cantidad_disponible;lectura_fecha_hora;lectura_temperatura_c
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L71433;2025-04-17;2028-04-01;Planta Pereira 7;Pereira;Planta;1421;2026-07-08 04:48:00;21.3
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L30392;2024-06-21;2025-06-16;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4618;2026-07-02 14:43:00;7.7
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L28894;2025-11-20;2027-05-14;Planta Cúcuta 21;Cúcuta;Planta;2589;2026-03-14 14:04:00;20.1
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;CEDI Cartagena 12;Cartagena;Centro de distribución;4156;2026-02-22 09:29:00;3.4
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L52753;2025-11-05;2027-10-26;Planta Cúcuta 21;Cúcuta;Planta;739;2026-07-11 19:32:00;19.1
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4683;2026-07-20 06:20:00;5.6
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Planta Pereira 4;Pereira;Planta;2813;2026-02-25 16:41:00;16.0
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L39038;2023-10-31;2025-10-20;CEDI Ibagué 17;Ibagué;Centro de distribución;4282;2026-07-10 05:23:00;-21.9
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L17355;2025-03-26;2027-03-16;Planta Cúcuta 22;Cúcuta;Planta;4897;2026-02-17 20:41:00;17.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L61717;2023-09-01;2025-08-21;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2064;2026-07-22 19:55:00;15.2
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L97404;2023-08-23;2026-08-07;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3210;2026-03-09 19:45:00;23.8
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L59808;2025-05-13;2028-04-27;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;4312;2026-02-27 20:42:00;18.8
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L73372;2026-03-13;2029-02-25;Planta Pereira 7;Pereira;Planta;2799;2026-06-08 06:14:00;24.0
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L62383;2024-12-15;2026-06-08;CEDI Ibagué 17;Ibagué;Centro de distribución;4421;2026-06-18 01:42:00;-20.8
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L36318;2024-04-30;2026-04-20;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1329;2026-03-22 22:49:00;22.5
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L56357;2025-11-13;2027-05-07;Planta Ibagué 14;Ibagué;Planta;2984;2026-07-27 23:15:00;-15.0
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L46046;2025-05-30;2028-05-14;Planta Pereira 8;Pereira;Planta;4374;2026-04-06 09:51:00;7.9
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L94323;2023-10-06;2024-09-30;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2308;2026-05-12 16:33:00;3.5
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;CEDI Medellín 9;Medellín;Centro de distribución;427;2026-07-18 15:55:00;-20.0
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Unidad de Salud Pereira 10;Pereira;Unidad de salud;687;2026-03-17 08:28:00;23.0
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2863;2026-02-10 13:03:00;4.0
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L90676;2025-04-11;2028-03-26;CEDI Cartagena 12;Cartagena;Centro de distribución;1839;2026-02-11 10:59:00;3.2
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L52906;2024-10-10;2027-09-25;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;313;2026-04-18 15:44:00;24.1
+Vitalis Farmacéutica;Insulina NPH Vial;Vial;2;8;L51467;2025-01-19;2026-07-13;Unidad de Salud Pereira 3;Pereira;Unidad de salud;155;2026-04-10 06:53:00;4.2
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L29340;2023-08-09;2025-07-29;Planta Pereira 4;Pereira;Planta;2360;2026-04-05 09:07:00;15.2
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L65936;2025-05-05;2027-04-25;Unidad de Salud Pereira 3;Pereira;Unidad de salud;908;2026-06-11 19:34:00;2.1
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L33819;2023-11-14;2025-11-03;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3516;2026-02-04 19:22:00;17.2
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L86019;2025-05-24;2028-05-08;CEDI Ibagué 17;Ibagué;Centro de distribución;2954;2026-02-21 16:34:00;-18.5
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L86619;2025-09-22;2027-09-12;CEDI Medellín 16;Medellín;Centro de distribución;356;2026-07-16 12:23:00;2.1
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L20350;2025-09-25;2027-03-19;Planta Pereira 8;Pereira;Planta;849;2026-07-02 23:48:00;2.6
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Planta Medellín 25;Medellín;Planta;3806;2026-08-01 15:40:00;2.0
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L65936;2025-05-05;2027-04-25;Planta Bogotá 2;Bogotá;Planta;2403;2026-03-27 01:50:00;-24.4
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;Unidad de Salud Medellín 18;Medellín;Unidad de salud;3878;2026-04-09 01:48:00;-19.2
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L33509;2025-06-14;2028-05-29;Planta Cúcuta 21;Cúcuta;Planta;2719;2026-04-14 03:51:00;19.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L61717;2023-09-01;2025-08-21;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1530;2026-06-11 22:31:00;19.6
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L49829;2025-03-13;2026-09-04;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3477;2026-02-24 13:38:00;7.0
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L23970;2025-12-21;2027-06-14;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2686;2026-07-23 09:19:00;5.3
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L68138;2024-01-01;2024-12-26;CEDI Cartagena 12;Cartagena;Centro de distribución;3662;2026-02-14 23:55:00;7.8
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L53025;2025-02-24;2026-02-19;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3327;2026-05-08 16:51:00;11.5
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L82309;2025-12-26;2026-12-21;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;550;2026-04-05 20:23:00;14.0
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;CEDI Cartagena 12;Cartagena;Centro de distribución;3047;2026-05-28 02:36:00;2.4
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L51224;2025-01-01;2026-12-22;Planta Pereira 8;Pereira;Planta;929;2026-02-10 23:11:00;4.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89129;2024-12-28;2025-12-23;Planta Medellín 25;Medellín;Planta;2132;2026-08-03 14:13:00;7.3
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L50846;2025-05-29;2026-05-24;Planta Pereira 7;Pereira;Planta;1004;2026-03-10 02:28:00;17.4
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Planta Cúcuta 22;Cúcuta;Planta;2846;2026-02-20 17:34:00;17.3
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;CEDI Cartagena 12;Cartagena;Centro de distribución;4167;2026-04-02 03:12:00;6.0
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4688;2026-05-09 14:51:00;-16.3
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L88193;2026-01-09;2027-12-30;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3261;2026-06-06 16:26:00;23.7
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L59968;2025-10-02;2027-03-26;Planta Cúcuta 21;Cúcuta;Planta;607;2026-05-30 14:43:00;19.1
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L52245;2024-12-18;2025-12-13;Planta Medellín 25;Medellín;Planta;1057;2026-05-25 16:58:00;8.2
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L46208;2025-11-30;2027-11-20;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1326;2026-04-27 22:14:00;-20.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L35144;2025-12-12;2028-11-26;CEDI Medellín 9;Medellín;Centro de distribución;1608;2026-07-16 17:17:00;-24.3
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L79066;2025-04-26;2026-04-21;Planta Cúcuta 21;Cúcuta;Planta;1381;2026-07-05 18:09:00;17.1
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L49251;2023-10-02;2024-09-26;CEDI Villavicencio 19;Villavicencio;Centro de distribución;337;2026-02-11 02:02:00;-14.7
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L38361;2026-04-21;2028-04-10;Planta Medellín 25;Medellín;Planta;4686;2026-05-21 19:40:00;3.3
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L60277;2024-08-28;2026-02-19;CEDI Medellín 16;Medellín;Centro de distribución;2006;2026-07-29 12:19:00;5.3
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L69600;2024-02-07;2025-07-31;CEDI Medellín 16;Medellín;Centro de distribución;3804;2026-03-28 10:38:00;3.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L20350;2025-09-25;2027-03-19;CEDI Bogotá 13;Bogotá;Centro de distribución;1071;2026-05-09 16:35:00;-24.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Planta Pereira 8;Pereira;Planta;1154;2026-02-28 01:18:00;8.8
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L83920;2024-10-23;2027-10-08;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4732;2026-04-25 06:48:00;18.1
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L86931;2026-05-02;2027-10-24;CEDI Medellín 16;Medellín;Centro de distribución;189;2026-02-27 12:32:00;4.0
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L33509;2025-06-14;2028-05-29;Planta Bogotá 2;Bogotá;Planta;2304;2026-06-10 19:56:00;-16.1
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Planta Pereira 4;Pereira;Planta;3530;2026-03-10 08:46:00;18.4
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L15075;2026-03-24;2027-09-15;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4602;2026-03-25 11:35:00;-22.5
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Planta Bucaramanga 20;Bucaramanga;Planta;973;2026-03-08 03:25:00;5.7
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L40162;2025-07-25;2027-01-16;Planta Medellín 25;Medellín;Planta;1181;2026-03-26 19:32:00;9.0
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L96079;2026-04-17;2027-10-09;CEDI Ibagué 17;Ibagué;Centro de distribución;3743;2026-03-14 19:57:00;-20.4
+Laboratorios Cruz Verde;Desmopresina Jeringa prellenada;Jeringa prellenada;15;25;L50768;2024-03-12;2025-03-07;CEDI Bogotá 13;Bogotá;Centro de distribución;2451;2026-07-05 10:32:00;-16.6
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;CEDI Medellín 16;Medellín;Centro de distribución;136;2026-05-09 10:43:00;2.4
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Planta Bucaramanga 20;Bucaramanga;Planta;3887;2026-04-12 20:50:00;8.1
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;4294;2026-07-15 23:39:00;-17.6
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L63545;2026-02-11;2029-01-26;Planta Bogotá 2;Bogotá;Planta;4690;2026-08-02 03:12:00;-25.4
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L56112;2026-02-18;2028-02-08;Planta Ibagué 14;Ibagué;Planta;4110;2026-07-10 15:55:00;-15.8
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2662;2026-07-23 15:33:00;-19.9
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2902;2026-07-27 23:43:00;-18.0
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L82848;2023-08-24;2025-02-14;Planta Pereira 8;Pereira;Planta;2285;2026-06-26 09:14:00;9.1
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Planta Bucaramanga 23;Bucaramanga;Planta;4005;2026-04-26 15:22:00;-18.1
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L47752;2026-01-17;2029-01-01;Planta Pereira 4;Pereira;Planta;4697;2026-07-27 17:24:00;23.6
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L52906;2024-10-10;2027-09-25;Unidad de Salud Pereira 10;Pereira;Unidad de salud;344;2026-04-18 22:05:00;18.3
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;Planta Pereira 7;Pereira;Planta;1655;2026-06-21 08:59:00;19.9
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L44687;2024-01-17;2025-07-10;Planta Pereira 8;Pereira;Planta;415;2026-07-25 16:14:00;4.5
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L85748;2026-06-08;2027-11-30;Planta Pereira 4;Pereira;Planta;1126;2026-02-05 17:59:00;17.0
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;CEDI Medellín 16;Medellín;Centro de distribución;1633;2026-04-18 10:18:00;7.1
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L42530;2024-04-02;2027-03-18;Unidad de Salud Medellín 18;Medellín;Unidad de salud;305;2026-03-20 13:56:00;-9.3
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2371;2026-02-13 00:19:00;-20.5
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L77952;2025-08-13;2028-07-28;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4450;2026-06-18 15:56:00;8.7
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L82848;2023-08-24;2025-02-14;Planta Pereira 4;Pereira;Planta;2708;2026-03-17 23:29:00;28.1
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L94896;2024-06-14;2027-05-30;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1582;2026-03-20 19:54:00;-18.9
+Nova Pharma Colombia;Vacuna Fiebre Amarilla Tableta;Tableta;2;8;L95175;2024-01-15;2026-01-04;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3283;2026-07-25 03:11:00;7.8
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;CEDI Medellín 9;Medellín;Centro de distribución;3142;2026-04-05 14:48:00;-22.8
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L19508;2023-08-23;2026-08-07;CEDI Medellín 9;Medellín;Centro de distribución;2945;2026-07-31 07:03:00;-18.4
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L79066;2025-04-26;2026-04-21;Planta Bucaramanga 23;Bucaramanga;Planta;2547;2026-07-30 03:40:00;-16.5
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93606;2026-05-05;2027-04-30;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3917;2026-03-15 14:47:00;24.5
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L85748;2026-06-08;2027-11-30;Planta Medellín 25;Medellín;Planta;4403;2026-07-24 06:48:00;4.2
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L90676;2025-04-11;2028-03-26;CEDI Ibagué 17;Ibagué;Centro de distribución;3659;2026-06-19 22:23:00;-24.0
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L61807;2023-11-24;2024-11-18;Planta Pereira 7;Pereira;Planta;4691;2026-06-21 04:10:00;18.3
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L42951;2024-11-18;2025-11-13;Planta Bucaramanga 23;Bucaramanga;Planta;4777;2026-06-09 02:57:00;-19.0
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L69600;2024-02-07;2025-07-31;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4619;2026-02-18 17:29:00;11.5
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L91183;2024-01-18;2027-01-02;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1785;2026-07-02 02:02:00;5.1
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L56025;2026-06-12;2029-05-27;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3867;2026-02-12 09:26:00;2.0
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L86858;2024-10-19;2026-04-12;CEDI Cartagena 12;Cartagena;Centro de distribución;3133;2026-05-29 12:24:00;3.9
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L38760;2025-02-12;2028-01-28;Planta Cúcuta 21;Cúcuta;Planta;2848;2026-03-06 05:34:00;17.8
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L91183;2024-01-18;2027-01-02;Planta Medellín 25;Medellín;Planta;186;2026-04-21 14:43:00;6.1
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L29887;2024-06-04;2026-05-25;Planta Pereira 8;Pereira;Planta;3773;2026-05-03 04:17:00;4.3
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93507;2025-01-21;2026-07-15;Planta Cúcuta 22;Cúcuta;Planta;3434;2026-07-11 00:15:00;9.9
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L14278;2024-11-20;2026-11-10;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;362;2026-05-17 14:14:00;6.0
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L13534;2025-10-18;2026-10-13;CEDI Ibagué 17;Ibagué;Centro de distribución;2369;2026-04-04 23:36:00;-21.5
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Planta Pereira 8;Pereira;Planta;2472;2026-03-12 21:33:00;2.7
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Planta Cúcuta 21;Cúcuta;Planta;3499;2026-06-26 15:03:00;26.0
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Planta Bucaramanga 23;Bucaramanga;Planta;3410;2026-05-19 04:19:00;-20.5
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1182;2026-06-02 01:35:00;18.9
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L26199;2026-02-20;2028-02-10;Planta Pereira 8;Pereira;Planta;2088;2026-03-28 10:41:00;2.3
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;Planta Bogotá 2;Bogotá;Planta;2199;2026-05-11 21:38:00;-17.8
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15965;2023-11-23;2025-11-12;CEDI Medellín 16;Medellín;Centro de distribución;1711;2026-04-30 09:58:00;3.4
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3923;2026-04-07 22:38:00;5.9
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Planta Medellín 25;Medellín;Planta;2318;2026-05-12 14:34:00;5.3
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L89570;2026-01-25;2029-01-09;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;807;2026-06-04 10:58:00;2.7
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1195;2026-02-08 08:35:00;7.8
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;Planta Pereira 7;Pereira;Planta;2702;2026-04-03 12:36:00;23.3
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L49251;2023-10-02;2024-09-26;CEDI Medellín 9;Medellín;Centro de distribución;4002;2026-07-18 23:31:00;-19.7
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L13534;2025-10-18;2026-10-13;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4477;2026-06-09 05:58:00;8.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L82309;2025-12-26;2026-12-21;Unidad de Salud Pereira 3;Pereira;Unidad de salud;397;2026-02-05 13:08:00;6.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Planta Pereira 7;Pereira;Planta;4142;2026-05-31 11:03:00;21.7
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L10800;2024-08-09;2026-01-31;Planta Cúcuta 22;Cúcuta;Planta;3996;2026-02-08 00:34:00;19.1
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L63955;2026-05-14;2028-05-03;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2348;2026-02-08 16:52:00;-18.2
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L33086;2026-07-07;2028-06-26;Planta Pereira 4;Pereira;Planta;789;2026-06-18 04:15:00;17.0
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L32962;2026-03-24;2029-03-08;CEDI Bogotá 13;Bogotá;Centro de distribución;647;2026-05-10 12:29:00;-17.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L90676;2025-04-11;2028-03-26;Planta Cúcuta 21;Cúcuta;Planta;259;2026-02-27 12:24:00;18.7
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L79827;2025-12-28;2027-12-18;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4094;2026-05-26 20:50:00;5.4
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;Planta Pereira 8;Pereira;Planta;1731;2026-07-31 18:30:00;4.9
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4616;2026-07-22 01:11:00;-16.3
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L33819;2023-11-14;2025-11-03;Planta Medellín 25;Medellín;Planta;3262;2026-02-23 09:10:00;5.6
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L14705;2023-12-22;2025-06-14;CEDI Bogotá 13;Bogotá;Centro de distribución;1146;2026-07-30 23:05:00;-18.6
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L87812;2024-03-14;2027-02-27;Planta Pereira 8;Pereira;Planta;622;2026-05-02 19:49:00;6.0
+Nova Pharma Colombia;Vacuna Fiebre Amarilla Tableta;Tableta;2;8;L95175;2024-01-15;2026-01-04;CEDI Cartagena 1;Cartagena;Centro de distribución;2239;2026-05-30 15:14:00;-20.1
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L73156;2025-03-30;2027-03-20;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2419;2026-04-08 22:04:00;1.5
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3191;2026-04-26 11:06:00;3.9
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L71605;2025-07-16;2028-06-30;Planta Pereira 4;Pereira;Planta;1085;2026-02-26 05:27:00;19.7
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2899;2026-06-25 02:38:00;5.1
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Planta Ibagué 14;Ibagué;Planta;3176;2026-02-25 23:57:00;-17.9
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L99687;2024-04-07;2025-04-02;Planta Cúcuta 22;Cúcuta;Planta;3118;2026-03-19 04:17:00;18.0
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L72422;2026-02-07;2028-01-28;CEDI Medellín 9;Medellín;Centro de distribución;3449;2026-04-21 15:50:00;-25.0
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;Planta Bucaramanga 20;Bucaramanga;Planta;1601;2026-06-01 03:08:00;5.2
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L73156;2025-03-30;2027-03-20;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3606;2026-04-30 13:52:00;23.7
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4941;2026-07-31 06:30:00;19.5
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4022;2026-07-01 07:20:00;5.2
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1636;2026-07-05 17:11:00;-18.0
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Planta Bucaramanga 23;Bucaramanga;Planta;1717;2026-05-27 09:53:00;-17.1
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L68115;2026-01-30;2027-07-24;Planta Cúcuta 22;Cúcuta;Planta;4090;2026-03-11 20:19:00;17.9
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L75771;2025-02-12;2026-08-06;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3678;2026-07-07 15:37:00;4.4
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L84000;2024-09-27;2025-09-22;Unidad de Salud Medellín 18;Medellín;Unidad de salud;301;2026-05-07 22:57:00;-16.6
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;Planta Medellín 25;Medellín;Planta;2033;2026-07-22 21:22:00;3.3
+Laboratorios Andina S.A.;Toxina Botulínica Tableta;Tableta;15;25;L49893;2026-05-08;2027-05-03;Planta Medellín 25;Medellín;Planta;2716;2026-05-25 03:00:00;1.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;CEDI Bogotá 13;Bogotá;Centro de distribución;3793;2026-07-27 18:44:00;-26.5
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L94896;2024-06-14;2027-05-30;Planta Ibagué 14;Ibagué;Planta;703;2026-03-05 23:09:00;-22.0
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L10800;2024-08-09;2026-01-31;CEDI Cartagena 12;Cartagena;Centro de distribución;3900;2026-02-28 14:46:00;5.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;CEDI Cartagena 1;Cartagena;Centro de distribución;2810;2026-07-19 03:43:00;-15.7
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1311;2026-04-29 17:27:00;-16.2
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L69087;2024-12-15;2027-11-30;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3540;2026-05-16 00:47:00;-19.8
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L86619;2025-09-22;2027-09-12;CEDI Cartagena 1;Cartagena;Centro de distribución;1759;2026-03-28 08:48:00;-17.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L54092;2023-10-01;2026-09-15;CEDI Cartagena 12;Cartagena;Centro de distribución;2670;2026-03-26 14:07:00;4.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L34727;2024-12-05;2027-11-20;Planta Bucaramanga 20;Bucaramanga;Planta;3183;2026-07-10 12:37:00;2.2
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L76317;2025-07-02;2026-06-27;Planta Cúcuta 22;Cúcuta;Planta;2436;2026-07-11 18:05:00;21.2
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L67654;2024-01-09;2025-12-29;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3058;2026-07-31 04:32:00;-20.8
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L29340;2023-08-09;2025-07-29;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3986;2026-07-16 17:44:00;-14.5
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L19961;2024-12-13;2025-12-08;CEDI Medellín 16;Medellín;Centro de distribución;2366;2026-03-11 05:20:00;7.4
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;CEDI Medellín 16;Medellín;Centro de distribución;1118;2026-03-25 12:35:00;5.0
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L69600;2024-02-07;2025-07-31;Planta Bucaramanga 23;Bucaramanga;Planta;3636;2026-06-09 05:05:00;-18.5
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93507;2025-01-21;2026-07-15;CEDI Medellín 9;Medellín;Centro de distribución;1841;2026-06-21 09:10:00;-17.0
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4184;2026-03-04 18:07:00;-22.2
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;Planta Medellín 25;Medellín;Planta;3615;2026-06-23 06:27:00;3.6
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L76698;2025-02-13;2028-01-29;Planta Bogotá 2;Bogotá;Planta;3684;2026-04-12 11:55:00;-17.0
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Planta Pereira 7;Pereira;Planta;4816;2026-07-30 11:55:00;22.5
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L13534;2025-10-18;2026-10-13;Planta Pereira 7;Pereira;Planta;1695;2026-02-19 18:22:00;20.6
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4691;2026-04-13 16:57:00;20.6
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L23022;2025-08-25;2027-08-15;Planta Bogotá 2;Bogotá;Planta;2271;2026-07-21 04:44:00;-17.1
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L69510;2023-12-27;2025-06-19;Planta Medellín 25;Medellín;Planta;3217;2026-06-09 04:36:00;6.2
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L26334;2025-04-10;2027-03-31;Planta Cúcuta 21;Cúcuta;Planta;762;2026-05-18 16:47:00;19.1
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L79531;2024-10-17;2027-10-02;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4767;2026-02-04 23:05:00;22.2
+BioSalud Laboratorios;Vacuna Polio Inactivada Jeringa prellenada;Jeringa prellenada;2;8;L73335;2024-03-09;2025-08-31;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4378;2026-05-16 06:27:00;6.9
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L77952;2025-08-13;2028-07-28;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4483;2026-07-01 04:36:00;24.4
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L92544;2024-09-05;2027-08-21;Planta Cúcuta 21;Cúcuta;Planta;3764;2026-02-08 03:59:00;29.4
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;Planta Bucaramanga 23;Bucaramanga;Planta;1080;2026-07-20 09:10:00;-15.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;CEDI Medellín 9;Medellín;Centro de distribución;675;2026-05-10 21:57:00;-19.9
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;Planta Ibagué 14;Ibagué;Planta;747;2026-08-03 03:00:00;-24.1
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L68138;2024-01-01;2024-12-26;CEDI Cartagena 1;Cartagena;Centro de distribución;66;2026-08-01 10:52:00;-22.7
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L85248;2024-11-09;2027-10-25;Unidad de Salud Pereira 3;Pereira;Unidad de salud;1875;2026-05-13 02:46:00;5.6
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3135;2026-03-10 20:43:00;10.5
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L94323;2023-10-06;2024-09-30;CEDI Cartagena 12;Cartagena;Centro de distribución;1745;2026-07-14 23:09:00;7.9
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15965;2023-11-23;2025-11-12;Unidad de Salud Pereira 3;Pereira;Unidad de salud;823;2026-03-11 03:37:00;5.9
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L13534;2025-10-18;2026-10-13;Planta Pereira 8;Pereira;Planta;2268;2026-07-19 02:15:00;5.6
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Planta Cúcuta 22;Cúcuta;Planta;2471;2026-03-28 16:38:00;20.8
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;Planta Pereira 8;Pereira;Planta;4054;2026-05-13 03:15:00;5.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L19602;2024-10-13;2026-10-03;CEDI Cartagena 12;Cartagena;Centro de distribución;2592;2026-03-09 12:55:00;6.8
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L76317;2025-07-02;2026-06-27;Planta Medellín 25;Medellín;Planta;3858;2026-02-22 00:37:00;-4.3
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;CEDI Ibagué 17;Ibagué;Centro de distribución;2346;2026-07-14 22:32:00;-17.6
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;CEDI Medellín 9;Medellín;Centro de distribución;684;2026-04-24 02:32:00;-14.4
+Nova Pharma Colombia;Vacuna Fiebre Amarilla Tableta;Tableta;2;8;L95175;2024-01-15;2026-01-04;CEDI Bogotá 13;Bogotá;Centro de distribución;4804;2026-07-16 20:43:00;-19.1
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L44687;2024-01-17;2025-07-10;Planta Bogotá 2;Bogotá;Planta;2002;2026-02-26 13:07:00;-20.1
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Planta Pereira 4;Pereira;Planta;103;2026-03-11 22:00:00;18.0
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L75597;2026-05-11;2029-04-25;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3046;2026-03-08 23:49:00;-15.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15778;2023-08-11;2025-07-31;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3517;2026-04-14 16:04:00;19.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Planta Bogotá 2;Bogotá;Planta;4092;2026-06-29 05:23:00;-22.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L67654;2024-01-09;2025-12-29;Planta Pereira 8;Pereira;Planta;4168;2026-02-04 01:54:00;6.4
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L98647;2025-10-25;2027-10-15;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1466;2026-02-13 17:51:00;24.9
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L16629;2025-06-17;2026-12-09;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2620;2026-04-14 02:36:00;4.2
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L33086;2026-07-07;2028-06-26;Planta Pereira 8;Pereira;Planta;4225;2026-02-15 12:04:00;8.4
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L82340;2025-09-14;2028-08-29;CEDI Villavicencio 11;Villavicencio;Centro de distribución;707;2026-06-25 14:00:00;18.1
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L63545;2026-02-11;2029-01-26;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3016;2026-07-05 15:49:00;7.4
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L14278;2024-11-20;2026-11-10;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;52;2026-05-19 00:14:00;20.8
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;CEDI Villavicencio 11;Villavicencio;Centro de distribución;11;2026-07-22 12:54:00;21.8
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Planta Ibagué 14;Ibagué;Planta;4030;2026-02-19 04:45:00;-23.6
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L62184;2025-02-19;2026-08-13;Planta Bucaramanga 23;Bucaramanga;Planta;3051;2026-06-01 23:05:00;-19.2
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L91205;2025-06-05;2026-11-27;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4848;2026-06-29 01:27:00;4.9
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L63841;2023-11-01;2025-10-21;CEDI Bogotá 13;Bogotá;Centro de distribución;2672;2026-04-26 14:17:00;-21.3
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;865;2026-03-18 14:29:00;17.0
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2525;2026-06-02 08:54:00;1.7
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;Planta Pereira 7;Pereira;Planta;2685;2026-03-13 02:45:00;17.0
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;CEDI Medellín 9;Medellín;Centro de distribución;1424;2026-02-11 12:54:00;-19.7
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Planta Pereira 4;Pereira;Planta;1145;2026-03-07 00:03:00;24.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;CEDI Cartagena 12;Cartagena;Centro de distribución;688;2026-07-03 18:16:00;6.2
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L22196;2025-03-28;2026-09-19;Planta Cúcuta 21;Cúcuta;Planta;3632;2026-03-08 02:57:00;24.4
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Planta Bogotá 2;Bogotá;Planta;1376;2026-06-30 13:52:00;-17.8
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L96646;2023-09-25;2025-03-18;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2899;2026-03-30 05:17:00;-27.1
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L94896;2024-06-14;2027-05-30;CEDI Medellín 16;Medellín;Centro de distribución;3375;2026-06-24 15:03:00;2.2
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Planta Cúcuta 21;Cúcuta;Planta;4453;2026-02-08 12:50:00;22.1
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L20350;2025-09-25;2027-03-19;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4115;2026-04-27 12:17:00;-23.7
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Planta Bogotá 2;Bogotá;Planta;3864;2026-06-19 11:49:00;-20.0
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L69510;2023-12-27;2025-06-19;Planta Cúcuta 22;Cúcuta;Planta;1975;2026-04-13 17:52:00;23.6
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93606;2026-05-05;2027-04-30;CEDI Villavicencio 19;Villavicencio;Centro de distribución;3181;2026-05-05 05:11:00;-23.2
+BioSalud Laboratorios;Vacuna Polio Inactivada Jeringa prellenada;Jeringa prellenada;2;8;L73335;2024-03-09;2025-08-31;CEDI Villavicencio 19;Villavicencio;Centro de distribución;231;2026-08-03 22:22:00;-15.3
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L33834;2026-04-28;2027-10-20;CEDI Medellín 16;Medellín;Centro de distribución;4441;2026-04-24 05:31:00;0.9
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L96951;2024-03-03;2025-08-25;CEDI Ibagué 17;Ibagué;Centro de distribución;3915;2026-02-04 10:58:00;-17.9
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;CEDI Villavicencio 11;Villavicencio;Centro de distribución;487;2026-02-09 04:37:00;21.0
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L84177;2023-11-12;2026-10-27;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3060;2026-08-03 21:25:00;5.0
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L41266;2024-04-18;2027-04-03;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3578;2026-07-17 15:41:00;4.5
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L69878;2025-04-13;2026-10-05;Planta Pereira 8;Pereira;Planta;4824;2026-03-20 12:19:00;5.8
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L62923;2024-04-05;2025-09-27;Planta Bucaramanga 23;Bucaramanga;Planta;4692;2026-05-15 18:02:00;-23.7
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Planta Cúcuta 21;Cúcuta;Planta;4632;2026-03-02 15:09:00;17.0
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;726;2026-07-25 20:46:00;-16.3
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Planta Bucaramanga 23;Bucaramanga;Planta;555;2026-05-04 08:50:00;-25.4
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L84000;2024-09-27;2025-09-22;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3391;2026-06-10 12:22:00;-20.7
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3696;2026-02-22 01:18:00;-25.5
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3075;2026-03-17 23:04:00;-18.3
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L10800;2024-08-09;2026-01-31;Planta Bucaramanga 23;Bucaramanga;Planta;253;2026-05-25 20:10:00;-19.1
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L14705;2023-12-22;2025-06-14;Planta Pereira 7;Pereira;Planta;1556;2026-05-19 22:35:00;22.9
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1945;2026-02-28 01:25:00;21.7
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;CEDI Cartagena 1;Cartagena;Centro de distribución;3502;2026-02-26 09:52:00;-18.1
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Planta Pereira 7;Pereira;Planta;1399;2026-07-17 09:05:00;18.6
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L85748;2026-06-08;2027-11-30;CEDI Medellín 16;Medellín;Centro de distribución;2170;2026-02-27 20:34:00;3.9
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L54092;2023-10-01;2026-09-15;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;365;2026-04-12 14:29:00;4.6
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L80702;2023-11-18;2025-11-07;Planta Medellín 25;Medellín;Planta;792;2026-02-25 21:22:00;6.6
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L62521;2026-05-07;2027-05-02;Unidad de Salud Medellín 18;Medellín;Unidad de salud;499;2026-05-14 16:26:00;-14.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L48974;2025-12-29;2027-12-19;CEDI Medellín 16;Medellín;Centro de distribución;2448;2026-02-24 12:57:00;5.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L54236;2025-09-18;2027-09-08;Planta Pereira 4;Pereira;Planta;3678;2026-03-20 05:13:00;22.0
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L72422;2026-02-07;2028-01-28;Planta Pereira 7;Pereira;Planta;1211;2026-07-06 08:20:00;25.4
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L26199;2026-02-20;2028-02-10;Unidad de Salud Medellín 18;Medellín;Unidad de salud;3255;2026-06-25 10:54:00;-22.4
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L84000;2024-09-27;2025-09-22;Planta Pereira 4;Pereira;Planta;3395;2026-03-14 04:36:00;21.7
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;CEDI Villavicencio 19;Villavicencio;Centro de distribución;827;2026-04-18 17:56:00;-21.8
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L19120;2024-05-20;2025-05-15;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4988;2026-06-05 01:11:00;-23.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;Planta Bogotá 2;Bogotá;Planta;3242;2026-04-29 22:15:00;-24.6
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L14373;2025-08-20;2027-02-11;CEDI Cartagena 1;Cartagena;Centro de distribución;2767;2026-04-22 09:17:00;-15.5
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L62521;2026-05-07;2027-05-02;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2461;2026-05-28 10:17:00;22.6
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L62640;2025-12-24;2026-12-19;Planta Pereira 7;Pereira;Planta;3335;2026-06-08 16:55:00;17.4
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L49507;2024-10-09;2026-04-02;CEDI Bogotá 13;Bogotá;Centro de distribución;1111;2026-06-18 18:01:00;-22.1
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L53025;2025-02-24;2026-02-19;Planta Pereira 8;Pereira;Planta;270;2026-05-31 01:58:00;3.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L58843;2024-04-26;2025-04-21;CEDI Ibagué 17;Ibagué;Centro de distribución;3251;2026-07-16 03:43:00;-25.1
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;CEDI Medellín 16;Medellín;Centro de distribución;4807;2026-06-25 11:22:00;4.2
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L97012;2025-06-20;2026-06-15;Unidad de Salud Pereira 10;Pereira;Unidad de salud;224;2026-05-13 01:10:00;24.4
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;Planta Cúcuta 22;Cúcuta;Planta;1693;2026-04-13 20:26:00;21.2
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L61116;2025-12-09;2027-06-02;Planta Cúcuta 21;Cúcuta;Planta;1418;2026-07-07 00:14:00;18.4
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L63955;2026-05-14;2028-05-03;Planta Ibagué 14;Ibagué;Planta;3084;2026-05-04 14:16:00;-23.4
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;CEDI Villavicencio 19;Villavicencio;Centro de distribución;838;2026-02-05 16:42:00;-14.3
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;CEDI Medellín 16;Medellín;Centro de distribución;522;2026-05-01 08:40:00;3.3
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L76698;2025-02-13;2028-01-29;Planta Pereira 7;Pereira;Planta;1228;2026-06-16 07:57:00;16.6
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L58629;2025-12-09;2027-06-02;Planta Cúcuta 22;Cúcuta;Planta;2618;2026-07-28 04:46:00;15.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L84000;2024-09-27;2025-09-22;CEDI Bogotá 13;Bogotá;Centro de distribución;3180;2026-02-13 18:45:00;-14.1
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Planta Cúcuta 22;Cúcuta;Planta;4379;2026-07-17 15:58:00;24.0
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L79827;2025-12-28;2027-12-18;Planta Cúcuta 22;Cúcuta;Planta;4573;2026-03-22 09:06:00;20.4
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L52245;2024-12-18;2025-12-13;Planta Cúcuta 22;Cúcuta;Planta;2749;2026-07-21 02:14:00;19.3
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L14705;2023-12-22;2025-06-14;CEDI Cartagena 12;Cartagena;Centro de distribución;2134;2026-07-03 09:29:00;7.0
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L67154;2023-08-07;2025-01-28;CEDI Medellín 16;Medellín;Centro de distribución;1593;2026-06-12 03:55:00;6.2
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L80702;2023-11-18;2025-11-07;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1640;2026-05-02 13:36:00;25.4
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L73372;2026-03-13;2029-02-25;Planta Medellín 25;Medellín;Planta;662;2026-06-08 10:40:00;7.4
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L24996;2024-10-17;2027-10-02;CEDI Medellín 9;Medellín;Centro de distribución;1715;2026-03-19 18:48:00;-22.6
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L72518;2023-08-16;2025-08-05;Planta Bucaramanga 20;Bucaramanga;Planta;3552;2026-07-16 13:25:00;-1.5
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;CEDI Cartagena 1;Cartagena;Centro de distribución;2639;2026-06-19 06:01:00;-17.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L20350;2025-09-25;2027-03-19;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1056;2026-03-02 12:32:00;19.9
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L76698;2025-02-13;2028-01-29;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3734;2026-06-17 19:33:00;19.5
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;CEDI Medellín 16;Medellín;Centro de distribución;2942;2026-03-24 05:58:00;7.2
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L61116;2025-12-09;2027-06-02;Planta Pereira 7;Pereira;Planta;179;2026-07-04 16:10:00;16.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L36318;2024-04-30;2026-04-20;Planta Cúcuta 21;Cúcuta;Planta;2095;2026-06-20 19:03:00;19.6
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L96951;2024-03-03;2025-08-25;Planta Bogotá 2;Bogotá;Planta;948;2026-05-21 14:24:00;-24.5
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3447;2026-07-23 03:42:00;20.6
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Unidad de Salud Pereira 10;Pereira;Unidad de salud;933;2026-03-03 15:12:00;21.9
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;CEDI Cartagena 12;Cartagena;Centro de distribución;3356;2026-04-20 05:02:00;6.5
+Vitalis Farmacéutica;Filgrastim Ampolla;Ampolla;15;25;L45818;2025-04-27;2027-04-17;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1921;2026-02-04 00:42:00;14.7
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L30392;2024-06-21;2025-06-16;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;737;2026-06-14 02:46:00;23.5
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L62262;2025-12-02;2026-11-27;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2163;2026-06-02 01:06:00;24.3
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Planta Cúcuta 22;Cúcuta;Planta;2561;2026-05-24 23:07:00;16.7
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;Planta Cúcuta 22;Cúcuta;Planta;1396;2026-04-29 11:57:00;19.7
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L98184;2025-04-30;2026-10-22;CEDI Cartagena 12;Cartagena;Centro de distribución;2807;2026-03-22 03:25:00;4.3
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L85248;2024-11-09;2027-10-25;Planta Ibagué 14;Ibagué;Planta;1366;2026-03-04 04:44:00;-16.3
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L77889;2026-03-12;2027-03-07;Planta Ibagué 14;Ibagué;Planta;4839;2026-06-07 18:43:00;-20.3
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L16658;2024-02-09;2027-01-24;Planta Cúcuta 22;Cúcuta;Planta;1070;2026-06-07 15:07:00;23.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L34727;2024-12-05;2027-11-20;CEDI Cartagena 1;Cartagena;Centro de distribución;4299;2026-07-01 23:36:00;-21.4
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L29313;2023-09-23;2024-09-17;Planta Ibagué 14;Ibagué;Planta;2036;2026-06-07 11:42:00;-18.6
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;CEDI Cartagena 1;Cartagena;Centro de distribución;1285;2026-06-13 15:54:00;-21.0
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L14705;2023-12-22;2025-06-14;CEDI Medellín 9;Medellín;Centro de distribución;412;2026-06-13 07:35:00;-18.9
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L30006;2026-04-01;2027-03-27;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4694;2026-05-29 02:54:00;4.4
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;Planta Pereira 4;Pereira;Planta;3304;2026-05-20 01:35:00;21.5
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L46208;2025-11-30;2027-11-20;CEDI Ibagué 17;Ibagué;Centro de distribución;4606;2026-03-28 20:42:00;-20.9
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L67733;2025-07-01;2026-12-23;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2719;2026-06-27 19:38:00;5.3
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;Planta Pereira 4;Pereira;Planta;1816;2026-02-04 10:22:00;24.7
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;Planta Bucaramanga 23;Bucaramanga;Planta;870;2026-02-15 05:31:00;-22.9
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;CEDI Medellín 9;Medellín;Centro de distribución;1604;2026-03-24 03:59:00;-17.3
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;Planta Bucaramanga 23;Bucaramanga;Planta;2768;2026-03-03 13:02:00;-14.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4827;2026-06-13 04:31:00;2.7
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L65176;2026-07-16;2027-07-11;CEDI Villavicencio 19;Villavicencio;Centro de distribución;3956;2026-06-14 05:44:00;-18.5
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L26199;2026-02-20;2028-02-10;Planta Cúcuta 22;Cúcuta;Planta;4919;2026-07-09 10:32:00;23.6
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;CEDI Medellín 9;Medellín;Centro de distribución;3259;2026-05-02 09:28:00;-18.0
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;Planta Bucaramanga 23;Bucaramanga;Planta;4487;2026-04-25 22:47:00;-15.2
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L13783;2024-12-06;2026-05-30;Planta Cúcuta 22;Cúcuta;Planta;2828;2026-07-26 04:45:00;22.9
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L28894;2025-11-20;2027-05-14;Planta Bucaramanga 23;Bucaramanga;Planta;945;2026-05-05 17:30:00;-17.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L16764;2024-09-23;2026-09-13;Planta Ibagué 14;Ibagué;Planta;104;2026-06-17 03:01:00;-22.5
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L32962;2026-03-24;2029-03-08;Planta Medellín 25;Medellín;Planta;1318;2026-04-18 21:16:00;1.6
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L56112;2026-02-18;2028-02-08;Planta Medellín 25;Medellín;Planta;4433;2026-02-12 11:52:00;5.1
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L67733;2025-07-01;2026-12-23;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4597;2026-05-14 07:32:00;7.6
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L33509;2025-06-14;2028-05-29;CEDI Bogotá 13;Bogotá;Centro de distribución;3174;2026-05-21 21:20:00;-16.7
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;Planta Bucaramanga 20;Bucaramanga;Planta;3629;2026-04-02 20:45:00;5.9
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L72402;2026-05-05;2029-04-19;Planta Medellín 25;Medellín;Planta;1585;2026-04-20 14:11:00;6.6
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L20561;2024-05-13;2025-11-04;CEDI Bogotá 13;Bogotá;Centro de distribución;332;2026-05-24 08:35:00;-23.4
+Vitalis Farmacéutica;Insulina NPH Vial;Vial;2;8;L51467;2025-01-19;2026-07-13;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3820;2026-03-15 01:09:00;24.6
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L59968;2025-10-02;2027-03-26;CEDI Ibagué 17;Ibagué;Centro de distribución;1801;2026-03-23 16:04:00;-18.2
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L58629;2025-12-09;2027-06-02;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2862;2026-04-01 06:42:00;3.6
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;Unidad de Salud Medellín 18;Medellín;Unidad de salud;72;2026-03-05 21:22:00;-19.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;CEDI Bogotá 13;Bogotá;Centro de distribución;928;2026-05-13 08:34:00;-19.2
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;CEDI Ibagué 17;Ibagué;Centro de distribución;4167;2026-05-29 15:02:00;-21.6
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L49829;2025-03-13;2026-09-04;Planta Pereira 4;Pereira;Planta;1371;2026-06-21 17:00:00;20.4
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L48829;2024-11-11;2026-11-01;Planta Cúcuta 22;Cúcuta;Planta;3475;2026-03-02 06:34:00;24.4
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L72422;2026-02-07;2028-01-28;Planta Cúcuta 21;Cúcuta;Planta;590;2026-07-29 04:01:00;19.1
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2063;2026-06-26 02:36:00;-15.6
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Planta Cúcuta 21;Cúcuta;Planta;3313;2026-05-25 10:01:00;11.7
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L31299;2024-07-31;2027-07-16;Planta Bucaramanga 23;Bucaramanga;Planta;594;2026-05-06 16:06:00;-21.5
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;Planta Medellín 25;Medellín;Planta;3585;2026-05-12 12:52:00;5.9
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L13804;2025-10-08;2027-09-28;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3203;2026-06-23 09:40:00;3.4
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L94246;2025-12-28;2027-06-21;Planta Pereira 4;Pereira;Planta;342;2026-02-05 18:38:00;19.1
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L38361;2026-04-21;2028-04-10;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2816;2026-03-30 13:57:00;5.9
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Planta Bucaramanga 20;Bucaramanga;Planta;2070;2026-03-25 03:11:00;6.2
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Planta Cúcuta 21;Cúcuta;Planta;4502;2026-02-22 09:42:00;14.5
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L69878;2025-04-13;2026-10-05;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1921;2026-03-01 09:39:00;14.8
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L59808;2025-05-13;2028-04-27;Planta Bucaramanga 20;Bucaramanga;Planta;2504;2026-07-31 18:09:00;5.0
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L56955;2024-12-03;2026-11-23;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;39;2026-04-25 07:50:00;-22.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2716;2026-06-06 14:28:00;18.0
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L90676;2025-04-11;2028-03-26;CEDI Medellín 9;Medellín;Centro de distribución;1146;2026-06-21 06:16:00;-17.3
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;CEDI Ibagué 17;Ibagué;Centro de distribución;255;2026-07-02 18:25:00;-12.2
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L85748;2026-06-08;2027-11-30;Planta Cúcuta 21;Cúcuta;Planta;1217;2026-05-08 12:14:00;24.2
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L38760;2025-02-12;2028-01-28;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4105;2026-06-14 02:25:00;2.7
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L85470;2025-09-10;2028-08-25;Planta Medellín 25;Medellín;Planta;4211;2026-03-11 14:10:00;4.4
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L52906;2024-10-10;2027-09-25;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3960;2026-05-06 01:14:00;5.8
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;Planta Bogotá 2;Bogotá;Planta;1693;2026-06-16 11:24:00;-20.4
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L28894;2025-11-20;2027-05-14;Planta Pereira 4;Pereira;Planta;4271;2026-07-16 08:53:00;22.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L75771;2025-02-12;2026-08-06;CEDI Cartagena 12;Cartagena;Centro de distribución;4814;2026-07-21 02:33:00;4.9
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L95841;2024-02-22;2027-02-06;CEDI Cartagena 12;Cartagena;Centro de distribución;2826;2026-06-08 15:56:00;5.6
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L85470;2025-09-10;2028-08-25;Planta Pereira 8;Pereira;Planta;631;2026-06-15 20:17:00;2.3
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Planta Cúcuta 22;Cúcuta;Planta;1886;2026-05-21 10:46:00;16.7
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L58351;2024-07-12;2025-07-07;Planta Cúcuta 21;Cúcuta;Planta;3366;2026-02-09 07:02:00;16.6
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1203;2026-02-18 05:16:00;-15.7
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2322;2026-02-25 06:28:00;5.6
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93606;2026-05-05;2027-04-30;Planta Ibagué 14;Ibagué;Planta;4922;2026-03-12 18:52:00;-17.0
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L19961;2024-12-13;2025-12-08;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2807;2026-05-31 19:37:00;2.0
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L47353;2024-06-22;2027-06-07;Planta Pereira 7;Pereira;Planta;4282;2026-06-13 21:26:00;23.6
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L86350;2024-06-02;2027-05-18;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4123;2026-03-06 02:30:00;-17.2
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L62923;2024-04-05;2025-09-27;Planta Medellín 25;Medellín;Planta;3534;2026-06-17 13:23:00;7.8
+Vitalis Farmacéutica;Filgrastim Ampolla;Ampolla;15;25;L45818;2025-04-27;2027-04-17;Planta Medellín 25;Medellín;Planta;3123;2026-05-04 18:51:00;7.2
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L92544;2024-09-05;2027-08-21;Planta Ibagué 14;Ibagué;Planta;1096;2026-04-10 15:49:00;-21.6
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L68115;2026-01-30;2027-07-24;CEDI Medellín 9;Medellín;Centro de distribución;1548;2026-02-05 22:47:00;-16.9
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;CEDI Bogotá 13;Bogotá;Centro de distribución;1682;2026-07-30 10:26:00;-22.4
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L28643;2023-12-28;2024-12-22;CEDI Medellín 9;Medellín;Centro de distribución;4391;2026-05-23 18:23:00;-17.4
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L10800;2024-08-09;2026-01-31;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3032;2026-06-27 17:30:00;-23.0
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1131;2026-07-22 03:47:00;4.2
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L62383;2024-12-15;2026-06-08;Planta Pereira 7;Pereira;Planta;4164;2026-05-17 10:51:00;21.1
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L58351;2024-07-12;2025-07-07;CEDI Bogotá 13;Bogotá;Centro de distribución;43;2026-02-27 04:30:00;-15.9
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;CEDI Cartagena 12;Cartagena;Centro de distribución;655;2026-07-09 01:46:00;5.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L16764;2024-09-23;2026-09-13;Planta Bucaramanga 23;Bucaramanga;Planta;4894;2026-02-18 05:40:00;-21.5
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L16764;2024-09-23;2026-09-13;Planta Pereira 7;Pereira;Planta;275;2026-07-07 16:33:00;22.3
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Planta Pereira 8;Pereira;Planta;2;2026-03-16 02:17:00;6.2
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L41890;2025-04-22;2027-04-12;CEDI Ibagué 17;Ibagué;Centro de distribución;125;2026-08-03 02:58:00;-24.7
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L93611;2025-01-05;2027-12-21;CEDI Cartagena 12;Cartagena;Centro de distribución;2265;2026-04-02 19:12:00;-1.6
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L46666;2023-10-10;2025-09-29;CEDI Ibagué 17;Ibagué;Centro de distribución;872;2026-06-27 02:32:00;-20.7
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L71433;2025-04-17;2028-04-01;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4709;2026-04-09 22:28:00;-15.1
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L17355;2025-03-26;2027-03-16;Planta Medellín 25;Medellín;Planta;3758;2026-07-28 14:57:00;4.1
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;CEDI Bogotá 13;Bogotá;Centro de distribución;1805;2026-07-27 22:14:00;-17.3
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Planta Bucaramanga 23;Bucaramanga;Planta;2157;2026-04-08 09:05:00;-20.3
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L33086;2026-07-07;2028-06-26;CEDI Medellín 16;Medellín;Centro de distribución;2571;2026-05-05 06:57:00;4.5
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;CEDI Medellín 16;Medellín;Centro de distribución;1635;2026-04-05 23:15:00;6.4
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Planta Bucaramanga 20;Bucaramanga;Planta;2916;2026-03-15 03:07:00;8.0
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;Planta Medellín 25;Medellín;Planta;4435;2026-02-14 15:23:00;5.7
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L63955;2026-05-14;2028-05-03;CEDI Medellín 16;Medellín;Centro de distribución;1498;2026-06-14 08:25:00;3.6
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L29340;2023-08-09;2025-07-29;CEDI Medellín 16;Medellín;Centro de distribución;4429;2026-02-12 16:22:00;4.9
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L20561;2024-05-13;2025-11-04;Planta Bucaramanga 23;Bucaramanga;Planta;4245;2026-06-01 10:44:00;-24.4
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L62383;2024-12-15;2026-06-08;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2962;2026-07-10 08:11:00;19.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;CEDI Cartagena 12;Cartagena;Centro de distribución;1506;2026-06-11 13:13:00;5.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;CEDI Medellín 9;Medellín;Centro de distribución;3692;2026-03-22 18:08:00;-14.6
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L71605;2025-07-16;2028-06-30;Planta Pereira 8;Pereira;Planta;4549;2026-05-25 12:12:00;4.3
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3453;2026-06-11 04:57:00;-16.5
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L79531;2024-10-17;2027-10-02;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2055;2026-06-27 18:03:00;19.6
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L50319;2025-03-17;2028-03-01;CEDI Medellín 16;Medellín;Centro de distribución;788;2026-05-30 23:21:00;3.1
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L71433;2025-04-17;2028-04-01;CEDI Cartagena 12;Cartagena;Centro de distribución;162;2026-05-20 03:22:00;8.6
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L77952;2025-08-13;2028-07-28;CEDI Cartagena 12;Cartagena;Centro de distribución;2663;2026-07-26 16:31:00;6.5
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L16764;2024-09-23;2026-09-13;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;1186;2026-03-18 20:51:00;7.3
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L95841;2024-02-22;2027-02-06;Unidad de Salud Pereira 3;Pereira;Unidad de salud;648;2026-03-17 10:14:00;4.3
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L93283;2026-03-11;2028-02-29;CEDI Medellín 9;Medellín;Centro de distribución;3644;2026-05-07 23:37:00;-19.9
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L25129;2024-03-10;2025-09-01;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1922;2026-07-23 08:47:00;20.7
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L23970;2025-12-21;2027-06-14;Planta Pereira 4;Pereira;Planta;522;2026-06-05 17:03:00;15.0
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89129;2024-12-28;2025-12-23;Planta Bucaramanga 20;Bucaramanga;Planta;1272;2026-02-25 20:59:00;6.7
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L71069;2025-12-02;2026-11-27;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;4315;2026-03-19 00:02:00;22.7
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4428;2026-04-14 17:28:00;4.2
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L62262;2025-12-02;2026-11-27;Planta Cúcuta 21;Cúcuta;Planta;4620;2026-05-26 16:40:00;20.8
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L62521;2026-05-07;2027-05-02;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3619;2026-04-23 11:26:00;-3.0
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L88696;2025-05-04;2027-04-24;Unidad de Salud Medellín 18;Medellín;Unidad de salud;68;2026-07-30 15:48:00;-21.7
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Planta Bucaramanga 20;Bucaramanga;Planta;1894;2026-02-05 17:23:00;4.3
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3192;2026-05-11 07:16:00;-23.8
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L52081;2024-03-05;2025-08-27;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4357;2026-04-13 13:12:00;22.6
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L62262;2025-12-02;2026-11-27;Planta Bucaramanga 20;Bucaramanga;Planta;3709;2026-04-14 22:39:00;4.4
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L25129;2024-03-10;2025-09-01;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;837;2026-04-17 08:08:00;-17.2
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L80702;2023-11-18;2025-11-07;CEDI Cartagena 1;Cartagena;Centro de distribución;4043;2026-03-31 10:26:00;-21.0
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L58843;2024-04-26;2025-04-21;Planta Bucaramanga 23;Bucaramanga;Planta;259;2026-04-29 02:53:00;-18.6
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L98452;2024-11-24;2027-11-09;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4449;2026-06-04 05:12:00;6.6
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L19602;2024-10-13;2026-10-03;Planta Pereira 4;Pereira;Planta;2039;2026-05-13 14:15:00;21.0
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L29313;2023-09-23;2024-09-17;CEDI Ibagué 17;Ibagué;Centro de distribución;1707;2026-06-05 12:43:00;-14.1
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4502;2026-06-17 03:16:00;4.3
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L15075;2026-03-24;2027-09-15;Planta Cúcuta 22;Cúcuta;Planta;1784;2026-03-04 07:40:00;17.9
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L63545;2026-02-11;2029-01-26;CEDI Cartagena 1;Cartagena;Centro de distribución;344;2026-07-02 22:30:00;-19.2
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L38255;2026-06-18;2027-06-13;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2772;2026-07-14 01:03:00;3.1
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3996;2026-04-04 10:35:00;23.7
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L39038;2023-10-31;2025-10-20;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1580;2026-02-09 22:24:00;3.1
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L19120;2024-05-20;2025-05-15;Planta Bucaramanga 23;Bucaramanga;Planta;3584;2026-06-27 09:34:00;-19.0
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L93611;2025-01-05;2027-12-21;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3837;2026-04-15 19:58:00;22.6
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2157;2026-06-22 11:29:00;15.4
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L69087;2024-12-15;2027-11-30;CEDI Cartagena 1;Cartagena;Centro de distribución;2982;2026-07-12 07:20:00;-17.3
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L26199;2026-02-20;2028-02-10;Planta Pereira 7;Pereira;Planta;4293;2026-07-28 15:49:00;20.9
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Planta Pereira 4;Pereira;Planta;788;2026-06-17 21:04:00;16.8
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93507;2025-01-21;2026-07-15;Planta Pereira 7;Pereira;Planta;876;2026-06-08 06:06:00;15.7
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L69460;2025-07-02;2026-12-24;CEDI Ibagué 17;Ibagué;Centro de distribución;4835;2026-04-10 01:23:00;-28.1
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L50846;2025-05-29;2026-05-24;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3834;2026-07-17 01:23:00;6.7
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L91381;2024-12-29;2026-06-22;Planta Bucaramanga 23;Bucaramanga;Planta;477;2026-07-11 08:33:00;-25.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L49618;2023-09-01;2025-02-22;CEDI Ibagué 17;Ibagué;Centro de distribución;795;2026-03-01 23:14:00;-20.6
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1465;2026-06-26 23:35:00;-22.0
+BioSalud Laboratorios;Vacuna Polio Inactivada Jeringa prellenada;Jeringa prellenada;2;8;L73335;2024-03-09;2025-08-31;Planta Cúcuta 22;Cúcuta;Planta;3757;2026-08-02 21:27:00;22.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;CEDI Ibagué 17;Ibagué;Centro de distribución;2764;2026-07-22 05:34:00;-15.2
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L63841;2023-11-01;2025-10-21;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2659;2026-05-10 13:48:00;-17.7
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L32782;2024-01-04;2025-06-27;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4469;2026-03-30 12:49:00;-18.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L24996;2024-10-17;2027-10-02;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3252;2026-02-04 23:02:00;8.2
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L60277;2024-08-28;2026-02-19;CEDI Cartagena 1;Cartagena;Centro de distribución;2460;2026-04-01 06:54:00;-21.0
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L82102;2023-10-18;2026-10-02;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4188;2026-06-26 18:59:00;-20.5
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L42411;2024-09-15;2025-09-10;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2170;2026-05-08 18:15:00;18.3
+Laboratorios Andina S.A.;Toxina Botulínica Tableta;Tableta;15;25;L49893;2026-05-08;2027-05-03;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1781;2026-02-23 23:20:00;-18.1
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L29313;2023-09-23;2024-09-17;Planta Bucaramanga 20;Bucaramanga;Planta;2460;2026-02-13 23:51:00;4.2
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L93066;2024-02-25;2027-02-09;CEDI Cartagena 12;Cartagena;Centro de distribución;3557;2026-05-21 03:55:00;7.4
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L19508;2023-08-23;2026-08-07;Planta Cúcuta 21;Cúcuta;Planta;3133;2026-02-17 09:33:00;15.5
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;413;2026-07-26 23:25:00;25.5
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L97012;2025-06-20;2026-06-15;Planta Pereira 8;Pereira;Planta;3538;2026-04-19 12:09:00;1.5
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L44970;2024-06-25;2025-06-20;Unidad de Salud Medellín 18;Medellín;Unidad de salud;3270;2026-04-12 02:25:00;-19.2
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L13804;2025-10-08;2027-09-28;CEDI Medellín 16;Medellín;Centro de distribución;4581;2026-03-26 15:25:00;5.0
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L69510;2023-12-27;2025-06-19;Planta Pereira 8;Pereira;Planta;586;2026-04-13 13:20:00;6.3
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L62184;2025-02-19;2026-08-13;Planta Ibagué 14;Ibagué;Planta;2992;2026-05-04 06:20:00;-21.1
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L99687;2024-04-07;2025-04-02;CEDI Cartagena 12;Cartagena;Centro de distribución;3622;2026-07-13 04:28:00;3.2
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;702;2026-03-04 23:03:00;17.8
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L47752;2026-01-17;2029-01-01;CEDI Cartagena 1;Cartagena;Centro de distribución;2812;2026-07-31 03:19:00;-21.9
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L88222;2025-03-05;2026-02-28;Planta Pereira 7;Pereira;Planta;4476;2026-06-17 08:35:00;20.5
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;CEDI Bogotá 13;Bogotá;Centro de distribución;4775;2026-07-23 16:02:00;-23.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L71605;2025-07-16;2028-06-30;Planta Bogotá 2;Bogotá;Planta;3808;2026-07-21 00:04:00;-21.8
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Planta Pereira 4;Pereira;Planta;156;2026-04-19 20:24:00;17.0
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L92544;2024-09-05;2027-08-21;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3970;2026-07-06 17:05:00;16.9
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L25129;2024-03-10;2025-09-01;Planta Bogotá 2;Bogotá;Planta;2026;2026-06-19 09:21:00;-13.4
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L55293;2025-04-07;2028-03-22;Planta Cúcuta 21;Cúcuta;Planta;2476;2026-04-05 16:17:00;23.5
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15778;2023-08-11;2025-07-31;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2295;2026-04-02 04:21:00;-15.6
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L71385;2024-01-05;2025-06-28;CEDI Ibagué 17;Ibagué;Centro de distribución;1863;2026-05-21 07:36:00;-22.1
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L59808;2025-05-13;2028-04-27;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4441;2026-03-09 06:41:00;3.0
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4291;2026-03-10 13:58:00;23.7
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L41266;2024-04-18;2027-04-03;CEDI Villavicencio 11;Villavicencio;Centro de distribución;555;2026-06-26 17:46:00;15.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15778;2023-08-11;2025-07-31;Planta Medellín 25;Medellín;Planta;2610;2026-05-20 13:19:00;6.0
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L63955;2026-05-14;2028-05-03;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1539;2026-03-03 04:11:00;16.7
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L42530;2024-04-02;2027-03-18;Planta Bucaramanga 20;Bucaramanga;Planta;1902;2026-04-04 21:01:00;4.7
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L79066;2025-04-26;2026-04-21;Planta Bucaramanga 20;Bucaramanga;Planta;3840;2026-07-20 11:11:00;7.1
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93507;2025-01-21;2026-07-15;Planta Ibagué 14;Ibagué;Planta;122;2026-04-14 13:14:00;-16.1
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L88193;2026-01-09;2027-12-30;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3598;2026-07-11 15:44:00;-21.9
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L95841;2024-02-22;2027-02-06;Planta Medellín 25;Medellín;Planta;342;2026-07-09 23:52:00;3.7
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L86350;2024-06-02;2027-05-18;CEDI Ibagué 17;Ibagué;Centro de distribución;895;2026-05-30 14:52:00;-15.1
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L93283;2026-03-11;2028-02-29;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;321;2026-06-26 12:33:00;8.0
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L94323;2023-10-06;2024-09-30;CEDI Bogotá 13;Bogotá;Centro de distribución;2494;2026-04-18 14:10:00;-20.4
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L94246;2025-12-28;2027-06-21;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3700;2026-02-27 23:32:00;3.5
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L13804;2025-10-08;2027-09-28;CEDI Bogotá 13;Bogotá;Centro de distribución;3387;2026-04-27 14:01:00;-22.9
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;738;2026-04-09 10:44:00;6.5
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Unidad de Salud Pereira 3;Pereira;Unidad de salud;935;2026-08-03 14:40:00;4.2
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L83920;2024-10-23;2027-10-08;CEDI Bogotá 13;Bogotá;Centro de distribución;4508;2026-05-12 01:49:00;-23.8
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L43065;2024-01-18;2027-01-02;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1184;2026-03-21 22:03:00;-21.4
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1480;2026-03-06 04:12:00;21.8
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L38255;2026-06-18;2027-06-13;Unidad de Salud Medellín 18;Medellín;Unidad de salud;47;2026-07-09 15:15:00;-22.4
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L62640;2025-12-24;2026-12-19;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4925;2026-07-07 00:15:00;6.6
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Planta Bogotá 2;Bogotá;Planta;1514;2026-03-13 01:41:00;-16.6
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L14705;2023-12-22;2025-06-14;Unidad de Salud Pereira 3;Pereira;Unidad de salud;401;2026-03-03 13:11:00;2.3
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4742;2026-05-07 01:05:00;6.1
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;Planta Medellín 25;Medellín;Planta;3500;2026-06-24 02:18:00;3.7
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L59808;2025-05-13;2028-04-27;CEDI Ibagué 17;Ibagué;Centro de distribución;3389;2026-06-18 06:44:00;-24.2
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L67954;2024-10-14;2027-09-29;CEDI Medellín 16;Medellín;Centro de distribución;4954;2026-08-03 09:27:00;5.1
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L55293;2025-04-07;2028-03-22;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;4609;2026-06-11 16:46:00;21.3
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;Planta Bucaramanga 23;Bucaramanga;Planta;2379;2026-03-25 00:07:00;-24.4
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Planta Bucaramanga 20;Bucaramanga;Planta;3396;2026-05-20 01:21:00;5.0
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;CEDI Medellín 9;Medellín;Centro de distribución;555;2026-04-23 09:32:00;-18.7
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L39817;2024-02-05;2027-01-20;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3244;2026-06-29 19:01:00;22.4
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;CEDI Medellín 16;Medellín;Centro de distribución;291;2026-07-19 04:30:00;2.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L93066;2024-02-25;2027-02-09;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3391;2026-02-18 16:19:00;5.9
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;Planta Pereira 7;Pereira;Planta;4730;2026-07-29 10:51:00;25.0
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L43065;2024-01-18;2027-01-02;CEDI Medellín 9;Medellín;Centro de distribución;255;2026-05-01 12:40:00;-20.7
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L54092;2023-10-01;2026-09-15;Planta Bucaramanga 20;Bucaramanga;Planta;957;2026-04-23 22:54:00;2.5
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L89570;2026-01-25;2029-01-09;Planta Pereira 8;Pereira;Planta;3044;2026-05-30 09:13:00;4.2
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L86350;2024-06-02;2027-05-18;Planta Medellín 25;Medellín;Planta;1655;2026-02-27 14:32:00;2.1
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3960;2026-06-18 09:49:00;19.1
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L19862;2024-06-04;2025-05-30;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3175;2026-06-17 03:00:00;2.5
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L67954;2024-10-14;2027-09-29;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3824;2026-02-15 03:33:00;29.4
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L38361;2026-04-21;2028-04-10;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1642;2026-03-25 09:17:00;21.1
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L52081;2024-03-05;2025-08-27;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1290;2026-04-15 03:00:00;24.8
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L97404;2023-08-23;2026-08-07;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2609;2026-04-14 04:45:00;-16.7
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L82340;2025-09-14;2028-08-29;Planta Bucaramanga 20;Bucaramanga;Planta;2774;2026-06-22 14:03:00;2.7
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;CEDI Bogotá 13;Bogotá;Centro de distribución;440;2026-02-26 13:25:00;-22.9
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Planta Bucaramanga 20;Bucaramanga;Planta;2913;2026-04-24 10:52:00;4.0
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L35144;2025-12-12;2028-11-26;Planta Medellín 25;Medellín;Planta;3814;2026-06-29 04:05:00;8.1
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L97819;2024-04-10;2027-03-26;CEDI Medellín 16;Medellín;Centro de distribución;1898;2026-04-02 04:55:00;6.6
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L52245;2024-12-18;2025-12-13;Planta Bucaramanga 23;Bucaramanga;Planta;2706;2026-04-28 14:31:00;-24.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2312;2026-05-04 19:36:00;-24.9
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4555;2026-07-20 02:50:00;17.9
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L44687;2024-01-17;2025-07-10;Planta Bucaramanga 20;Bucaramanga;Planta;1996;2026-06-24 05:30:00;3.8
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L32838;2025-01-28;2026-01-23;Planta Ibagué 14;Ibagué;Planta;4646;2026-05-02 17:44:00;-22.2
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L79531;2024-10-17;2027-10-02;Planta Pereira 4;Pereira;Planta;4851;2026-07-06 14:20:00;21.5
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;Planta Cúcuta 22;Cúcuta;Planta;4885;2026-05-12 10:31:00;20.1
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L13534;2025-10-18;2026-10-13;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1;2026-03-13 21:09:00;-21.1
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Planta Pereira 7;Pereira;Planta;1684;2026-07-28 10:19:00;21.9
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L72422;2026-02-07;2028-01-28;Planta Bucaramanga 23;Bucaramanga;Planta;2820;2026-02-26 18:00:00;-18.9
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L39451;2024-03-23;2027-03-08;Planta Bogotá 2;Bogotá;Planta;3024;2026-06-24 01:00:00;-17.0
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;CEDI Cartagena 1;Cartagena;Centro de distribución;1927;2026-05-25 22:37:00;-21.6
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L71385;2024-01-05;2025-06-28;Planta Ibagué 14;Ibagué;Planta;4465;2026-03-30 21:11:00;-21.2
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;Planta Ibagué 14;Ibagué;Planta;1263;2026-04-18 21:08:00;-18.9
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L87812;2024-03-14;2027-02-27;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;693;2026-03-11 20:51:00;19.0
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L27038;2024-12-29;2026-06-22;Planta Bucaramanga 20;Bucaramanga;Planta;1472;2026-05-31 16:27:00;5.2
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L54092;2023-10-01;2026-09-15;Planta Ibagué 14;Ibagué;Planta;4952;2026-02-05 18:31:00;-17.3
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L23022;2025-08-25;2027-08-15;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4721;2026-05-08 01:02:00;-18.7
+Vitalis Farmacéutica;Filgrastim Ampolla;Ampolla;15;25;L45818;2025-04-27;2027-04-17;Planta Bucaramanga 23;Bucaramanga;Planta;655;2026-03-12 23:46:00;-18.7
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4234;2026-02-24 16:56:00;4.9
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L52753;2025-11-05;2027-10-26;Planta Cúcuta 22;Cúcuta;Planta;4417;2026-07-02 09:39:00;15.1
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L88696;2025-05-04;2027-04-24;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;4199;2026-06-04 18:46:00;3.5
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L39451;2024-03-23;2027-03-08;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1372;2026-02-13 22:59:00;20.4
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L88385;2023-10-24;2026-10-08;Planta Bogotá 2;Bogotá;Planta;3876;2026-07-02 05:36:00;-23.0
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3971;2026-02-25 04:32:00;16.6
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;CEDI Medellín 9;Medellín;Centro de distribución;2104;2026-02-07 23:07:00;-17.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;CEDI Cartagena 12;Cartagena;Centro de distribución;1436;2026-04-11 22:15:00;5.8
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;Unidad de Salud Pereira 3;Pereira;Unidad de salud;1188;2026-07-06 04:53:00;6.5
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Planta Cúcuta 22;Cúcuta;Planta;3605;2026-07-17 05:13:00;21.8
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L40005;2023-09-15;2025-09-04;Planta Medellín 25;Medellín;Planta;950;2026-02-17 05:29:00;3.8
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;CEDI Bogotá 13;Bogotá;Centro de distribución;3195;2026-06-05 08:09:00;-19.9
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L46046;2025-05-30;2028-05-14;CEDI Bogotá 13;Bogotá;Centro de distribución;2586;2026-06-19 21:02:00;-23.9
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L65176;2026-07-16;2027-07-11;Planta Bucaramanga 20;Bucaramanga;Planta;2233;2026-04-30 08:17:00;6.1
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;Planta Medellín 25;Medellín;Planta;1980;2026-07-26 18:49:00;2.7
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L73372;2026-03-13;2029-02-25;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4486;2026-02-06 21:00:00;21.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L77889;2026-03-12;2027-03-07;Planta Cúcuta 22;Cúcuta;Planta;3653;2026-05-04 07:46:00;10.9
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L53025;2025-02-24;2026-02-19;Planta Bucaramanga 20;Bucaramanga;Planta;1776;2026-07-07 20:07:00;5.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L72518;2023-08-16;2025-08-05;CEDI Bogotá 13;Bogotá;Centro de distribución;4637;2026-03-23 03:44:00;-23.8
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L39949;2025-11-28;2027-11-18;CEDI Medellín 9;Medellín;Centro de distribución;3497;2026-07-31 21:49:00;-18.0
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L82102;2023-10-18;2026-10-02;Planta Medellín 25;Medellín;Planta;511;2026-05-12 12:21:00;7.3
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L33086;2026-07-07;2028-06-26;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;568;2026-06-09 06:39:00;4.8
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L32838;2025-01-28;2026-01-23;Planta Pereira 7;Pereira;Planta;870;2026-05-28 22:16:00;14.8
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L81376;2024-11-06;2026-04-30;Planta Medellín 25;Medellín;Planta;3652;2026-02-08 15:09:00;10.4
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L32962;2026-03-24;2029-03-08;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2701;2026-05-15 18:00:00;21.5
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L87812;2024-03-14;2027-02-27;CEDI Bogotá 13;Bogotá;Centro de distribución;574;2026-06-22 07:00:00;-20.6
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L60205;2024-06-11;2025-12-03;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4385;2026-05-06 10:43:00;-23.3
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L97012;2025-06-20;2026-06-15;CEDI Cartagena 12;Cartagena;Centro de distribución;4379;2026-05-02 02:53:00;5.6
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;Unidad de Salud Medellín 18;Medellín;Unidad de salud;322;2026-05-13 21:12:00;-22.3
+BioSalud Laboratorios;Vacuna Polio Inactivada Jeringa prellenada;Jeringa prellenada;2;8;L73335;2024-03-09;2025-08-31;CEDI Medellín 16;Medellín;Centro de distribución;695;2026-07-15 14:47:00;-4.3
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L69460;2025-07-02;2026-12-24;CEDI Bogotá 13;Bogotá;Centro de distribución;516;2026-06-22 20:19:00;-18.6
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L47353;2024-06-22;2027-06-07;Planta Bogotá 2;Bogotá;Planta;2779;2026-02-18 10:50:00;-18.1
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L65936;2025-05-05;2027-04-25;Planta Cúcuta 22;Cúcuta;Planta;4395;2026-03-14 23:37:00;16.0
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L69460;2025-07-02;2026-12-24;Planta Cúcuta 21;Cúcuta;Planta;156;2026-06-04 19:02:00;11.9
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L86931;2026-05-02;2027-10-24;Planta Pereira 4;Pereira;Planta;3737;2026-07-10 05:53:00;21.9
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L89570;2026-01-25;2029-01-09;Planta Bucaramanga 20;Bucaramanga;Planta;1806;2026-02-20 06:27:00;5.0
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;CEDI Villavicencio 11;Villavicencio;Centro de distribución;989;2026-07-29 18:34:00;17.4
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L31299;2024-07-31;2027-07-16;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1420;2026-04-30 02:07:00;-21.5
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L92242;2023-10-23;2025-10-12;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1351;2026-05-27 07:59:00;-20.3
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L36318;2024-04-30;2026-04-20;Planta Medellín 25;Medellín;Planta;1292;2026-02-08 15:05:00;1.1
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L77952;2025-08-13;2028-07-28;Planta Ibagué 14;Ibagué;Planta;3899;2026-07-31 04:13:00;-24.3
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L44687;2024-01-17;2025-07-10;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;308;2026-07-06 05:45:00;-18.7
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L60277;2024-08-28;2026-02-19;CEDI Cartagena 12;Cartagena;Centro de distribución;3430;2026-02-05 17:15:00;4.6
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L12875;2025-10-22;2027-10-12;Planta Medellín 25;Medellín;Planta;4421;2026-06-13 07:29:00;7.1
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L41635;2025-11-13;2028-10-28;Planta Pereira 4;Pereira;Planta;1222;2026-07-29 15:31:00;17.3
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L84177;2023-11-12;2026-10-27;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1716;2026-05-26 08:21:00;22.3
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L77889;2026-03-12;2027-03-07;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;429;2026-06-21 05:10:00;6.7
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L48974;2025-12-29;2027-12-19;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3643;2026-07-05 18:20:00;5.3
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L29887;2024-06-04;2026-05-25;Planta Medellín 25;Medellín;Planta;902;2026-04-28 07:06:00;3.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93606;2026-05-05;2027-04-30;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3858;2026-07-03 15:03:00;6.3
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L39949;2025-11-28;2027-11-18;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3173;2026-05-10 04:29:00;-17.4
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1042;2026-02-12 22:36:00;14.5
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L65936;2025-05-05;2027-04-25;Planta Ibagué 14;Ibagué;Planta;1402;2026-05-02 07:56:00;-23.1
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L79827;2025-12-28;2027-12-18;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4528;2026-04-03 02:26:00;-16.5
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L96079;2026-04-17;2027-10-09;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2286;2026-02-07 23:27:00;5.7
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1220;2026-06-30 00:26:00;-16.6
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L61807;2023-11-24;2024-11-18;Planta Bogotá 2;Bogotá;Planta;3487;2026-06-19 12:30:00;-16.3
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;Planta Pereira 8;Pereira;Planta;680;2026-06-26 00:44:00;7.7
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L94896;2024-06-14;2027-05-30;Planta Pereira 8;Pereira;Planta;743;2026-02-08 15:42:00;4.4
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L46930;2024-10-08;2026-09-28;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3799;2026-03-11 22:25:00;4.2
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L62923;2024-04-05;2025-09-27;Planta Cúcuta 21;Cúcuta;Planta;579;2026-05-13 22:21:00;19.7
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L51359;2024-04-04;2025-09-26;Planta Cúcuta 22;Cúcuta;Planta;663;2026-07-12 10:47:00;24.4
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L84177;2023-11-12;2026-10-27;Planta Bogotá 2;Bogotá;Planta;909;2026-05-13 11:29:00;-19.2
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1677;2026-03-11 10:15:00;-19.2
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2889;2026-04-13 16:43:00;17.9
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L24996;2024-10-17;2027-10-02;CEDI Medellín 16;Medellín;Centro de distribución;4107;2026-06-18 03:30:00;6.8
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;3015;2026-07-26 22:51:00;9.0
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L90676;2025-04-11;2028-03-26;CEDI Bogotá 13;Bogotá;Centro de distribución;1464;2026-04-18 02:06:00;-24.5
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L80702;2023-11-18;2025-11-07;Planta Pereira 7;Pereira;Planta;4265;2026-07-14 00:18:00;19.7
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L96079;2026-04-17;2027-10-09;CEDI Cartagena 12;Cartagena;Centro de distribución;3441;2026-05-28 23:41:00;-4.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L93066;2024-02-25;2027-02-09;Planta Ibagué 14;Ibagué;Planta;4740;2026-05-02 20:41:00;-17.2
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L68138;2024-01-01;2024-12-26;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2491;2026-06-29 04:57:00;5.8
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L47752;2026-01-17;2029-01-01;Planta Medellín 25;Medellín;Planta;387;2026-03-13 11:18:00;3.7
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L16764;2024-09-23;2026-09-13;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1436;2026-07-31 21:50:00;-24.3
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L59968;2025-10-02;2027-03-26;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1036;2026-05-27 08:23:00;-17.0
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L20350;2025-09-25;2027-03-19;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3054;2026-05-29 17:10:00;25.2
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L52906;2024-10-10;2027-09-25;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2623;2026-03-15 00:47:00;5.3
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L13783;2024-12-06;2026-05-30;Planta Medellín 25;Medellín;Planta;4699;2026-07-24 04:51:00;6.6
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L68991;2025-01-15;2026-07-09;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3923;2026-02-14 04:43:00;4.7
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L93606;2026-05-05;2027-04-30;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2927;2026-02-27 10:03:00;4.7
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L51224;2025-01-01;2026-12-22;Planta Pereira 7;Pereira;Planta;184;2026-02-25 17:54:00;20.0
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L91205;2025-06-05;2026-11-27;Planta Pereira 7;Pereira;Planta;4017;2026-04-26 19:38:00;18.8
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3503;2026-05-09 12:23:00;14.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Unidad de Salud Medellín 18;Medellín;Unidad de salud;717;2026-03-31 23:56:00;-19.1
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L47752;2026-01-17;2029-01-01;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3472;2026-05-21 04:53:00;-20.4
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;CEDI Ibagué 17;Ibagué;Centro de distribución;2747;2026-02-20 18:48:00;-22.7
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L52081;2024-03-05;2025-08-27;Planta Ibagué 14;Ibagué;Planta;1432;2026-06-26 14:45:00;-18.1
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L71385;2024-01-05;2025-06-28;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4537;2026-06-09 01:52:00;24.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L58843;2024-04-26;2025-04-21;Planta Pereira 8;Pereira;Planta;219;2026-02-04 04:16:00;4.2
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Planta Cúcuta 21;Cúcuta;Planta;2356;2026-05-21 05:31:00;30.5
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L30392;2024-06-21;2025-06-16;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4906;2026-05-07 18:30:00;6.5
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;Planta Bucaramanga 23;Bucaramanga;Planta;979;2026-05-10 16:46:00;-18.2
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L53025;2025-02-24;2026-02-19;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2618;2026-06-02 22:08:00;17.2
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L69878;2025-04-13;2026-10-05;Planta Bogotá 2;Bogotá;Planta;2374;2026-04-19 16:40:00;-15.6
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L19961;2024-12-13;2025-12-08;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2642;2026-04-25 21:51:00;-21.4
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L72277;2023-12-31;2026-12-15;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4751;2026-05-05 04:00:00;-24.3
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L23022;2025-08-25;2027-08-15;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1335;2026-03-02 06:09:00;21.0
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;Planta Ibagué 14;Ibagué;Planta;3772;2026-02-23 03:52:00;-25.1
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L12875;2025-10-22;2027-10-12;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3620;2026-07-06 16:48:00;23.7
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Planta Pereira 8;Pereira;Planta;1054;2026-07-31 04:44:00;2.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L35144;2025-12-12;2028-11-26;Planta Ibagué 14;Ibagué;Planta;915;2026-02-23 00:49:00;-20.4
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L56025;2026-06-12;2029-05-27;CEDI Medellín 16;Medellín;Centro de distribución;974;2026-04-09 01:04:00;2.3
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Planta Bucaramanga 20;Bucaramanga;Planta;1682;2026-07-04 06:11:00;4.6
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L51224;2025-01-01;2026-12-22;CEDI Villavicencio 19;Villavicencio;Centro de distribución;2849;2026-05-05 05:54:00;-19.3
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;Planta Pereira 4;Pereira;Planta;4736;2026-02-07 16:13:00;23.6
+Vitalis Farmacéutica;Insulina NPH Vial;Vial;2;8;L51467;2025-01-19;2026-07-13;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;808;2026-03-30 16:54:00;5.8
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L94323;2023-10-06;2024-09-30;Planta Cúcuta 22;Cúcuta;Planta;879;2026-03-22 11:24:00;19.3
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L34727;2024-12-05;2027-11-20;Planta Pereira 4;Pereira;Planta;3816;2026-03-04 16:08:00;19.5
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2687;2026-06-10 03:24:00;4.0
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L68138;2024-01-01;2024-12-26;Planta Pereira 8;Pereira;Planta;4537;2026-05-19 09:54:00;5.6
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L55890;2025-08-25;2026-08-20;Planta Cúcuta 22;Cúcuta;Planta;3010;2026-03-21 00:43:00;18.7
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L86019;2025-05-24;2028-05-08;Planta Pereira 4;Pereira;Planta;1174;2026-05-16 12:44:00;19.7
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L99687;2024-04-07;2025-04-02;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2979;2026-03-26 10:12:00;7.0
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L27038;2024-12-29;2026-06-22;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4088;2026-04-16 22:49:00;4.8
+Laboratorios Andina S.A.;Toxina Botulínica Tableta;Tableta;15;25;L49893;2026-05-08;2027-05-03;CEDI Cartagena 12;Cartagena;Centro de distribución;3897;2026-07-24 19:25:00;8.0
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L39949;2025-11-28;2027-11-18;Planta Pereira 4;Pereira;Planta;1000;2026-04-09 15:31:00;12.6
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;CEDI Medellín 16;Medellín;Centro de distribución;219;2026-03-21 12:38:00;5.0
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L72277;2023-12-31;2026-12-15;Planta Medellín 25;Medellín;Planta;626;2026-07-23 16:49:00;4.9
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L89570;2026-01-25;2029-01-09;CEDI Medellín 16;Medellín;Centro de distribución;4135;2026-04-11 17:21:00;1.0
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L32838;2025-01-28;2026-01-23;Planta Pereira 4;Pereira;Planta;3142;2026-05-30 10:54:00;24.6
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L85470;2025-09-10;2028-08-25;CEDI Medellín 16;Medellín;Centro de distribución;3528;2026-03-10 09:45:00;5.1
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L50846;2025-05-29;2026-05-24;Planta Cúcuta 22;Cúcuta;Planta;4536;2026-07-29 17:36:00;19.9
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;CEDI Bogotá 13;Bogotá;Centro de distribución;2157;2026-06-10 18:24:00;-19.3
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Planta Bogotá 2;Bogotá;Planta;230;2026-07-05 01:08:00;-17.1
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L93130;2025-01-25;2028-01-10;Planta Medellín 25;Medellín;Planta;2795;2026-05-12 03:27:00;3.6
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L14278;2024-11-20;2026-11-10;Planta Pereira 8;Pereira;Planta;1922;2026-07-19 09:37:00;3.1
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1390;2026-02-09 17:20:00;15.8
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L86858;2024-10-19;2026-04-12;CEDI Medellín 9;Medellín;Centro de distribución;167;2026-08-01 15:37:00;-25.3
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L28894;2025-11-20;2027-05-14;CEDI Villavicencio 19;Villavicencio;Centro de distribución;800;2026-06-09 03:44:00;-18.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L17355;2025-03-26;2027-03-16;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2453;2026-05-08 13:12:00;-19.0
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L48829;2024-11-11;2026-11-01;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2172;2026-02-16 09:36:00;18.2
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L98184;2025-04-30;2026-10-22;Planta Bucaramanga 23;Bucaramanga;Planta;4736;2026-02-28 18:21:00;-22.1
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L96646;2023-09-25;2025-03-18;Planta Pereira 7;Pereira;Planta;2845;2026-02-23 20:52:00;18.9
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L34727;2024-12-05;2027-11-20;Planta Pereira 7;Pereira;Planta;3394;2026-05-17 08:39:00;20.7
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;Planta Cúcuta 21;Cúcuta;Planta;4228;2026-03-23 18:31:00;18.5
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L97207;2025-12-17;2026-12-12;CEDI Medellín 9;Medellín;Centro de distribución;4364;2026-07-11 13:59:00;-19.0
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L84177;2023-11-12;2026-10-27;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;1210;2026-04-06 04:47:00;5.5
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Unidad de Salud Pereira 3;Pereira;Unidad de salud;1667;2026-05-20 08:52:00;2.7
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L48974;2025-12-29;2027-12-19;CEDI Bogotá 13;Bogotá;Centro de distribución;1953;2026-03-05 04:12:00;-23.8
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L19120;2024-05-20;2025-05-15;Unidad de Salud Medellín 18;Medellín;Unidad de salud;3572;2026-05-23 20:57:00;-25.7
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L75597;2026-05-11;2029-04-25;CEDI Medellín 9;Medellín;Centro de distribución;4511;2026-03-21 20:54:00;-23.9
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2571;2026-07-08 09:55:00;3.7
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L97012;2025-06-20;2026-06-15;CEDI Bogotá 13;Bogotá;Centro de distribución;1151;2026-04-05 03:36:00;-16.4
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L81376;2024-11-06;2026-04-30;CEDI Medellín 16;Medellín;Centro de distribución;739;2026-04-05 19:07:00;6.1
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L86619;2025-09-22;2027-09-12;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1932;2026-05-23 06:09:00;1.8
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;CEDI Medellín 16;Medellín;Centro de distribución;4370;2026-05-10 22:07:00;3.7
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L51224;2025-01-01;2026-12-22;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2973;2026-06-05 22:23:00;21.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L82309;2025-12-26;2026-12-21;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;447;2026-07-30 21:15:00;3.2
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L12875;2025-10-22;2027-10-12;Planta Cúcuta 22;Cúcuta;Planta;999;2026-06-20 07:54:00;17.9
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L50319;2025-03-17;2028-03-01;Unidad de Salud Pereira 10;Pereira;Unidad de salud;739;2026-04-05 09:13:00;22.6
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L59968;2025-10-02;2027-03-26;Planta Medellín 25;Medellín;Planta;3328;2026-02-12 08:55:00;3.3
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L62184;2025-02-19;2026-08-13;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3460;2026-03-01 05:44:00;16.3
+Nova Pharma Colombia;Vacuna Fiebre Amarilla Tableta;Tableta;2;8;L95175;2024-01-15;2026-01-04;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;224;2026-02-17 20:41:00;2.9
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L91183;2024-01-18;2027-01-02;CEDI Bogotá 13;Bogotá;Centro de distribución;1639;2026-07-14 09:20:00;-20.4
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L38760;2025-02-12;2028-01-28;CEDI Medellín 9;Medellín;Centro de distribución;1421;2026-07-29 18:52:00;-22.4
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L91381;2024-12-29;2026-06-22;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3223;2026-05-11 18:14:00;-26.2
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L29887;2024-06-04;2026-05-25;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3788;2026-03-26 08:44:00;5.8
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L88385;2023-10-24;2026-10-08;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;729;2026-05-09 05:36:00;16.8
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L39949;2025-11-28;2027-11-18;Planta Cúcuta 22;Cúcuta;Planta;4048;2026-03-06 07:45:00;18.4
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L32962;2026-03-24;2029-03-08;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4048;2026-05-12 04:27:00;23.9
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1551;2026-05-22 05:26:00;5.3
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L48974;2025-12-29;2027-12-19;Planta Bucaramanga 20;Bucaramanga;Planta;3694;2026-04-08 11:37:00;-0.0
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;Planta Cúcuta 22;Cúcuta;Planta;1738;2026-05-13 22:27:00;21.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L56025;2026-06-12;2029-05-27;Planta Bogotá 2;Bogotá;Planta;2726;2026-04-05 15:58:00;-21.1
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L31299;2024-07-31;2027-07-16;CEDI Cartagena 1;Cartagena;Centro de distribución;2077;2026-06-13 19:24:00;-22.3
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1469;2026-04-11 05:32:00;-20.6
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L96356;2024-01-24;2026-01-13;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4345;2026-05-25 04:16:00;14.8
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2953;2026-05-25 09:57:00;7.6
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L40005;2023-09-15;2025-09-04;CEDI Ibagué 17;Ibagué;Centro de distribución;2564;2026-05-26 05:20:00;-17.7
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L94323;2023-10-06;2024-09-30;Planta Bogotá 2;Bogotá;Planta;1547;2026-03-14 01:14:00;-23.3
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L97207;2025-12-17;2026-12-12;Planta Ibagué 14;Ibagué;Planta;950;2026-06-10 01:28:00;-20.8
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L30392;2024-06-21;2025-06-16;Planta Pereira 4;Pereira;Planta;1212;2026-03-07 11:05:00;16.4
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L52081;2024-03-05;2025-08-27;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4797;2026-03-30 18:00:00;-19.5
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L52753;2025-11-05;2027-10-26;Planta Pereira 8;Pereira;Planta;4080;2026-07-27 03:56:00;3.3
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L60205;2024-06-11;2025-12-03;CEDI Bogotá 13;Bogotá;Centro de distribución;3060;2026-07-05 03:53:00;-23.2
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2206;2026-07-06 21:00:00;2.6
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L24996;2024-10-17;2027-10-02;CEDI Villavicencio 11;Villavicencio;Centro de distribución;4662;2026-03-09 06:55:00;15.9
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;579;2026-06-24 19:24:00;1.8
+Laboratorios Andina S.A.;Toxina Botulínica Tableta;Tableta;15;25;L49893;2026-05-08;2027-05-03;Unidad de Salud Pereira 3;Pereira;Unidad de salud;168;2026-03-29 05:24:00;6.0
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;Planta Pereira 4;Pereira;Planta;2445;2026-06-09 13:47:00;22.5
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L61116;2025-12-09;2027-06-02;CEDI Cartagena 12;Cartagena;Centro de distribución;787;2026-05-09 16:12:00;6.1
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L29340;2023-08-09;2025-07-29;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3461;2026-05-09 19:11:00;4.4
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L66450;2024-05-28;2025-11-19;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;1836;2026-07-19 21:45:00;2.9
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L49829;2025-03-13;2026-09-04;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3835;2026-05-26 02:58:00;22.4
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L71894;2024-12-15;2027-11-30;Planta Pereira 8;Pereira;Planta;4285;2026-05-24 09:36:00;1.0
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;CEDI Ibagué 17;Ibagué;Centro de distribución;3480;2026-05-20 03:29:00;-18.2
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L50319;2025-03-17;2028-03-01;CEDI Villavicencio 19;Villavicencio;Centro de distribución;669;2026-06-12 00:07:00;-17.7
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L91205;2025-06-05;2026-11-27;Planta Bogotá 2;Bogotá;Planta;682;2026-05-21 22:19:00;-21.2
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Planta Bucaramanga 20;Bucaramanga;Planta;2171;2026-05-02 05:13:00;3.9
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;Planta Ibagué 14;Ibagué;Planta;4377;2026-02-08 00:25:00;-24.8
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L95841;2024-02-22;2027-02-06;Planta Cúcuta 22;Cúcuta;Planta;4930;2026-06-08 09:39:00;23.5
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L93283;2026-03-11;2028-02-29;Unidad de Salud Pereira 10;Pereira;Unidad de salud;717;2026-03-08 04:00:00;17.9
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L33834;2026-04-28;2027-10-20;CEDI Cartagena 1;Cartagena;Centro de distribución;1714;2026-06-07 20:09:00;-18.7
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2465;2026-06-02 04:30:00;3.4
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L68138;2024-01-01;2024-12-26;CEDI Medellín 16;Medellín;Centro de distribución;3862;2026-02-09 14:37:00;2.8
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L98452;2024-11-24;2027-11-09;Planta Bogotá 2;Bogotá;Planta;2734;2026-02-06 03:40:00;-16.7
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4740;2026-07-06 23:35:00;6.6
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L79531;2024-10-17;2027-10-02;Planta Pereira 8;Pereira;Planta;497;2026-06-19 00:27:00;5.6
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L16629;2025-06-17;2026-12-09;CEDI Medellín 16;Medellín;Centro de distribución;957;2026-06-10 19:41:00;10.7
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L82848;2023-08-24;2025-02-14;CEDI Medellín 16;Medellín;Centro de distribución;2816;2026-05-27 07:32:00;4.5
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L97207;2025-12-17;2026-12-12;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2403;2026-05-14 13:53:00;24.9
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L85748;2026-06-08;2027-11-30;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1697;2026-04-17 22:47:00;-24.2
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L41266;2024-04-18;2027-04-03;Planta Bucaramanga 20;Bucaramanga;Planta;4031;2026-03-01 13:31:00;3.0
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;CEDI Cartagena 12;Cartagena;Centro de distribución;2136;2026-05-06 21:10:00;4.1
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L33405;2025-01-28;2026-01-23;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3527;2026-03-05 19:14:00;15.4
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L66450;2024-05-28;2025-11-19;CEDI Cartagena 12;Cartagena;Centro de distribución;382;2026-06-26 08:57:00;3.5
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L77889;2026-03-12;2027-03-07;Planta Bucaramanga 23;Bucaramanga;Planta;413;2026-05-27 14:53:00;-16.0
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L23970;2025-12-21;2027-06-14;Unidad de Salud Medellín 18;Medellín;Unidad de salud;343;2026-06-13 03:10:00;-17.6
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L82199;2023-09-01;2026-08-16;Planta Bucaramanga 23;Bucaramanga;Planta;3616;2026-06-13 15:46:00;-17.3
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;Planta Pereira 4;Pereira;Planta;1653;2026-05-27 13:49:00;21.9
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L66450;2024-05-28;2025-11-19;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4137;2026-03-19 02:17:00;19.5
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L86858;2024-10-19;2026-04-12;Planta Pereira 8;Pereira;Planta;1130;2026-05-24 13:58:00;4.3
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L12875;2025-10-22;2027-10-12;CEDI Cartagena 1;Cartagena;Centro de distribución;3625;2026-03-13 00:45:00;-15.6
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L85470;2025-09-10;2028-08-25;Planta Ibagué 14;Ibagué;Planta;503;2026-05-15 01:42:00;-16.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;Planta Cúcuta 22;Cúcuta;Planta;4535;2026-04-22 23:47:00;17.7
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L54236;2025-09-18;2027-09-08;Planta Bucaramanga 23;Bucaramanga;Planta;3309;2026-05-29 20:13:00;-15.8
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L62640;2025-12-24;2026-12-19;Planta Bucaramanga 23;Bucaramanga;Planta;2828;2026-07-20 12:49:00;-17.6
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L71069;2025-12-02;2026-11-27;CEDI Ibagué 17;Ibagué;Centro de distribución;4430;2026-04-17 06:05:00;-20.4
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L83920;2024-10-23;2027-10-08;CEDI Cartagena 1;Cartagena;Centro de distribución;228;2026-06-22 18:16:00;-21.8
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L61807;2023-11-24;2024-11-18;Planta Pereira 4;Pereira;Planta;491;2026-05-10 08:40:00;18.9
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;2440;2026-06-30 23:00:00;6.2
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;CEDI Cartagena 12;Cartagena;Centro de distribución;2451;2026-04-17 21:50:00;7.1
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L75771;2025-02-12;2026-08-06;CEDI Ibagué 17;Ibagué;Centro de distribución;2028;2026-03-02 10:33:00;-18.2
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L92544;2024-09-05;2027-08-21;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;3487;2026-05-20 02:05:00;16.8
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3025;2026-07-27 16:25:00;5.6
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L40005;2023-09-15;2025-09-04;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4086;2026-07-16 13:28:00;-16.8
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L16629;2025-06-17;2026-12-09;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1182;2026-06-13 04:31:00;-19.0
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Planta Bucaramanga 23;Bucaramanga;Planta;1741;2026-05-31 15:02:00;-16.2
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L45614;2025-06-21;2027-06-11;Planta Bucaramanga 20;Bucaramanga;Planta;3347;2026-03-04 03:23:00;4.1
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L14373;2025-08-20;2027-02-11;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3067;2026-04-22 09:31:00;14.2
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L86858;2024-10-19;2026-04-12;Planta Bogotá 2;Bogotá;Planta;2499;2026-04-17 06:11:00;-16.8
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L93611;2025-01-05;2027-12-21;Unidad de Salud Pereira 3;Pereira;Unidad de salud;366;2026-05-21 15:36:00;3.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L75771;2025-02-12;2026-08-06;CEDI Medellín 16;Medellín;Centro de distribución;4961;2026-03-09 04:32:00;6.6
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L43065;2024-01-18;2027-01-02;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;2664;2026-02-26 19:42:00;5.4
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L17355;2025-03-26;2027-03-16;Unidad de Salud Medellín 18;Medellín;Unidad de salud;375;2026-07-25 14:47:00;-23.5
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L46930;2024-10-08;2026-09-28;CEDI Villavicencio 19;Villavicencio;Centro de distribución;2530;2026-06-27 20:07:00;-19.8
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4274;2026-03-24 15:32:00;-17.2
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L73372;2026-03-13;2029-02-25;CEDI Cartagena 1;Cartagena;Centro de distribución;2252;2026-03-28 07:53:00;-16.8
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L31299;2024-07-31;2027-07-16;CEDI Medellín 16;Medellín;Centro de distribución;190;2026-05-02 13:11:00;5.6
+BioSalud Laboratorios;Heparina Sódica Jarabe;Jarabe;-25;-15;L71433;2025-04-17;2028-04-01;Unidad de Salud Pereira 3;Pereira;Unidad de salud;939;2026-03-01 17:10:00;2.8
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3336;2026-07-27 05:03:00;14.6
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L76698;2025-02-13;2028-01-29;CEDI Bogotá 13;Bogotá;Centro de distribución;808;2026-04-26 04:26:00;-16.8
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L20561;2024-05-13;2025-11-04;Planta Bogotá 2;Bogotá;Planta;1659;2026-04-06 19:37:00;-22.6
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;CEDI Medellín 9;Medellín;Centro de distribución;496;2026-04-26 14:35:00;-21.0
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L78494;2025-09-21;2028-09-05;CEDI Cartagena 1;Cartagena;Centro de distribución;2204;2026-06-25 18:43:00;-23.2
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L71069;2025-12-02;2026-11-27;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4655;2026-05-19 14:05:00;23.5
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L94246;2025-12-28;2027-06-21;CEDI Cartagena 12;Cartagena;Centro de distribución;4427;2026-03-19 07:34:00;9.1
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;CEDI Cartagena 1;Cartagena;Centro de distribución;3806;2026-07-12 09:41:00;-16.8
+Vitalis Farmacéutica;Filgrastim Ampolla;Ampolla;15;25;L45818;2025-04-27;2027-04-17;CEDI Medellín 9;Medellín;Centro de distribución;4897;2026-04-09 21:24:00;-14.0
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L70552;2025-11-27;2026-11-22;Planta Bogotá 2;Bogotá;Planta;1322;2026-06-20 18:04:00;-22.3
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Planta Ibagué 14;Ibagué;Planta;1727;2026-07-10 16:51:00;-21.3
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L88385;2023-10-24;2026-10-08;Planta Medellín 25;Medellín;Planta;3708;2026-04-14 07:42:00;7.4
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L59808;2025-05-13;2028-04-27;CEDI Cartagena 1;Cartagena;Centro de distribución;1095;2026-07-19 00:38:00;-19.0
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L62184;2025-02-19;2026-08-13;Unidad de Salud Medellín 18;Medellín;Unidad de salud;4005;2026-05-15 17:05:00;-16.7
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15778;2023-08-11;2025-07-31;Planta Cúcuta 22;Cúcuta;Planta;3646;2026-07-26 03:22:00;24.3
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L26199;2026-02-20;2028-02-10;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;69;2026-03-07 14:23:00;-15.8
+Suramed Laboratorios;Adalimumab Suspensión inyectable;Suspensión inyectable;15;25;L96951;2024-03-03;2025-08-25;Planta Medellín 25;Medellín;Planta;2303;2026-07-28 22:22:00;4.1
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L85243;2025-03-08;2028-02-21;Planta Pereira 8;Pereira;Planta;4045;2026-05-07 01:17:00;5.6
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;Planta Pereira 7;Pereira;Planta;3244;2026-03-04 08:36:00;19.0
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4818;2026-03-08 23:04:00;4.1
+Nova Pharma Colombia;Rituximab Ampolla;Ampolla;15;25;L63955;2026-05-14;2028-05-03;Planta Pereira 7;Pereira;Planta;189;2026-07-31 21:34:00;21.7
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L91183;2024-01-18;2027-01-02;Planta Ibagué 14;Ibagué;Planta;424;2026-04-27 13:54:00;-15.7
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L12875;2025-10-22;2027-10-12;CEDI Ibagué 17;Ibagué;Centro de distribución;356;2026-04-02 01:17:00;-15.7
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L98452;2024-11-24;2027-11-09;Planta Pereira 7;Pereira;Planta;2741;2026-02-24 18:51:00;16.0
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Planta Pereira 7;Pereira;Planta;1347;2026-04-29 09:04:00;20.1
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L93066;2024-02-25;2027-02-09;CEDI Medellín 9;Medellín;Centro de distribución;2024;2026-03-03 15:15:00;-14.4
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Unidad de Salud Pereira 3;Pereira;Unidad de salud;4914;2026-07-12 14:48:00;2.4
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L53404;2023-09-29;2024-09-23;Planta Bogotá 2;Bogotá;Planta;3091;2026-04-25 22:04:00;-18.5
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L39219;2023-09-21;2025-03-14;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3537;2026-02-20 03:43:00;14.2
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L40775;2024-05-07;2027-04-22;Planta Pereira 4;Pereira;Planta;3367;2026-04-04 19:50:00;20.1
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L56955;2024-12-03;2026-11-23;Planta Bucaramanga 20;Bucaramanga;Planta;829;2026-05-01 20:43:00;6.6
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L23970;2025-12-21;2027-06-14;CEDI Cartagena 1;Cartagena;Centro de distribución;4875;2026-02-21 18:50:00;-15.4
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L86858;2024-10-19;2026-04-12;CEDI Medellín 16;Medellín;Centro de distribución;3642;2026-03-23 07:08:00;5.5
+Laboratorios Nevado;Infliximab Suspensión inyectable;Suspensión inyectable;15;25;L87812;2024-03-14;2027-02-27;CEDI Ibagué 17;Ibagué;Centro de distribución;2930;2026-04-24 18:56:00;-20.7
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3021;2026-02-06 16:37:00;20.5
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;Planta Ibagué 14;Ibagué;Planta;2816;2026-03-26 06:40:00;-15.1
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L97207;2025-12-17;2026-12-12;Planta Bucaramanga 20;Bucaramanga;Planta;2712;2026-07-02 18:21:00;5.5
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L39949;2025-11-28;2027-11-18;Planta Bogotá 2;Bogotá;Planta;4062;2026-04-01 00:40:00;-23.6
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L44687;2024-01-17;2025-07-10;CEDI Medellín 16;Medellín;Centro de distribución;2715;2026-05-11 06:25:00;4.6
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L66531;2023-12-25;2025-12-14;CEDI Cartagena 12;Cartagena;Centro de distribución;245;2026-06-26 03:09:00;2.8
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15778;2023-08-11;2025-07-31;Planta Pereira 7;Pereira;Planta;1620;2026-04-17 05:14:00;24.5
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L14278;2024-11-20;2026-11-10;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1605;2026-02-09 05:53:00;-23.6
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;CEDI Bogotá 13;Bogotá;Centro de distribución;909;2026-05-01 06:19:00;-20.8
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L79827;2025-12-28;2027-12-18;CEDI Ibagué 17;Ibagué;Centro de distribución;3553;2026-02-20 03:09:00;-17.3
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L75771;2025-02-12;2026-08-06;Planta Bucaramanga 23;Bucaramanga;Planta;3065;2026-04-26 19:27:00;-16.0
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L33834;2026-04-28;2027-10-20;Unidad de Salud Medellín 18;Medellín;Unidad de salud;2409;2026-03-14 10:15:00;-23.6
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L69460;2025-07-02;2026-12-24;Planta Pereira 7;Pereira;Planta;666;2026-06-04 21:39:00;15.7
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L48680;2025-06-03;2028-05-18;CEDI Medellín 16;Medellín;Centro de distribución;4250;2026-06-02 05:20:00;6.4
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L45665;2026-01-27;2029-01-11;CEDI Medellín 16;Medellín;Centro de distribución;2198;2026-07-02 12:40:00;1.8
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L15965;2023-11-23;2025-11-12;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3481;2026-05-11 18:10:00;24.0
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L38760;2025-02-12;2028-01-28;Planta Medellín 25;Medellín;Planta;688;2026-04-20 14:33:00;4.4
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L49251;2023-10-02;2024-09-26;Planta Ibagué 14;Ibagué;Planta;3695;2026-06-03 13:26:00;-21.3
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L46930;2024-10-08;2026-09-28;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3618;2026-04-04 08:41:00;-23.0
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L66349;2024-03-18;2026-03-08;CEDI Ibagué 17;Ibagué;Centro de distribución;4478;2026-07-18 02:50:00;-23.1
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L41890;2025-04-22;2027-04-12;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1610;2026-07-26 10:16:00;19.0
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L31632;2026-03-18;2027-09-09;Planta Medellín 25;Medellín;Planta;4449;2026-04-11 00:49:00;4.8
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L58629;2025-12-09;2027-06-02;CEDI Bogotá 13;Bogotá;Centro de distribución;4750;2026-07-21 00:30:00;-17.0
+Laboratorios Cruz Verde;Toxina Botulínica Jarabe;Jarabe;15;25;L25292;2024-05-16;2025-05-11;Planta Pereira 8;Pereira;Planta;1858;2026-03-29 15:14:00;6.0
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L21188;2024-02-10;2027-01-25;CEDI Villavicencio 11;Villavicencio;Centro de distribución;703;2026-04-25 06:27:00;23.3
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L48652;2026-02-18;2029-02-02;Unidad de Salud Medellín 18;Medellín;Unidad de salud;246;2026-05-10 04:36:00;-16.8
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L38255;2026-06-18;2027-06-13;Planta Cúcuta 22;Cúcuta;Planta;2905;2026-05-01 07:26:00;20.0
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L25129;2024-03-10;2025-09-01;CEDI Villavicencio 19;Villavicencio;Centro de distribución;263;2026-03-11 04:21:00;-18.4
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L98452;2024-11-24;2027-11-09;CEDI Bogotá 13;Bogotá;Centro de distribución;1672;2026-05-15 02:34:00;-21.2
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L24996;2024-10-17;2027-10-02;Planta Cúcuta 21;Cúcuta;Planta;2495;2026-02-27 05:06:00;20.8
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L69460;2025-07-02;2026-12-24;CEDI Cartagena 1;Cartagena;Centro de distribución;1529;2026-03-26 02:58:00;-16.0
+BioSalud Laboratorios;Vacuna Polio Inactivada Jeringa prellenada;Jeringa prellenada;2;8;L85574;2024-08-27;2026-08-17;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;470;2026-05-09 16:00:00;4.1
+Nova Pharma Colombia;Vacuna Triple Viral Tableta;Tableta;2;8;L41266;2024-04-18;2027-04-03;Planta Pereira 4;Pereira;Planta;1057;2026-06-21 13:30:00;22.1
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L42951;2024-11-18;2025-11-13;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;1684;2026-04-24 13:52:00;22.0
+FarmaCol de Colombia;Desmopresina Suspensión inyectable;Suspensión inyectable;15;25;L80592;2026-04-21;2028-04-10;CEDI Villavicencio 19;Villavicencio;Centro de distribución;1662;2026-06-12 22:43:00;-21.3
+Laboratorios Andina S.A.;Toxina Botulínica Tableta;Tableta;15;25;L49893;2026-05-08;2027-05-03;Planta Bucaramanga 20;Bucaramanga;Planta;2022;2026-06-18 10:58:00;5.4
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;746;2026-04-18 20:56:00;7.1
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L74251;2024-03-07;2027-02-20;Planta Ibagué 14;Ibagué;Planta;2040;2026-03-21 19:46:00;-21.0
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L29313;2023-09-23;2024-09-17;CEDI Bogotá 13;Bogotá;Centro de distribución;357;2026-04-06 05:17:00;-16.1
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L67199;2026-06-16;2027-06-11;Planta Bucaramanga 23;Bucaramanga;Planta;1779;2026-06-10 13:48:00;-18.0
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L77889;2026-03-12;2027-03-07;CEDI Ibagué 17;Ibagué;Centro de distribución;2670;2026-05-19 14:10:00;-22.5
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L66531;2023-12-25;2025-12-14;Planta Cúcuta 21;Cúcuta;Planta;3783;2026-05-12 10:47:00;24.1
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L78327;2026-04-22;2027-10-14;Planta Bucaramanga 23;Bucaramanga;Planta;1118;2026-04-28 21:47:00;-20.5
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L63545;2026-02-11;2029-01-26;Planta Bucaramanga 23;Bucaramanga;Planta;3585;2026-03-11 15:52:00;-23.2
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L62383;2024-12-15;2026-06-08;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2409;2026-03-07 17:47:00;-22.4
+BioSalud Laboratorios;Insulina NPH Ampolla;Ampolla;15;25;L33086;2026-07-07;2028-06-26;Planta Pereira 7;Pereira;Planta;282;2026-07-26 17:13:00;18.1
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L23970;2025-12-21;2027-06-14;CEDI Bogotá 13;Bogotá;Centro de distribución;2525;2026-05-28 01:38:00;-24.1
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;CEDI Cartagena 12;Cartagena;Centro de distribución;1954;2026-03-27 02:01:00;6.0
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L82848;2023-08-24;2025-02-14;Planta Cúcuta 22;Cúcuta;Planta;517;2026-04-01 03:51:00;23.8
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2643;2026-06-27 20:12:00;22.5
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L56955;2024-12-03;2026-11-23;Planta Pereira 4;Pereira;Planta;1903;2026-03-30 03:22:00;16.8
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L19602;2024-10-13;2026-10-03;CEDI Bogotá 13;Bogotá;Centro de distribución;1742;2026-06-01 07:04:00;-19.1
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L56357;2025-11-13;2027-05-07;Unidad de Salud Pereira 3;Pereira;Unidad de salud;1790;2026-05-20 09:49:00;7.0
+MedLife Pharma;Enoxaparina Jarabe;Jarabe;15;25;L79827;2025-12-28;2027-12-18;CEDI Medellín 9;Medellín;Centro de distribución;776;2026-07-07 10:40:00;-17.5
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L38760;2025-02-12;2028-01-28;CEDI Villavicencio 11;Villavicencio;Centro de distribución;1436;2026-07-16 22:20:00;25.3
+Genfar Latam;Vacuna Hepatitis B Tableta;Tableta;15;25;L49651;2026-07-22;2027-07-17;Planta Bucaramanga 20;Bucaramanga;Planta;4792;2026-05-29 12:32:00;5.0
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L19602;2024-10-13;2026-10-03;Planta Pereira 8;Pereira;Planta;173;2026-07-11 03:19:00;3.2
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L35144;2025-12-12;2028-11-26;Planta Bogotá 2;Bogotá;Planta;1126;2026-05-10 15:18:00;-23.4
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4899;2026-05-28 23:56:00;3.3
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;CEDI Ibagué 17;Ibagué;Centro de distribución;3398;2026-07-19 09:48:00;-23.7
+Laboratorios Cruz Verde;Vacuna COVID-19 Ampolla;Ampolla;2;8;L63545;2026-02-11;2029-01-26;Planta Pereira 7;Pereira;Planta;4418;2026-02-17 21:15:00;23.6
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;3623;2026-07-15 00:04:00;-17.6
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L94246;2025-12-28;2027-06-21;Planta Pereira 7;Pereira;Planta;1028;2026-02-27 05:37:00;21.4
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L49507;2024-10-09;2026-04-02;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3491;2026-06-03 09:10:00;5.6
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2337;2026-07-01 14:40:00;18.1
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L84963;2025-08-08;2027-07-29;CEDI Bogotá 13;Bogotá;Centro de distribución;3094;2026-03-18 15:28:00;-20.4
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L42411;2024-09-15;2025-09-10;CEDI Medellín 16;Medellín;Centro de distribución;162;2026-05-12 13:54:00;3.7
+Nova Pharma Colombia;Somatostatina Vial;Vial;2;8;L95215;2023-12-22;2024-12-16;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1439;2026-04-10 12:29:00;-22.6
+Vitalis Farmacéutica;Filgrastim Ampolla;Ampolla;15;25;L45818;2025-04-27;2027-04-17;Unidad de Salud Pereira 3;Pereira;Unidad de salud;2729;2026-03-10 22:30:00;10.4
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L50846;2025-05-29;2026-05-24;CEDI Bogotá 13;Bogotá;Centro de distribución;3406;2026-05-16 23:23:00;-21.7
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L67154;2023-08-07;2025-01-28;Planta Ibagué 14;Ibagué;Planta;318;2026-03-07 12:59:00;-20.3
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L50319;2025-03-17;2028-03-01;Planta Medellín 25;Medellín;Planta;2855;2026-06-14 22:31:00;5.4
+BioSalud Laboratorios;Desmopresina Tableta;Tableta;-25;-15;L61717;2023-09-01;2025-08-21;Planta Ibagué 14;Ibagué;Planta;2021;2026-04-07 15:02:00;-16.2
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L16658;2024-02-09;2027-01-24;Planta Bucaramanga 23;Bucaramanga;Planta;1211;2026-04-11 19:29:00;-16.6
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L58351;2024-07-12;2025-07-07;CEDI Cartagena 1;Cartagena;Centro de distribución;956;2026-02-27 20:45:00;-16.1
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L33834;2026-04-28;2027-10-20;Planta Ibagué 14;Ibagué;Planta;1358;2026-05-24 08:44:00;-20.6
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L71385;2024-01-05;2025-06-28;CEDI Villavicencio 19;Villavicencio;Centro de distribución;2522;2026-05-20 23:55:00;-23.7
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L33788;2026-01-12;2028-12-27;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;1716;2026-05-16 22:19:00;1.0
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L72277;2023-12-31;2026-12-15;Unidad de Salud Pereira 3;Pereira;Unidad de salud;3422;2026-06-18 13:41:00;3.5
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L54092;2023-10-01;2026-09-15;Planta Bucaramanga 23;Bucaramanga;Planta;1100;2026-03-26 15:11:00;-21.1
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L88222;2025-03-05;2026-02-28;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;1646;2026-02-19 23:11:00;-17.8
+Coldex Laboratorios;Vacuna DPT Suspensión inyectable;Suspensión inyectable;15;25;L68115;2026-01-30;2027-07-24;Unidad de Salud Bucaramanga 15;Bucaramanga;Unidad de salud;894;2026-07-16 05:05:00;3.4
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;CEDI Cartagena 1;Cartagena;Centro de distribución;4797;2026-04-05 15:31:00;-19.5
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;Planta Cúcuta 22;Cúcuta;Planta;4771;2026-02-14 03:13:00;18.7
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L32962;2026-03-24;2029-03-08;CEDI Medellín 16;Medellín;Centro de distribución;3876;2026-05-01 19:27:00;4.6
+Genfar Latam;Toxina Botulínica Jeringa prellenada;Jeringa prellenada;2;8;L63841;2023-11-01;2025-10-21;Planta Pereira 8;Pereira;Planta;2959;2026-07-24 12:24:00;7.1
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L62383;2024-12-15;2026-06-08;CEDI Cartagena 1;Cartagena;Centro de distribución;3743;2026-08-01 12:46:00;-21.4
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L62976;2026-06-22;2027-06-17;Planta Bucaramanga 23;Bucaramanga;Planta;2036;2026-05-09 14:39:00;-17.0
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;CEDI Cartagena 1;Cartagena;Centro de distribución;2950;2026-02-15 23:20:00;-19.0
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L56955;2024-12-03;2026-11-23;CEDI Medellín 16;Medellín;Centro de distribución;822;2026-05-13 09:38:00;2.1
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L65069;2025-10-09;2026-10-04;CEDI Medellín 16;Medellín;Centro de distribución;713;2026-04-22 21:35:00;7.8
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L67654;2024-01-09;2025-12-29;CEDI Medellín 16;Medellín;Centro de distribución;4429;2026-04-06 07:13:00;4.4
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L16658;2024-02-09;2027-01-24;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;2674;2026-05-13 08:14:00;-17.3
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Planta Cúcuta 22;Cúcuta;Planta;1112;2026-06-20 20:46:00;20.8
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L67733;2025-07-01;2026-12-23;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4920;2026-02-20 20:21:00;-20.6
+Nova Pharma Colombia;Vacuna Hepatitis B Ampolla;Ampolla;-25;-15;L71385;2024-01-05;2025-06-28;Planta Cúcuta 21;Cúcuta;Planta;4603;2026-05-26 07:14:00;17.0
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L66450;2024-05-28;2025-11-19;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;4851;2026-03-24 23:07:00;4.3
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L73156;2025-03-30;2027-03-20;CEDI Villavicencio 19;Villavicencio;Centro de distribución;13;2026-04-24 01:37:00;-18.6
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Planta Medellín 25;Medellín;Planta;2990;2026-07-27 04:33:00;6.3
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L98039;2025-04-09;2028-03-24;Unidad de Salud Medellín 18;Medellín;Unidad de salud;3773;2026-04-25 04:52:00;-14.6
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L62262;2025-12-02;2026-11-27;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;4927;2026-04-17 04:47:00;22.6
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L14852;2024-04-18;2026-04-08;Unidad de Salud Pereira 10;Pereira;Unidad de salud;4115;2026-07-30 03:17:00;25.6
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Ampolla;Ampolla;-25;-15;L49618;2023-09-01;2025-02-22;CEDI Medellín 16;Medellín;Centro de distribución;2387;2026-08-03 12:03:00;7.4
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;Planta Bucaramanga 23;Bucaramanga;Planta;430;2026-03-21 15:46:00;-19.6
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L98452;2024-11-24;2027-11-09;CEDI Villavicencio 11;Villavicencio;Centro de distribución;3460;2026-07-27 15:22:00;22.3
+Laboratorios Cruz Verde;Vacuna Rotavirus Vial;Vial;2;8;L41635;2025-11-13;2028-10-28;Planta Bucaramanga 23;Bucaramanga;Planta;4489;2026-05-15 03:08:00;-20.9
+Laboratorios Cruz Verde;Desmopresina Jarabe;Jarabe;2;8;L70332;2025-07-20;2027-07-10;Planta Bucaramanga 23;Bucaramanga;Planta;2490;2026-06-01 20:10:00;-19.4
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L52906;2024-10-10;2027-09-25;Planta Pereira 7;Pereira;Planta;1786;2026-03-26 23:41:00;15.8
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L54236;2025-09-18;2027-09-08;CEDI Bogotá 13;Bogotá;Centro de distribución;3498;2026-07-27 05:59:00;-24.9
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L15075;2026-03-24;2027-09-15;Planta Pereira 4;Pereira;Planta;4222;2026-07-20 10:37:00;18.3
+BioSalud Laboratorios;Etanercept Tableta;Tableta;15;25;L14278;2024-11-20;2026-11-10;Planta Bogotá 2;Bogotá;Planta;973;2026-04-06 12:31:00;-21.7
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L96356;2024-01-24;2026-01-13;Planta Medellín 25;Medellín;Planta;3798;2026-07-20 12:17:00;-0.4
+Laboratorios Cruz Verde;Vacuna Fiebre Amarilla Jeringa prellenada;Jeringa prellenada;2;8;L43092;2026-04-08;2027-04-03;CEDI Cartagena 1;Cartagena;Centro de distribución;4807;2026-06-30 18:30:00;-21.5
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L73372;2026-03-13;2029-02-25;CEDI Bogotá 13;Bogotá;Centro de distribución;3966;2026-07-19 22:27:00;-23.1
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L69087;2024-12-15;2027-11-30;CEDI Bogotá 13;Bogotá;Centro de distribución;161;2026-05-15 17:52:00;-18.7
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;Planta Medellín 25;Medellín;Planta;1699;2026-07-22 03:11:00;13.8
+Laboratorios Tequendama;Filgrastim Jeringa prellenada;Jeringa prellenada;2;8;L15482;2025-04-26;2027-04-16;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;4711;2026-03-28 20:10:00;15.1
+Laboratorios Nevado;Rituximab Suspensión inyectable;Suspensión inyectable;15;25;L49507;2024-10-09;2026-04-02;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2978;2026-06-23 05:27:00;25.2
+Laboratorios San Rafael;Vacuna COVID-19 Jarabe;Jarabe;15;25;L31299;2024-07-31;2027-07-16;CEDI Ibagué 17;Ibagué;Centro de distribución;2403;2026-07-22 17:28:00;-23.6
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L98815;2024-06-22;2025-06-17;Planta Bucaramanga 20;Bucaramanga;Planta;4409;2026-06-14 06:44:00;3.6
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L33834;2026-04-28;2027-10-20;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2455;2026-03-31 04:38:00;20.8
+Farmacéutica del Caribe;Vacuna Fiebre Amarilla Suspensión inyectable;Suspensión inyectable;2;8;L50319;2025-03-17;2028-03-01;CEDI Medellín 9;Medellín;Centro de distribución;3127;2026-07-20 05:25:00;-19.1
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L33819;2023-11-14;2025-11-03;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1669;2026-02-22 20:46:00;-21.9
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L14373;2025-08-20;2027-02-11;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4189;2026-07-08 05:26:00;-17.3
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L73156;2025-03-30;2027-03-20;CEDI Cartagena 1;Cartagena;Centro de distribución;4944;2026-04-08 02:17:00;-24.9
+Vitalis Farmacéutica;Trastuzumab Tableta;Tableta;15;25;L88193;2026-01-09;2027-12-30;CEDI Villavicencio 11;Villavicencio;Centro de distribución;728;2026-05-07 10:49:00;18.8
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L19508;2023-08-23;2026-08-07;Planta Pereira 4;Pereira;Planta;3089;2026-04-01 12:06:00;21.7
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L45018;2023-08-09;2025-07-29;CEDI Villavicencio 19;Villavicencio;Centro de distribución;4010;2026-02-28 16:22:00;-16.9
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L92544;2024-09-05;2027-08-21;Planta Bogotá 2;Bogotá;Planta;1398;2026-04-26 12:11:00;-20.8
+Farmacéutica del Caribe;Somatostatina Suspensión inyectable;Suspensión inyectable;2;8;L58629;2025-12-09;2027-06-02;CEDI Medellín 16;Medellín;Centro de distribución;4852;2026-03-08 08:00:00;6.8
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L33819;2023-11-14;2025-11-03;CEDI Bogotá 13;Bogotá;Centro de distribución;4649;2026-04-13 01:58:00;-16.3
+Laboratorios Andina S.A.;Vacuna DPT Tableta;Tableta;15;25;L91927;2024-09-12;2027-08-28;Planta Cúcuta 22;Cúcuta;Planta;4986;2026-05-22 22:29:00;18.3
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L79066;2025-04-26;2026-04-21;Unidad de Salud Pereira 10;Pereira;Unidad de salud;2259;2026-05-24 16:45:00;24.8
+Coldex Laboratorios;Infliximab Vial;Vial;-25;-15;L67954;2024-10-14;2027-09-29;Unidad de Salud Pereira 10;Pereira;Unidad de salud;3330;2026-04-25 02:40:00;16.5
+Laboratorios Tequendama;Insulina NPH Jarabe;Jarabe;2;8;L85470;2025-09-10;2028-08-25;CEDI Villavicencio 19;Villavicencio;Centro de distribución;470;2026-02-25 23:18:00;-19.5
+Genfar Latam;Filgrastim Suspensión inyectable;Suspensión inyectable;15;25;L27038;2024-12-29;2026-06-22;Planta Cúcuta 22;Cúcuta;Planta;4167;2026-03-10 15:31:00;21.6
+Vitalis Farmacéutica;Filgrastim Jarabe;Jarabe;-25;-15;L64377;2025-11-15;2027-11-05;CEDI Bogotá 13;Bogotá;Centro de distribución;113;2026-07-11 06:58:00;-18.2
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L56898;2024-10-07;2026-03-31;Planta Bucaramanga 20;Bucaramanga;Planta;3675;2026-03-19 21:59:00;7.4
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L26334;2025-04-10;2027-03-31;CEDI Cartagena 12;Cartagena;Centro de distribución;1092;2026-06-15 11:03:00;4.2
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L68991;2025-01-15;2026-07-09;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2046;2026-06-22 03:18:00;17.4
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L45018;2023-08-09;2025-07-29;Planta Cúcuta 21;Cúcuta;Planta;4223;2026-02-13 14:57:00;21.1
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L30006;2026-04-01;2027-03-27;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2444;2026-05-05 03:00:00;19.2
+Coldex Laboratorios;Enoxaparina Ampolla;Ampolla;2;8;L32838;2025-01-28;2026-01-23;CEDI Medellín 16;Medellín;Centro de distribución;1618;2026-02-25 16:32:00;7.1
+Laboratorios Andina S.A.;Enoxaparina Tableta;Tableta;15;25;L41285;2025-01-28;2028-01-13;Unidad de Salud Barranquilla 5;Barranquilla;Unidad de salud;2049;2026-04-02 15:25:00;18.3
+InmunoLab S.A.S.;Calcitonina Ampolla;Ampolla;-25;-15;L33788;2026-01-12;2028-12-27;Planta Pereira 4;Pereira;Planta;3592;2026-07-22 14:10:00;11.1
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L65933;2026-02-02;2027-07-27;Planta Pereira 7;Pereira;Planta;2333;2026-02-14 04:25:00;12.7
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;Planta Cúcuta 22;Cúcuta;Planta;2177;2026-03-06 13:31:00;21.4
+BioGenesis Pharma;Somatropina Ampolla;Ampolla;2;8;L71537;2025-01-27;2027-01-17;Planta Medellín 25;Medellín;Planta;3275;2026-06-12 23:59:00;7.4
+Vitalis Farmacéutica;Rituximab Jarabe;Jarabe;15;25;L97500;2025-05-14;2028-04-28;CEDI Cartagena 1;Cartagena;Centro de distribución;1033;2026-03-15 11:32:00;-24.3
+FarmaCol de Colombia;Vacuna Varicela Ampolla;Ampolla;15;25;L64008;2024-08-06;2026-01-28;Planta Ibagué 14;Ibagué;Planta;4891;2026-02-06 13:30:00;-22.1
+Laboratorios Andina S.A.;Vacuna Triple Viral Jeringa prellenada;Jeringa prellenada;15;25;L69510;2023-12-27;2025-06-19;Planta Bucaramanga 20;Bucaramanga;Planta;1249;2026-06-14 05:15:00;2.5
+BioSalud Laboratorios;Vacuna Fiebre Amarilla Jarabe;Jarabe;15;25;L56955;2024-12-03;2026-11-23;Planta Pereira 7;Pereira;Planta;3882;2026-08-03 03:44:00;22.6
+Laboratorios Nevado;Bevacizumab Jarabe;Jarabe;2;8;L43065;2024-01-18;2027-01-02;Planta Pereira 8;Pereira;Planta;986;2026-03-09 12:02:00;2.7
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L41890;2025-04-22;2027-04-12;Unidad de Salud Pereira 3;Pereira;Unidad de salud;417;2026-05-12 13:33:00;4.2
+Vitalis Farmacéutica;Vacuna Influenza Ampolla;Ampolla;2;8;L89822;2025-02-01;2026-01-27;Planta Bogotá 2;Bogotá;Planta;4176;2026-05-24 20:03:00;-22.6
+Laboratorios del Pacífico;Vacuna Neumococo Tableta;Tableta;15;25;L97404;2023-08-23;2026-08-07;Planta Bucaramanga 23;Bucaramanga;Planta;3424;2026-04-08 10:57:00;-25.9
+InmunoLab S.A.S.;Heparina Sódica Tableta;Tableta;15;25;L67711;2024-02-24;2027-02-08;Planta Pereira 7;Pereira;Planta;2337;2026-06-04 08:58:00;20.9
+Vitalis Farmacéutica;Enoxaparina Suspensión inyectable;Suspensión inyectable;15;25;L50846;2025-05-29;2026-05-24;CEDI Cartagena 12;Cartagena;Centro de distribución;2738;2026-04-22 03:06:00;6.6
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L72518;2023-08-16;2025-08-05;CEDI Villavicencio 11;Villavicencio;Centro de distribución;2953;2026-05-07 23:49:00;21.2
+FarmaCol de Colombia;Vacuna Hepatitis B Suspensión inyectable;Suspensión inyectable;2;8;L82102;2023-10-18;2026-10-02;Planta Pereira 7;Pereira;Planta;4786;2026-05-13 02:56:00;16.5
+Laboratorios San Rafael;Vacuna Papiloma Humano Tableta;Tableta;-25;-15;L43862;2025-07-01;2027-06-21;Planta Pereira 7;Pereira;Planta;3651;2026-03-01 02:34:00;20.6
+Coldex Laboratorios;Vacuna Meningococo Jarabe;Jarabe;2;8;L82544;2025-07-08;2028-06-22;Unidad de Salud Medellín 18;Medellín;Unidad de salud;1258;2026-02-15 04:12:00;-20.2
+BioGenesis Pharma;Eritropoyetina Jarabe;Jarabe;2;8;L86435;2024-05-23;2025-11-14;CEDI Cartagena 12;Cartagena;Centro de distribución;3673;2026-07-15 22:07:00;6.2
+Vitalis Farmacéutica;Bevacizumab Jeringa prellenada;Jeringa prellenada;-25;-15;L79066;2025-04-26;2026-04-21;CEDI Cartagena 1;Cartagena;Centro de distribución;1367;2026-07-07 08:44:00;-16.0
+FarmaCol de Colombia;Vacuna Polio Inactivada Jarabe;Jarabe;15;25;L53404;2023-09-29;2024-09-23;Planta Bucaramanga 23;Bucaramanga;Planta;1558;2026-05-16 15:43:00;-19.6
+Laboratorios del Pacífico;Vacuna Neumococo Vial;Vial;-25;-15;L39038;2023-10-31;2025-10-20;Planta Medellín 25;Medellín;Planta;4172;2026-05-13 17:49:00;4.7
+Laboratorios Nevado;Insulina NPH Suspensión inyectable;Suspensión inyectable;-25;-15;L91183;2024-01-18;2027-01-02;Unidad de Salud Santa Marta 6;Santa Marta;Unidad de salud;4684;2026-03-31 18:44:00;-23.6
+Laboratorios Nevado;Vacuna COVID-19 Suspensión inyectable;Suspensión inyectable;-25;-15;L75597;2026-05-11;2029-04-25;Unidad de Salud Pereira 10;Pereira;Unidad de salud;1804;2026-04-20 22:17:00;19.5
+Coldex Laboratorios;Vacuna Triple Viral Suspensión inyectable;Suspensión inyectable;-25;-15;L89905;2024-02-23;2025-08-16;Unidad de Salud Pereira 10;Pereira;Unidad de salud;320;2026-07-17 04:56:00;16.7
+Laboratorios Tequendama;Adalimumab Jeringa prellenada;Jeringa prellenada;-25;-15;L15075;2026-03-24;2027-09-15;Planta Cúcuta 21;Cúcuta;Planta;2039;2026-03-29 17:07:00;14.6
+Farmacéutica Antioquia;Vacuna Varicela Jarabe;Jarabe;-25;-15;L91381;2024-12-29;2026-06-22;CEDI Villavicencio 11;Villavicencio;Centro de distribución;681;2026-08-03 17:16:00;21.9
+BioGenesis Pharma;Somatropina Ampolla;Ampolla;2;8;L71537;2025-01-27;2027-01-17;Planta Bogotá 2;Bogotá;Planta;85;2026-05-06 07:46:00;-16.3
+Genfar Latam;Infliximab Tableta;Tableta;-25;-15;L25906;2026-02-23;2027-08-17;Unidad de Salud Santa Marta 24;Santa Marta;Unidad de salud;3129;2026-07-21 08:55:00;6.1
+BioSalud Laboratorios;Vacuna Meningococo Tableta;Tableta;2;8;L62640;2025-12-24;2026-12-19;Planta Pereira 8;Pereira;Planta;2656;2026-04-13 06:37:00;6.9
+Laboratorios Andina S.A.;Vacuna Varicela Jeringa prellenada;Jeringa prellenada;2;8;L89730;2024-06-02;2025-05-28;Planta Pereira 8;Pereira;Planta;3554;2026-05-09 04:57:00;4.9
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;Planta Pereira 7;Pereira;Planta;4666;2026-06-09 23:11:00;20.0
+Coldex Laboratorios;Vacuna Polio Inactivada Tableta;Tableta;2;8;L93307;2026-03-02;2027-08-24;CEDI Bogotá 13;Bogotá;Centro de distribución;4979;2026-03-24 02:09:00;-25.0

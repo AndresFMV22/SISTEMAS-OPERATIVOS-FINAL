@@ -1,0 +1,28 @@
+# Credenciales y parámetros de conexión
+*.env
+.env*
+.pgpass
+*.pgpass
+secrets/
+docker-compose.override.yml
+
+# Artefactos de IDE de base de datos
+.idea/
+.vscode/
+*.iml
+*.dbeaver*
+.datagrip/
+
+# Volcados y respaldos pesados
+*.dump
+*.backup
+*.bak
+*.tar.gz
+
+# Temporales de sistema operativo y ofimática
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+*.tmp
+*.log
