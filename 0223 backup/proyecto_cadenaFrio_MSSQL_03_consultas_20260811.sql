@@ -4,10 +4,13 @@
 -- Integrantes del equipo:
 --   Andrés Felipe Martínez - ID SIGAA 000549446 - PostgreSQL 18 (nube: MS Azure)
 --   José Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker local)
---
 
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
--- Motor de Base de datos: PostgreSQL 18.x
+-- Motor de Base de datos: Microsoft SQL Server 2025
+
+-- Ejecutar conectado como cadena_frio_login sobre la base cadena_frio_db.
+select suser_name() as usuario_de_conexion, db_name() as base_de_datos_actual;
+go
 
 -- ***********************************
 -- Etapa 4 - Solución de consultas
@@ -22,13 +25,14 @@ temperatura mínima, temperatura máxima
 */
 
 select
-    m.descripcion medicamento,
-    ff.descripcion forma_farmaceutica,
-    m.temperatura_min_c temperatura_minima,
-    m.temperatura_max_c temperatura_maxima
+    m.descripcion       as medicamento,
+    ff.descripcion      as forma_farmaceutica,
+    m.temperatura_min_c as temperatura_minima,
+    m.temperatura_max_c as temperatura_maxima
 from corregido.medicamentos m
     join corregido.formas_farmaceuticas ff on ff.id = m.forma_farmaceutica_id
 order by m.descripcion;
+go
 
 /*
 B.
@@ -39,13 +43,14 @@ fecha de fabricación, fecha de vencimiento
 */
 
 select
-    m.descripcion medicamento,
-    l.codigo lote_codigo,
+    m.descripcion as medicamento,
+    l.codigo      as lote_codigo,
     l.fecha_fabricacion,
     l.fecha_vencimiento
 from corregido.medicamentos m
     join corregido.lotes l on l.medicamento_id = m.id
 order by m.descripcion, l.fecha_vencimiento;
+go
 
 /*
 C.
@@ -56,11 +61,11 @@ código del lote, nombre del medicamento, cantidad disponible
 */
 
 select
-    a.descripcion almacen,
-    c.descripcion ciudad,
-    ta.descripcion tipo_almacen,
-    l.codigo lote_codigo,
-    m.descripcion medicamento,
+    a.descripcion  as almacen,
+    c.descripcion  as ciudad,
+    ta.descripcion as tipo_almacen,
+    l.codigo       as lote_codigo,
+    m.descripcion  as medicamento,
     e.cantidad_disponible
 from corregido.existencias e
     join corregido.almacenes a on a.id = e.almacen_id
@@ -69,3 +74,4 @@ from corregido.existencias e
     join corregido.lotes l on l.id = e.lote_id
     join corregido.medicamentos m on m.id = l.medicamento_id
 order by a.descripcion, l.codigo;
+go

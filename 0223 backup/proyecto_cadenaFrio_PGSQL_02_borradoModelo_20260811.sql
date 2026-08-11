@@ -1,8 +1,10 @@
 -- Examen No. 1 - Agosto 11 de 2026
 -- Curso de Tópicos Avanzados de base de datos - UPB 202620
--- Andrés Felipe Martínez - ID SIGAA 000549446
--- Equipo: Andrés Felipe Martínez (000549446) - PostgreSQL 18
---         José Miguel Jaramillo (000210186) - MS SQL Server 2025
+--
+-- Integrantes del equipo:
+--   Andrés Felipe Martínez - ID SIGAA 000549446 - PostgreSQL 18 (nube: MS Azure)
+--   José Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker local)
+--
 
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: PostgreSQL 18.x

@@ -7,55 +7,53 @@ Docente: Juan Darío Rodas M.
 
 ## Integrantes
 
-| Nombre completo | ID SIGAA | Motor de base de datos |
-|---|---|---|
-| Andrés Felipe Martínez | 000549446 | PostgreSQL 18 |
-| José Miguel Jaramillo | 000210186 | Microsoft SQL Server 2025 |
+| Nombre completo | ID SIGAA | Motor de base de datos | Infraestructura |
+|---|---|---|---|
+| Andrés Felipe Martínez | 000549446 | PostgreSQL 18 | Microsoft Azure (nube) |
+| José Miguel Jaramillo | 000210186 | Microsoft SQL Server 2025 | Docker local |
 
-Cada integrante es responsable de la implementación completa en su propio motor, así como
-de los documentos de abastecimiento de infraestructura y de conexión remota
-correspondientes. El diagrama relacional es común a ambas implementaciones.
+Los dos integrantes implementan **el mismo modelo de datos**: las mismas nueve tablas, las
+mismas columnas, la misma nomenclatura y las mismas restricciones. Lo único que cambia es
+el dialecto de SQL y el motor. Por eso el diagrama relacional es uno solo y sirve para las
+dos implementaciones.
+
+Andrés despliega en **Microsoft Azure**, con lo que el equipo opta a la bonificación de
+despliegue en nube; la evidencia de conexión cifrada está documentada en la guía de
+infraestructura.
 
 ## Contenido del repositorio
 
 La nomenclatura de los scripts sigue la convención empleada por el docente en los
 proyectos de clase: `proyecto_<nombre>_<MOTOR>_<nn>_<contenido>_<AAAAMMDD>.sql`
 
+### Implementación en PostgreSQL 18 — Andrés Felipe Martínez (000549446)
+
 | Archivo | Descripción |
 |---|---|
-| `proyecto_cadenaFrio_PGSQL_01_scriptModelo_20260811.sql` | Abastecimiento en Docker, base de datos, usuario y privilegios, esquema `inicial` de staging, esquema `corregido` en 3NF, vistas y rutinas CRUD |
-| `proyecto_cadenaFrio_PGSQL_02_borradoModelo_20260811.sql` | Desmonte del modelo para reiniciar desde cero |
-| `proyecto_cadenaFrio_PGSQL_03_consultas_20260811.sql` | Consultas de la Etapa 4 (preguntas A, B y C) |
-| `proyecto_cadenaFrio_PGSQL_04_funcionCTEWindow_20260811.sql` | Función de la Etapa 5 con CTE y Window Functions, y consulta que la invoca |
-| `plan_preguntas_etapa5.md` | Plan previo de la Etapa 5: top 10 de preguntas del dominio y las tres menos exploradas |
-| `salidas/` | Resultados de ejecución de las consultas |
-| `docs/` | Documentos PDF de infraestructura, conexión e interacción con IA |
-| `diagrama_relacional.png` | Diagrama relacional del modelo |
+| `proyecto_cadenaFrio_PGSQL_01_scriptModelo_20260811.sql` | Abastecimiento, base de datos, usuario de mínimos privilegios, esquemas, tablas, vistas y rutinas CRUD |
+| `proyecto_cadenaFrio_PGSQL_02_borradoModelo_20260811.sql` | Desmonte completo del modelo |
+| `proyecto_cadenaFrio_PGSQL_03_consultas_20260811.sql` | Consultas de la Etapa 4 |
+| `proyecto_cadenaFrio_PGSQL_04_funcionCTEWindow_20260811.sql` | Función de la Etapa 5 con CTE y Window Functions |
 
-## Verificación
+### Implementación en SQL Server 2025 — José Miguel Jaramillo (000210186)
 
-Los scripts fueron ejecutados contra PostgreSQL 18.4 en contenedor Docker, con
-`ON_ERROR_STOP=1` y sin errores. Conteos obtenidos tras la carga:
-
-| Tabla | Filas |
+| Archivo | Descripción |
 |---|---|
-| fabricantes | 18 |
-| formas_farmaceuticas | 6 |
-| ciudades | 10 |
-| tipos_almacen | 3 |
-| medicamentos | 67 |
-| lotes | 259 |
-| almacenes | 25 |
-| existencias | 1.000 |
-| lecturas_temperatura | 1.000 |
+| `proyecto_cadenaFrio_MSSQL_01_scriptModelo_20260811.sql` | Equivalente T-SQL del modelo, con las mismas tablas y nomenclatura |
+| `proyecto_cadenaFrio_MSSQL_02_borradoModelo_20260811.sql` | Desmonte completo del modelo |
+| `proyecto_cadenaFrio_MSSQL_03_consultas_20260811.sql` | Consultas de la Etapa 4 |
+| `proyecto_cadenaFrio_MSSQL_04_funcionCTEWindow_20260811.sql` | Función de la Etapa 5 como función con valores de tabla |
 
-Se verificó además que el usuario `cadena_frio_usr` puede consultar y ejecutar rutinas
-pero no crear, alterar ni eliminar objetos, ni crear roles o bases de datos.
+### Documentos comunes
 
-El modelo se construye en dos esquemas, siguiendo la metodología de clase: `inicial`
-recibe el archivo plano tal como llega, con todas las columnas como texto y sin
-restricciones; `corregido` contiene el modelo normalizado y se puebla a partir del
-primero.
+| Archivo | Descripción |
+|---|---|
+| `diagrama_relacional.png` | Diagrama relacional del modelo, fondo blanco. Común a las dos implementaciones |
+| `diagrama_relacional.drawio` | Fuente editable del diagrama |
+| `plan_preguntas_etapa5.md` | Plan previo de la Etapa 5: top 10 de preguntas del dominio y las tres menos exploradas |
+| `docs/guia_infraestructura_y_conexion.docx` | Guía paso a paso de las Etapas 1 y 2 para ambos motores |
+| `salidas/` | Resultados de ejecución de las consultas |
+| `datos_cadena_frio/` | Archivo de datos de origen |
 
 ## Origen de los datos
 
@@ -64,7 +62,7 @@ Los datos son artificiales y no representan fabricantes, medicamentos ni almacen
 
 ## Modelo de datos
 
-El CSV llega como una única tabla ancha y desnormalizada. Se descompone en 9 tablas
+El CSV llega como una única tabla ancha y desnormalizada. Se descompone en nueve tablas
 siguiendo las dependencias funcionales verificadas sobre los datos:
 
 - `medicamento` → fabricante, forma farmacéutica y rango de temperatura
@@ -77,10 +75,38 @@ pero las lecturas se toman de forma continua, sin relación con qué lotes hay e
 en ese momento. Modelarlas juntas violaría la 3NF, por lo que viven en tablas separadas:
 `existencias` y `lecturas_temperatura`.
 
-## Ejecución
+El modelo se construye en dos esquemas, siguiendo la metodología de clase: `inicial`
+recibe el archivo plano tal como llega, con todas las columnas como texto y sin
+restricciones; `corregido` contiene el modelo normalizado y se puebla a partir del primero.
 
-```bash
-psql -h <host> -U cadena_frio_owner -d cadena_frio -f 01_modelo_datos.sql
-psql -h <host> -U cadena_frio_owner -d cadena_frio -f 02_carga_datos.sql
-psql -h <host> -U cadena_frio_owner -d cadena_frio -f 03_consultas.sql
-```
+## Privilegios mínimos
+
+El usuario administrador del motor (`postgres` en PostgreSQL, `sa` en SQL Server) se emplea
+únicamente para las dos acciones que ningún otro rol puede realizar: crear la base de datos
+y crear el usuario de trabajo. A partir de ahí, **todo el modelo se crea y se opera con un
+usuario sin atributos administrativos** (`cadena_frio_usr`).
+
+Los scripts del modelo incluyen cinco bloques de evidencia:
+
+1. La sesión no usa el usuario administrador ni la base de datos predeterminada del motor
+2. El rol no es superusuario y no puede crear bases de datos ni roles
+3. El propietario de las diez tablas es el usuario de mínimos privilegios
+4. Las sentencias administrativas fallan con error de permiso denegado
+5. Ningún objeto se creó fuera de la base de datos de trabajo
+
+## Verificación
+
+Los scripts de PostgreSQL fueron ejecutados contra PostgreSQL 18.4 en contenedor Docker,
+con `ON_ERROR_STOP=1` y sin errores. Conteos obtenidos tras la carga:
+
+| Tabla | Filas |
+|---|---|
+| fabricantes | 18 |
+| formas_farmaceuticas | 6 |
+| ciudades | 10 |
+| tipos_almacen | 3 |
+| medicamentos | 67 |
+| lotes | 259 |
+| almacenes | 25 |
+| existencias | 1.000 |
+| lecturas_temperatura | 1.000 |

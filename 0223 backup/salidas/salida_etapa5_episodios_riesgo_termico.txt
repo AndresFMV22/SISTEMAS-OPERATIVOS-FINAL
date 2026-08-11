@@ -1,5 +1,6 @@
 Examen No. 1 - Topicos Avanzados de Bases de Datos - UPB 202620
-Andres Felipe Martinez - ID SIGAA 000549446 - PostgreSQL 18
+Andres Felipe Martinez - ID SIGAA 000549446 - PostgreSQL 18 (Azure)
+Jose Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker)
 Etapa 5 - Funcion con CTE y Window Functions
 
 Pregunta: Para cada almacen y cada clase de conservacion, cuales fueron sus

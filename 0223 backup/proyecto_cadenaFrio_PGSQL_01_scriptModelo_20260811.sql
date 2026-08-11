@@ -1,8 +1,14 @@
 -- Examen No. 1 - Agosto 11 de 2026
 -- Curso de Tópicos Avanzados de base de datos - UPB 202620
--- Andrés Felipe Martínez - ID SIGAA 000549446
--- Equipo: Andrés Felipe Martínez (000549446) - PostgreSQL 18
---         José Miguel Jaramillo (000210186) - MS SQL Server 2025
+--
+-- Integrantes del equipo:
+--   Andrés Felipe Martínez - ID SIGAA 000549446 - PostgreSQL 18 (nube: MS Azure)
+--   José Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker local)
+--
+-- Ambos integrantes implementan el mismo modelo de datos, con las mismas
+-- tablas y la misma nomenclatura. Este archivo es la implementación para
+-- PostgreSQL; la implementación equivalente en T-SQL está en el archivo
+-- proyecto_cadenaFrio_MSSQL_01_scriptModelo_20260811.sql
 
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: PostgreSQL 18.x
@@ -69,6 +75,45 @@ alter default privileges in schema public grant execute on routines to cadena_fr
 
 -- Privilegios de consulta sobre el esquema information_schema
 grant usage on schema information_schema to cadena_frio_usr;
+
+-- *********************************************************************
+-- Cambio de sesión: a partir de aquí NO se usa el usuario administrador
+-- *********************************************************************
+
+-- Todo el modelo se crea y se opera con el usuario de mínimos privilegios.
+-- El usuario administrador (postgres) solo se empleó para las dos acciones
+-- que ningún otro rol puede realizar: crear la base de datos y crear el rol.
+
+\c cadena_frio_db cadena_frio_usr
+
+-- ------------------------------------------------------------------
+-- Evidencia 1: no se está trabajando con el usuario administrador
+--              ni sobre la base de datos predeterminada
+-- ------------------------------------------------------------------
+
+select current_user            usuario_de_la_sesion,
+       session_user            usuario_de_conexion,
+       current_database()      base_de_datos_actual,
+       inet_server_port()      puerto_tcp;
+
+-- Esperado: usuario cadena_frio_usr (no postgres)
+--           base de datos cadena_frio_db (no la predeterminada postgres)
+
+-- ------------------------------------------------------------------
+-- Evidencia 2: el rol no tiene atributos administrativos
+-- ------------------------------------------------------------------
+
+select rolname          rol,
+       rolsuper         es_superusuario,
+       rolcreatedb      puede_crear_bases,
+       rolcreaterole    puede_crear_roles,
+       rolbypassrls     omite_seguridad_de_filas,
+       rolreplication   puede_replicar
+from   pg_roles
+where  rolname = current_user;
+
+-- Esperado: todos los atributos en false. El rol solo puede actuar dentro
+-- de su propia base de datos y no puede escalar privilegios.
 
 -- ********************************
 -- Creación de Tablas
@@ -552,19 +597,56 @@ $$
 $$;
 
 -- ***********************************************
--- Privilegios sobre los objetos creados
+-- Evidencia final de privilegios mínimos
 -- ***********************************************
 
-grant usage on schema inicial, corregido to cadena_frio_usr;
+-- Los objetos anteriores fueron creados por cadena_frio_usr, que es su
+-- propietario. No se requirió el usuario administrador en ningún momento
+-- posterior a la creación de la base de datos y del rol.
 
-grant select, insert, update, delete on all tables in schema corregido to cadena_frio_usr;
+-- ------------------------------------------------------------------
+-- Evidencia 3: quién es el propietario real de los objetos
+-- ------------------------------------------------------------------
 
-grant usage, select on all sequences in schema corregido to cadena_frio_usr;
+select schemaname   esquema,
+       tablename    tabla,
+       tableowner   propietario
+from   pg_tables
+where  schemaname in ('inicial', 'corregido')
+order by schemaname, tablename;
 
-grant execute on all routines in schema corregido to cadena_frio_usr;
+-- Esperado: propietario cadena_frio_usr en las diez tablas, nunca postgres.
 
-alter default privileges in schema corregido grant select, insert, update, delete on tables to cadena_frio_usr;
+-- ------------------------------------------------------------------
+-- Evidencia 4: lo que el usuario NO puede hacer
+-- ------------------------------------------------------------------
 
-alter default privileges in schema corregido grant usage, select on sequences to cadena_frio_usr;
+-- Las cuatro sentencias siguientes deben fallar. Ejecutarlas una por una y
+-- capturar el mensaje de error es la demostración de que el rol no tiene
+-- privilegios administrativos.
 
-alter default privileges in schema corregido grant execute on routines to cadena_frio_usr;
+-- create database base_intrusa;
+--   ERROR: permission denied to create database
+
+-- create user usuario_intruso with password 'x';
+--   ERROR: permission denied to create role
+
+-- alter user cadena_frio_usr with superuser;
+--   ERROR: must be superuser to alter superuser roles
+
+-- select * from pg_authid;
+--   ERROR: permission denied for table pg_authid
+
+-- ------------------------------------------------------------------
+-- Evidencia 5: no se está trabajando sobre la base de datos del sistema
+-- ------------------------------------------------------------------
+
+select current_database()                                  base_de_datos_de_trabajo,
+       (select count(*) from pg_tables
+        where schemaname in ('inicial','corregido'))        tablas_del_modelo,
+       (select count(*) from information_schema.routines
+        where routine_schema = 'corregido')                 rutinas_del_modelo;
+
+-- Todo el modelo vive en cadena_frio_db, dentro de los esquemas inicial y
+-- corregido. No se creó ningún objeto en la base de datos predeterminada
+-- del motor ni en el esquema public.
