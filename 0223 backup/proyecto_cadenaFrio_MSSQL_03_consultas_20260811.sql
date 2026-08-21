@@ -8,13 +8,11 @@
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: Microsoft SQL Server 2025
 
--- Ejecutar conectado como cadena_frio_login sobre la base cadena_frio_db.
+-- Esto lo corro conectado como cadena_frio_login sobre la base cadena_frio_db.
 select suser_name() as usuario_de_conexion, db_name() as base_de_datos_actual;
 go
 
--- ***********************************
--- Etapa 4 - Solución de consultas
--- ***********************************
+-- Etapa 4: las tres consultas de exploración directa que pide el examen.
 
 /*
 A.

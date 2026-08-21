@@ -9,12 +9,11 @@
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: PostgreSQL 18.x
 
--- *************************************************
--- Borrado de las tablas para reinicio del modelo
--- *************************************************
+-- Este script lo uso cuando necesito reiniciar el modelo desde cero durante
+-- las pruebas, antes de volver a correr el 01.
 
 -- Borrado de rutinas - Funciones y procedimientos
-drop function corregido.f_analiza_excursiones_termicas;
+drop function corregido.f_episodios_riesgo_termico;
 drop function corregido.f_disponible_por_lote;
 drop function corregido.f_registrar_lectura;
 
@@ -26,8 +25,8 @@ drop view corregido.v_info_almacenes;
 drop view corregido.v_info_lotes;
 drop view corregido.v_info_medicamentos;
 
--- Borrado de tablas del modelo corregido
--- Se eliminan en orden inverso al de las dependencias
+-- Las tablas del modelo corregido las elimino en orden inverso al de las
+-- dependencias, si no, me va a tirar error de llave foránea.
 drop table corregido.lecturas_temperatura;
 drop table corregido.existencias;
 drop table corregido.lotes;
@@ -41,20 +40,17 @@ drop table corregido.fabricantes;
 -- Borrado de la tabla de staging
 drop table inicial.cadena_frio;
 
--- ===========================================================
--- Zona de peligro - Desmonte completo del modelo de datos
--- ===========================================================
+-- De aquí para abajo es la zona de peligro: esto ya no es reiniciar el
+-- modelo, es desmontarlo por completo, incluyendo el usuario y la base
+-- de datos. Solo lo corro cuando de verdad quiero empezar desde cero.
 
--- Borrado del esquema corregido
 drop schema corregido cascade;
 
--- Borrado del esquema inicial
 drop schema inicial cascade;
 
--- Revocación de privilegios al usuario cadena_frio_usr y posterior eliminación
+-- Antes de borrar el usuario le revoco los privilegios
 revoke all privileges on database cadena_frio_db from cadena_frio_usr;
 
 drop user cadena_frio_usr;
 
--- Borrado de la base de datos cadena_frio_db
 drop database cadena_frio_db;

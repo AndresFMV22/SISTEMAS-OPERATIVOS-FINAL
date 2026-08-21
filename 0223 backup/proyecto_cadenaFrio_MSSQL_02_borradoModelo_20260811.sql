@@ -8,9 +8,8 @@
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: Microsoft SQL Server 2025
 
--- *************************************************
--- Borrado de las tablas para reinicio del modelo
--- *************************************************
+-- Este script lo uso cuando necesito reiniciar el modelo desde cero durante
+-- las pruebas, antes de volver a correr el 01.
 
 use cadena_frio_db;
 go
@@ -30,8 +29,8 @@ drop view if exists corregido.v_info_lotes;
 drop view if exists corregido.v_info_medicamentos;
 go
 
--- Borrado de tablas del modelo corregido
--- Se eliminan en orden inverso al de las dependencias
+-- Las tablas del modelo corregido las elimino en orden inverso al de las
+-- dependencias, si no, me tira error de llave foránea.
 drop table if exists corregido.lecturas_temperatura;
 drop table if exists corregido.existencias;
 drop table if exists corregido.lotes;
@@ -47,18 +46,17 @@ go
 drop table if exists inicial.cadena_frio;
 go
 
--- ===========================================================
--- Zona de peligro - Desmonte completo del modelo de datos
--- ===========================================================
+-- De aquí para abajo es la zona de peligro: esto ya no es reiniciar el
+-- modelo, es desmontarlo por completo, incluyendo el login y la base de
+-- datos. Solo lo corro cuando de verdad quiero empezar desde cero.
 
--- Borrado de los esquemas
 drop schema if exists corregido;
 drop schema if exists inicial;
 go
 
--- Las sentencias siguientes requieren el usuario administrador (sa),
--- porque el usuario de mínimos privilegios no puede eliminar bases de
--- datos ni inicios de sesión.
+-- Las sentencias siguientes las tengo que correr con el usuario
+-- administrador (sa), porque el usuario de mínimos privilegios no puede
+-- eliminar bases de datos ni inicios de sesión.
 
 use master;
 go

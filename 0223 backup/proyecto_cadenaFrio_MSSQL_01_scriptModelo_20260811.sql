@@ -5,17 +5,15 @@
 --   Andrés Felipe Martínez - ID SIGAA 000549446 - PostgreSQL 18 (nube: MS Azure)
 --   José Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker local)
 --
--- Ambos integrantes implementan el mismo modelo de datos, con las mismas
--- tablas y la misma nomenclatura. Este archivo es la implementación para
--- Microsoft SQL Server; la implementación equivalente en PL/pgSQL está en
+-- Con Andrés quedamos en implementar el mismo modelo, las mismas tablas y
+-- la misma nomenclatura, cada uno en su motor. Este archivo es mi parte en
+-- SQL Server; la de Andrés en PostgreSQL queda en
 -- proyecto_cadenaFrio_PGSQL_01_scriptModelo_20260811.sql
 
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: Microsoft SQL Server 2025
 
--- ***********************************
--- Abastecimiento de imagen en Docker
--- ***********************************
+-- Trabajo con el motor en Docker. Así levanté la imagen y el contenedor:
 
 -- Descargar la imagen
 docker pull mcr.microsoft.com/mssql/server:2025-latest
@@ -23,15 +21,12 @@ docker pull mcr.microsoft.com/mssql/server:2025-latest
 -- Crear el contenedor
 docker run --name sqlsrv-cadenafrio -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=unaClav3" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2025-latest
 
--- Copiar el archivo de datos al contenedor, necesario para el BULK INSERT
+-- Copio el archivo de datos al contenedor, lo necesito para el BULK INSERT
 docker exec sqlsrv-cadenafrio mkdir -p /var/opt/mssql/datos
 docker cp datos_cadena_frio/datos_cadena_frio.csv sqlsrv-cadenafrio:/var/opt/mssql/datos/datos_cadena_frio.csv
 
--- ****************************************
--- Creación de base de datos y usuarios
--- ****************************************
-
--- Con usuario administrador (sa):
+-- Ahora creo la base de datos y el usuario de trabajo. Este bloque lo corro
+-- conectado como el administrador (sa):
 
 use master;
 go
@@ -68,24 +63,18 @@ go
 grant view definition to cadena_frio_usr;
 go
 
--- NOTA: no se agrega el usuario a db_owner ni a ningún rol administrativo.
--- Tampoco se le concede acceso a master ni a las demás bases del sistema.
+-- Ojo: no metí al usuario en db_owner ni en ningún rol administrativo,
+-- y tampoco le di acceso a master ni a las demás bases del sistema.
 
--- *********************************************************************
--- Cambio de sesión: a partir de aquí NO se usa el usuario administrador
--- *********************************************************************
-
--- En un IDE, cerrar la conexión de sa y abrir una nueva con el inicio de
--- sesión cadena_frio_login. Todo el modelo se crea y se opera con ese
--- usuario de mínimos privilegios.
+-- A partir de aquí dejo de usar el administrador. En mi IDE cierro la
+-- conexión de sa y abro una nueva con el inicio de sesión cadena_frio_login,
+-- que es con el que creo y opero todo el modelo de acá en adelante.
 --
 -- En DBeaver: nueva conexión, host localhost, puerto 1433,
 --             base de datos cadena_frio_db, usuario cadena_frio_login.
 
--- ------------------------------------------------------------------
--- Evidencia 1: no se está trabajando con el usuario administrador
---              ni sobre la base de datos master
--- ------------------------------------------------------------------
+-- Evidencia 1: compruebo que no estoy usando el administrador ni sobre
+-- la base de datos master.
 
 select suser_name()  as usuario_de_conexion,
        user_name()   as usuario_de_base_de_datos,
@@ -93,12 +82,10 @@ select suser_name()  as usuario_de_conexion,
        @@servername  as instancia;
 go
 
--- Esperado: usuario cadena_frio_login (no sa)
---           base de datos cadena_frio_db (no master)
+-- Me tiene que salir cadena_frio_login (no sa) y cadena_frio_db (no master).
 
--- ------------------------------------------------------------------
--- Evidencia 2: el usuario no pertenece a ningún rol administrativo
--- ------------------------------------------------------------------
+-- Evidencia 2: reviso que este usuario no pertenezca a ningún rol
+-- administrativo.
 
 select is_srvrolemember('sysadmin')      as es_sysadmin,
        is_srvrolemember('securityadmin') as es_securityadmin,
@@ -107,21 +94,20 @@ select is_srvrolemember('sysadmin')      as es_sysadmin,
        is_rolemember('db_securityadmin') as es_db_securityadmin;
 go
 
--- Esperado: los cinco valores en 0. El usuario solo puede actuar dentro de
--- cadena_frio_db y no puede escalar privilegios.
+-- Los cinco valores me tienen que dar en 0. Así confirmo que el usuario
+-- solo puede actuar dentro de cadena_frio_db y no tiene cómo escalar
+-- privilegios.
 
--- ********************************
--- Creación de Tablas
--- ********************************
+-- Ahora sí, la creación de las tablas.
 
 -- Creamos esquema inicial
 create schema inicial;
 go
 
--- El archivo de origen es una única tabla ancha y desnormalizada.
--- Se recibe tal cual llega, con todas las columnas como texto y sin
--- restricciones: primero ingresa el archivo completo y después se
--- reparte hacia el modelo normalizado.
+-- El archivo que me pasó Andrés es una sola tabla ancha y desnormalizada,
+-- así que la recibo tal cual llega: todas las columnas como texto y sin
+-- restricciones. Primero cargo el archivo completo acá y después reparto
+-- los datos hacia el modelo normalizado.
 create table inicial.cadena_frio
 (
     fabricante_nombre               nvarchar(200),
@@ -141,12 +127,9 @@ create table inicial.cadena_frio
 );
 go
 
--- ********************************************************
--- Cargar los datos del archivo CSV antes de continuar
--- ********************************************************
-
--- El archivo usa punto y coma como delimitador, viene en UTF-8 y trae
--- encabezado. CODEPAGE 65001 es UTF-8; sin él las tildes y la eñe se corrompen.
+-- Antes de seguir, cargo el CSV. Viene con punto y coma como delimitador,
+-- en UTF-8 y con encabezado. El CODEPAGE 65001 es obligatorio: sin él, las
+-- tildes y la eñe quedan corrompidas.
 bulk insert inicial.cadena_frio
 from '/var/opt/mssql/datos/datos_cadena_frio.csv'
 with (
@@ -158,22 +141,18 @@ with (
 );
 go
 
--- Alternativa: asistente de importación de DBeaver, indicando
--- delimitador ';' y codificación UTF-8.
+-- También lo puedo hacer con el asistente de importación de DBeaver,
+-- indicando el mismo delimitador y la misma codificación.
 
--- Validamos que hayan ingresado los 1.000 registros
+-- Reviso que hayan entrado los 1.000 registros
 select count(*) as total_registros from inicial.cadena_frio;
 go
 
--- *************************
--- Modelo de dato corregido
--- *************************
+-- De acá en adelante ya trabajo sobre el modelo normalizado.
 create schema corregido;
 go
 
--- -----------------------
--- Tabla Fabricantes
--- -----------------------
+-- Empiezo por fabricantes.
 create table corregido.fabricantes
 (
     id          int identity(1,1) constraint fabricantes_pk primary key,
@@ -189,7 +168,7 @@ exec sp_addextendedproperty 'MS_Description', 'razón social del laboratorio fab
      'SCHEMA', 'corregido', 'TABLE', 'fabricantes', 'COLUMN', 'descripcion';
 go
 
--- Cargamos datos desde el esquema inicial
+-- La lleno desde el esquema inicial
 insert into corregido.fabricantes (descripcion)
 (
     select distinct ltrim(rtrim(fabricante_nombre))
@@ -197,9 +176,7 @@ insert into corregido.fabricantes (descripcion)
 );
 go
 
--- -----------------------
--- Tabla Formas Farmaceuticas
--- -----------------------
+-- Sigo con formas farmacéuticas.
 create table corregido.formas_farmaceuticas
 (
     id          int identity(1,1) constraint formas_farmaceuticas_pk primary key,
@@ -222,9 +199,7 @@ insert into corregido.formas_farmaceuticas (descripcion)
 );
 go
 
--- -----------------------
--- Tabla Ciudades
--- -----------------------
+-- Ciudades, para saber dónde queda cada almacén.
 create table corregido.ciudades
 (
     id          int identity(1,1) constraint ciudades_pk primary key,
@@ -247,9 +222,8 @@ insert into corregido.ciudades (descripcion)
 );
 go
 
--- -----------------------
--- Tabla Tipos de Almacen
--- -----------------------
+-- Y los tipos de almacén: solo son tres (Planta, Centro de distribución,
+-- Unidad de salud), pero igual los saco a su propia tabla catálogo.
 create table corregido.tipos_almacen
 (
     id          int identity(1,1) constraint tipos_almacen_pk primary key,
@@ -272,13 +246,11 @@ insert into corregido.tipos_almacen (descripcion)
 );
 go
 
--- -----------------------
--- Tabla Medicamentos
--- -----------------------
-
--- El rango de temperatura es un atributo del medicamento y no del lote ni de
--- la lectura: en los 1.000 registros del archivo, cada medicamento conserva
--- siempre el mismo par (mínima, máxima). Ubicarlo aquí elimina esa redundancia.
+-- Con medicamentos tuve que decidir dónde poner el rango de temperatura.
+-- Andrés ya lo había verificado en el archivo: cada medicamento siempre
+-- trae el mismo par (mínima, máxima) en las 1.000 filas, así que es un
+-- atributo del medicamento, no del lote ni de la lectura. Ponerlo acá me
+-- evita esa redundancia.
 create table corregido.medicamentos
 (
     id                    int identity(1,1) constraint medicamentos_pk primary key,
@@ -321,12 +293,9 @@ insert into corregido.medicamentos (descripcion, fabricante_id, forma_farmaceuti
 );
 go
 
--- -----------------------
--- Tabla Lotes
--- -----------------------
-
--- Un lote pertenece a un solo medicamento: se verificó sobre el archivo que
--- ningún código de lote aparece asociado a dos medicamentos distintos.
+-- Para lotes uso la misma verificación que hizo Andrés sobre el archivo:
+-- ningún código de lote aparece asociado a dos medicamentos distintos, así
+-- que un lote pertenece siempre a uno solo.
 create table corregido.lotes
 (
     id                int identity(1,1) constraint lotes_pk primary key,
@@ -364,9 +333,7 @@ insert into corregido.lotes (codigo, medicamento_id, fecha_fabricacion, fecha_ve
 );
 go
 
--- -----------------------
--- Tabla Almacenes
--- -----------------------
+-- Ahora los almacenes.
 create table corregido.almacenes
 (
     id              int identity(1,1) constraint almacenes_pk primary key,
@@ -400,13 +367,10 @@ insert into corregido.almacenes (descripcion, ciudad_id, tipo_almacen_id)
 );
 go
 
--- -----------------------
--- Tabla Existencias
--- -----------------------
-
--- Un mismo lote puede repartirse entre varios almacenes y un mismo almacén
--- puede alojar decenas de lotes distintos: la relación es de muchos a muchos
--- y la pareja (lote, almacén) es su clave natural.
+-- Con existencias entro a la parte que más me costó pensar del modelo.
+-- Un mismo lote se reparte entre varios almacenes y un mismo almacén guarda
+-- decenas de lotes distintos, así que la relación es de muchos a muchos y
+-- uso la pareja (lote, almacén) como su clave natural.
 create table corregido.existencias
 (
     id                  int identity(1,1) constraint existencias_pk primary key,
@@ -442,16 +406,13 @@ insert into corregido.existencias (lote_id, almacen_id, cantidad_disponible)
 );
 go
 
--- ---------------------------
--- Tabla Lecturas de Temperatura
--- ---------------------------
-
--- Decisión de diseño central del modelo: la existencia de un lote en un almacén
--- y la lectura de temperatura de ese almacén comparten fila en el archivo de
--- origen, pero son hechos independientes. Las lecturas se registran de forma
--- continua, sin relación con qué lotes se encuentran en la bodega en ese
--- instante. Mantenerlas en una sola tabla introduciría una dependencia que no
--- existe en el dominio y rompería la tercera forma normal.
+-- Y acá va la trampa del ejercicio: la existencia de un lote en un almacén
+-- y la lectura de temperatura de ese almacén comparten fila en el CSV, pero
+-- son hechos independientes. Las lecturas se toman de forma continua, sin
+-- relación con qué lotes hay en la bodega en ese momento. Si las hubiera
+-- dejado juntas en una sola tabla, habría metido una dependencia que no
+-- existe en el dominio y me habría roto la tercera forma normal, así que
+-- las separo en dos tablas, igual que en la versión de Andrés.
 create table corregido.lecturas_temperatura
 (
     id            int identity(1,1) constraint lecturas_temperatura_pk primary key,
@@ -485,11 +446,9 @@ insert into corregido.lecturas_temperatura (almacen_id, fecha_hora, temperatura_
 );
 go
 
--- ********************************
--- Validación de la carga
--- ********************************
-
--- Los totales esperados provienen del análisis previo del archivo de origen.
+-- Con las nueve tablas cargadas, valido que todo haya entrado bien.
+-- Los totales de referencia son los mismos que verificó Andrés en el
+-- análisis previo del archivo.
 select 'fabricantes' as tabla, count(*) as total from corregido.fabricantes
 union all
 select 'formas_farmaceuticas', count(*) from corregido.formas_farmaceuticas
@@ -513,9 +472,8 @@ go
 --           tipos_almacen 3, medicamentos 67, lotes 259, almacenes 25,
 --           existencias 1000, lecturas_temperatura 1000
 
--- ********************************
--- Creación de Vistas
--- ********************************
+-- Ya con el modelo cargado, dejo tres vistas que uso seguido en las
+-- consultas de la Etapa 4.
 
 create view corregido.v_info_medicamentos as
 (
@@ -559,9 +517,10 @@ from corregido.almacenes a
 );
 go
 
--- ***********************************************
--- Funciones y Procedimientos de apoyo al CRUD
--- ***********************************************
+-- Por último, cuatro rutinas de apoyo para el CRUD del modelo. Las hice
+-- para no escribir a mano el insert/update/delete cada vez, y para que
+-- quien las use no necesite conocer los ids internos: resuelven las
+-- claves por nombre.
 
 -- Create / Update de una existencia
 create or alter procedure corregido.p_registrar_existencia
@@ -653,13 +612,11 @@ begin
 end;
 go
 
--- ***********************************************
--- Evidencia final de privilegios mínimos
--- ***********************************************
+-- Para cerrar, dejo la evidencia de que trabajé con privilegios mínimos:
+-- no volví a tocar el usuario administrador después de crear la base de
+-- datos, el login y el usuario.
 
--- ------------------------------------------------------------------
--- Evidencia 3: quién es el propietario real de los objetos
--- ------------------------------------------------------------------
+-- Evidencia 3: reviso quién quedó como propietario real de los objetos.
 
 select s.name                    as esquema,
        t.name                    as tabla,
@@ -672,15 +629,11 @@ where  s.name in ('inicial', 'corregido')
 order by s.name, t.name;
 go
 
--- Esperado: propietario cadena_frio_usr en las diez tablas, nunca dbo ni sa.
+-- Me tiene que salir cadena_frio_usr en las diez tablas, nunca dbo ni sa.
 
--- ------------------------------------------------------------------
--- Evidencia 4: lo que el usuario NO puede hacer
--- ------------------------------------------------------------------
-
--- Las cuatro sentencias siguientes deben fallar. Ejecutarlas una por una y
--- capturar el mensaje de error es la demostración de que el usuario no tiene
--- privilegios administrativos.
+-- Evidencia 4: lo que este usuario NO puede hacer. Corro las cuatro
+-- sentencias siguientes una por una y capturo el mensaje de error de cada
+-- una, eso es lo que demuestra que no tiene privilegios administrativos.
 
 -- use master;
 --   El servidor principal "cadena_frio_login" no puede tener acceso a la base de datos "master"
@@ -694,9 +647,8 @@ go
 -- alter server role sysadmin add member cadena_frio_login;
 --   No se puede modificar el rol de servidor 'sysadmin'
 
--- ------------------------------------------------------------------
--- Evidencia 5: no se está trabajando sobre la base de datos del sistema
--- ------------------------------------------------------------------
+-- Evidencia 5: confirmo que no me quedé trabajando sobre la base de datos
+-- del sistema.
 
 select db_name()                                             as base_de_datos_de_trabajo,
        (select count(*) from sys.tables t join sys.schemas s
@@ -707,5 +659,5 @@ select db_name()                                             as base_de_datos_de
           and schema_id = schema_id('corregido'))             as rutinas_del_modelo;
 go
 
--- Todo el modelo vive en cadena_frio_db, dentro de los esquemas inicial y
--- corregido. No se creó ningún objeto en master ni en el esquema dbo.
+-- Todo el modelo quedó en cadena_frio_db, dentro de los esquemas inicial y
+-- corregido. No creé ningún objeto en master ni en el esquema dbo.

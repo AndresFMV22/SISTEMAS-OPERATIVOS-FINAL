@@ -9,9 +9,8 @@
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: PostgreSQL 18.x
 
--- ***********************************
--- Etapa 4 - Solución de consultas
--- ***********************************
+-- Etapa 4: acá van las tres consultas de exploración directa que pide el
+-- examen.
 
 /*
 A.
