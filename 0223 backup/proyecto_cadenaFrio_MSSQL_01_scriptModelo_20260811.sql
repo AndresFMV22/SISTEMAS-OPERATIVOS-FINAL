@@ -138,7 +138,8 @@ GO
 -- conexión de sa y abro una nueva con el inicio de sesión cadena_frio_login,
 -- que es con el que creo y opero todo el modelo de acá en adelante.
 --
--- En DBeaver: nueva conexión, host localhost, puerto 1433,
+    
+----En DBeaver: nueva conexión, host localhost, puerto 1433,
 --             base de datos cadena_frio_db, usuario cadena_frio_login.
 
 -- Evidencia 1: compruebo que no estoy usando el administrador ni sobre
@@ -160,59 +161,83 @@ SELECT IS_SRVROLEMEMBER('sysadmin') AS es_sysadmin,
        IS_ROLEMEMBER('db_owner') AS es_db_owner,
        IS_ROLEMEMBER('db_securityadmin') AS es_db_securityadmin;
 
--- Los cinco valores me tienen que dar en 0. Así confirmo que el usuario
+-- Los cinco valores son en 0. Acá ya confirmo que el usuario
 -- solo puede actuar dentro de cadena_frio_db y no tiene cómo escalar
 -- privilegios.
 
--- Ahora sí, la creación de las tablas.
+-- Creación de las tablas.
 
 -- Creamos esquema inicial
-create schema inicial;
-go
+CREATE SCHEMA inicial;
 
 -- El archivo que me pasó Andrés es una sola tabla ancha y desnormalizada,
 -- así que la recibo tal cual llega: todas las columnas como texto y sin
 -- restricciones. Primero cargo el archivo completo acá y después reparto
 -- los datos hacia el modelo normalizado.
-create table inicial.cadena_frio
+CREATE TABLE inicial.cadena_frio
 (
-    fabricante_nombre               nvarchar(200),
-    medicamento_nombre              nvarchar(200),
-    forma_farmaceutica              nvarchar(100),
-    temperatura_min_c               nvarchar(50),
-    temperatura_max_c               nvarchar(50),
-    lote_codigo                     nvarchar(50),
-    lote_fecha_fabricacion          nvarchar(50),
-    lote_fecha_vencimiento          nvarchar(50),
-    almacen_nombre                  nvarchar(200),
-    almacen_ciudad                  nvarchar(100),
-    almacen_tipo                    nvarchar(100),
-    existencia_cantidad_disponible  nvarchar(50),
-    lectura_fecha_hora              nvarchar(50),
-    lectura_temperatura_c           nvarchar(50)
+    fabricante_nombre              nvarchar(200),
+    medicamento_nombre             nvarchar(200),
+    forma_farmaceutica             nvarchar(100),
+    temperatura_min_c              nvarchar(50),
+    temperatura_max_c              nvarchar(50),
+    lote_codigo                    nvarchar(50),
+    lote_fecha_fabricacion         nvarchar(50),
+    lote_fecha_vencimiento         nvarchar(50),
+    almacen_nombre                 nvarchar(200),
+    almacen_ciudad                 nvarchar(100),
+    almacen_tipo                   nvarchar(100),
+    existencia_cantidad_disponible nvarchar(50),
+    lectura_fecha_hora             nvarchar(50),
+    lectura_temperatura_c          nvarchar(50)
 );
-go
 
--- Antes de seguir, cargo el CSV. Viene con punto y coma como delimitador,
--- en UTF-8 y con encabezado. El CODEPAGE 65001 es obligatorio: sin él, las
--- tildes y la eñe quedan corrompidas.
-bulk insert inicial.cadena_frio
-from '/var/opt/mssql/datos/datos_cadena_frio.csv'
-with (
-    firstrow        = 2,
-    fieldterminator = ';',
-    rowterminator   = '0x0a',
-    codepage        = '65001',
-    tablock
+-- Cargo el CSV. con bulk insert, tiene punto y coma como delimitador,
+-- en UTF-8 y con encabezado. El CODEPAGE 65001 no funciona para SQL server 2025 sobre Linux
+BULK INSERT inicial.cadena_frio
+FROM '/tmp/bulkload/cadena_frio/datos_cadena_frio.csv'
+WITH
+(
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ';',
+    ROWTERMINATOR = '0x0a',
+    TABLOCK
 );
-go
+
 
 -- También lo puedo hacer con el asistente de importación de DBeaver,
 -- indicando el mismo delimitador y la misma codificación.
 
--- Reviso que hayan entrado los 1.000 registros
-select count(*) as total_registros from inicial.cadena_frio;
-go
+-- Reviso que hayan quedado los 1.000 registros
+SELECT COUNT(*) AS total_registros
+FROM inicial.cadena_frio;
+
+
+--Reviso que no se hayan corrompido Ñs ni tildes
+SELECT TOP 20
+    fabricante_nombre,
+    forma_farmaceutica,
+    almacen_ciudad,
+    almacen_tipo
+FROM inicial.cadena_frio
+WHERE fabricante_nombre LIKE '%ñ%'
+   OR fabricante_nombre LIKE '%á%'
+   OR fabricante_nombre LIKE '%é%'
+   OR fabricante_nombre LIKE '%í%'
+   OR fabricante_nombre LIKE '%ó%'
+   OR fabricante_nombre LIKE '%ú%'
+   OR forma_farmaceutica LIKE '%ñ%'
+   OR forma_farmaceutica LIKE '%á%'
+   OR forma_farmaceutica LIKE '%é%'
+   OR forma_farmaceutica LIKE '%í%'
+   OR forma_farmaceutica LIKE '%ó%'
+   OR forma_farmaceutica LIKE '%ú%'
+   OR almacen_ciudad LIKE '%ñ%'
+   OR almacen_ciudad LIKE '%á%'
+   OR almacen_ciudad LIKE '%é%'
+   OR almacen_ciudad LIKE '%í%'
+   OR almacen_ciudad LIKE '%ó%'
+   OR almacen_ciudad LIKE '%ú%';
 
 -- De acá en adelante ya trabajo sobre el modelo normalizado.
 create schema corregido;
