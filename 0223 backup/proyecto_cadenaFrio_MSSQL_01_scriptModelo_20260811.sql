@@ -5,66 +5,134 @@
 --   Andrés Felipe Martínez - ID SIGAA 000549446 - PostgreSQL 18 (nube: MS Azure)
 --   José Miguel Jaramillo  - ID SIGAA 000210186 - MS SQL Server 2025 (Docker local)
 --
--- Con Andrés quedamos en implementar el mismo modelo, las mismas tablas y
--- la misma nomenclatura, cada uno en su motor. Este archivo es mi parte en
--- SQL Server; la de Andrés en PostgreSQL queda en
+-- Autor: Jose Miguel Jaramillo, este archivo es mi parte en
+-- SQL Server; la parte de Andrés en PostgreSQL está en
 -- proyecto_cadenaFrio_PGSQL_01_scriptModelo_20260811.sql
 
 -- Proyecto: Cadena de frío de medicamentos - "Distri-Cold"
 -- Motor de Base de datos: Microsoft SQL Server 2025
 
--- Trabajo con el motor en Docker. Así levanté la imagen y el contenedor:
 
--- Descargar la imagen
+
+
+----En powershell
+--- Descargar la imagen de SQL Server 2025.
 docker pull mcr.microsoft.com/mssql/server:2025-latest
 
--- Crear el contenedor
+--- Crear el contenedor y correrlo, hay que usar ACCEPT_EULA=Y: para aceptar la licencia de Mssqlserv
 docker run --name sqlsrv-cadenafrio -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=unaClav3" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2025-latest
 
 -- Copio el archivo de datos al contenedor, lo necesito para el BULK INSERT
+--- Crear dentro del contenedor el directorio donde se almacenará el archivo CSV, -p para evitar conflictos 
 docker exec sqlsrv-cadenafrio mkdir -p /var/opt/mssql/datos
+
+---Copiar el CSV al contenedor para poder utilizarlo posteriormente con BULK INSERT.
 docker cp datos_cadena_frio/datos_cadena_frio.csv sqlsrv-cadenafrio:/var/opt/mssql/datos/datos_cadena_frio.csv
 
--- Ahora creo la base de datos y el usuario de trabajo. Este bloque lo corro
--- conectado como el administrador (sa):
+--- Verificar que el archivo fue copiado correctamente y que está disponible dentro del contenedor.
+docker exec sqlsrv-cadenafrio ls -lh /var/opt/mssql/datos/
 
-use master;
-go
+    
+-- Ahora creo la base de datos y el usuario de trabajo.
+    
+----En Docker Desktop, la pestaña Exec del contenedor
 
--- crear la base de datos
-create database cadena_frio_db;
-go
+--- Primero hay que entrar a SQL Server como administrador mediante sqlcmd, como en NAC y acueducto solo que esto reemplaza el comando con psql
+$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "unaClav3" -C
+    ---En este entorno no se admiten bloques de código por eso usé comandos estructurados en líneas, hay que pegar primero el comando en la línea 1>, enter y al estar en 2> poner GO y de nuevo enter para poder ejecutar
+-- Verificar el usuario de la sesión y la base de datos actual.
+SELECT SUSER_NAME() AS usuario, DB_NAME() AS base_actual;
+GO
 
-use cadena_frio_db;
-go
+-- Trabajar inicialmente en master para crear la base de datos.
+USE master;
+GO
 
--- crear el inicio de sesión a nivel de servidor
-create login cadena_frio_login with password = 'unaClav3',
-    check_policy = on,
-    default_database = cadena_frio_db;
-go
+-- Crear la base de datos del proyecto.
+CREATE DATABASE cadena_frio_db;
+GO
 
--- crear el usuario de base de datos asociado al inicio de sesión
-create user cadena_frio_usr for login cadena_frio_login;
-go
+-- Verificar que la base de datos fue creada y se encuentra disponible.
+SELECT name, state_desc
+FROM sys.databases
+WHERE name = 'cadena_frio_db';
+GO
+
+-- Cambiar a la base de datos del proyecto.
+USE cadena_frio_db;
+GO
+
+--- Crear el login a nivel de servidor y establecer cadena_frio_db como DB predeterminada, este usuario es el que se autentica contra el servidor
+CREATE LOGIN cadena_frio_login WITH PASSWORD = 'unaClav3',
+    CHECK_POLICY = ON,
+    DEFAULT_DATABASE = cadena_frio_db;
+GO
+
+--- Crear el usuario de la DB asociado al login de servidor, básicamente esta es la identidad que el login toma dentro de esta base de datos específica
+CREATE USER cadena_frio_usr FOR LOGIN cadena_frio_login;
+GO
 
 -- privilegios para crear objetos dentro de esta base de datos únicamente
-grant create schema  to cadena_frio_usr;
-grant create table   to cadena_frio_usr;
-grant create view    to cadena_frio_usr;
-grant create procedure to cadena_frio_usr;
-grant create function to cadena_frio_usr;
-go
+--- Permitir al usuario crear los esquemas y tablas necesarios para construir el modelo.
+GRANT CREATE SCHEMA TO cadena_frio_usr;
+GO
+GRANT CREATE TABLE TO cadena_frio_usr;
+GO
+
+--- Permitir al usuario crear las vistas requeridas por el modelo.
+GRANT CREATE VIEW TO cadena_frio_usr;
+GO
+
+--- Permitir al usuario crear los procedimientos almacenados requeridos.
+GRANT CREATE PROCEDURE TO cadena_frio_usr;
+GO
+
+--- Permitir al usuario crear las funciones requeridas por el modelo.
+GRANT CREATE FUNCTION TO cadena_frio_usr;
+GO
+
 
 -- privilegios de manipulación de datos sobre el esquema de trabajo
 -- (se otorgan después de crear los esquemas, más abajo)
 
--- privilegio para consultar el catálogo del sistema de esta base de datos
-grant view definition to cadena_frio_usr;
-go
+-- privilegio para consultar el catálogo del sistema y permitir consultar las definiciones de los objetos de la base de datos.
+GRANT VIEW DEFINITION TO cadena_frio_usr;
+GO
 
--- Ojo: no metí al usuario en db_owner ni en ningún rol administrativo,
--- y tampoco le di acceso a master ni a las demás bases del sistema.
+---- En master mediante Docker Exec
+
+-- El permiso de carga masiva es de ámbito servidor y debe concederse desde master.
+USE master;
+GO
+
+--- Permitir al login realizar operaciones de carga masiva para el CSV, esto es un permiso de ambito de servidor por esi no se le da al usr sino al login
+GRANT ADMINISTER BULK OPERATIONS TO cadena_frio_login;
+GO
+
+    ---- En cadena_frio_db mediante Docker Exec
+
+-- Volver a la base de datos del proyecto para realizar las verificaciones.
+USE cadena_frio_db;
+GO
+
+-- Verificar que el login existe, es un SQL_LOGIN y tiene la BD correcta como predeterminada.
+SELECT name, type_desc, default_database_name
+FROM sys.server_principals
+WHERE name = 'cadena_frio_login';
+GO
+
+-- Verificar que el usuario de base de datos existe y está asociado al proyecto.
+SELECT name, type_desc
+FROM sys.database_principals
+WHERE name = 'cadena_frio_usr';
+GO
+
+-- Verificar los permisos concedidos al usuario de trabajo.
+SELECT dp.permission_name, dp.state_desc
+FROM sys.database_permissions dp
+WHERE dp.grantee_principal_id = DATABASE_PRINCIPAL_ID('cadena_frio_usr');
+GO
+
 
 -- A partir de aquí dejo de usar el administrador. En mi IDE cierro la
 -- conexión de sa y abro una nueva con el inicio de sesión cadena_frio_login,
@@ -76,23 +144,21 @@ go
 -- Evidencia 1: compruebo que no estoy usando el administrador ni sobre
 -- la base de datos master.
 
-select suser_name()  as usuario_de_conexion,
-       user_name()   as usuario_de_base_de_datos,
-       db_name()     as base_de_datos_actual,
-       @@servername  as instancia;
-go
+SELECT SUSER_NAME() AS usuario_de_conexion,
+       USER_NAME() AS usuario_de_base_de_datos,
+       DB_NAME() AS base_de_datos_actual,
+       @@SERVERNAME AS instancia;
 
--- Me tiene que salir cadena_frio_login (no sa) y cadena_frio_db (no master).
+-- Aqui la salida es cadena_frio_login (no sa) y cadena_frio_db (no master).
 
 -- Evidencia 2: reviso que este usuario no pertenezca a ningún rol
 -- administrativo.
 
-select is_srvrolemember('sysadmin')      as es_sysadmin,
-       is_srvrolemember('securityadmin') as es_securityadmin,
-       is_srvrolemember('dbcreator')     as es_dbcreator,
-       is_rolemember('db_owner')         as es_db_owner,
-       is_rolemember('db_securityadmin') as es_db_securityadmin;
-go
+SELECT IS_SRVROLEMEMBER('sysadmin') AS es_sysadmin,
+       IS_SRVROLEMEMBER('securityadmin') AS es_securityadmin,
+       IS_SRVROLEMEMBER('dbcreator') AS es_dbcreator,
+       IS_ROLEMEMBER('db_owner') AS es_db_owner,
+       IS_ROLEMEMBER('db_securityadmin') AS es_db_securityadmin;
 
 -- Los cinco valores me tienen que dar en 0. Así confirmo que el usuario
 -- solo puede actuar dentro de cadena_frio_db y no tiene cómo escalar
