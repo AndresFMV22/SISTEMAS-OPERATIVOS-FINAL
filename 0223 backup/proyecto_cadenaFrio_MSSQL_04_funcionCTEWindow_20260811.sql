@@ -57,75 +57,88 @@ eso la implementación me quedó equivalente a la de Andrés en los dos motores.
 
 -- El código de la función:
 
-create or alter function corregido.f_episodios_riesgo_termico
+CREATE OR ALTER FUNCTION corregido.f_episodios_riesgo_termico
 (
-    @p_clase_conservacion nvarchar(50) = null
+    @p_clase_conservacion NVARCHAR(50) = NULL
 )
-returns table
-as
-return
+RETURNS TABLE
+AS
+RETURN
 (
-    with clases_conservacion as (
+    WITH clases_conservacion AS
+    (
         -- CTE 1: saco las clases de conservación del catálogo de
         -- medicamentos. Las derivo de los datos, no las escribo a mano.
-        select distinct
+        SELECT DISTINCT
             m.temperatura_min_c,
             m.temperatura_max_c,
-            case
-                when m.temperatura_max_c <= 0 then 'Congelado'
-                when m.temperatura_max_c <= 8 then 'Refrigerado'
-                else 'Ambiente controlado'
-            end as clase
-        from corregido.medicamentos m
+            CASE
+                WHEN m.temperatura_max_c <= 0 THEN 'Congelado'
+                WHEN m.temperatura_max_c <= 8 THEN 'Refrigerado'
+                ELSE 'Ambiente controlado'
+            END AS clase
+        FROM corregido.medicamentos m
     ),
-    inventario_expuesto as (
+    inventario_expuesto AS
+    (
         -- CTE 2: cuento las unidades almacenadas de cada clase en cada
         -- almacén, que es el inventario que queda en riesgo cuando esa
         -- clase sale de rango.
-        select
+        SELECT
             e.almacen_id,
             cc.clase,
-            sum(e.cantidad_disponible) as unidades
-        from corregido.existencias e
-            join corregido.lotes l on l.id = e.lote_id
-            join corregido.medicamentos m on m.id = l.medicamento_id
-            join clases_conservacion cc
-                on cc.temperatura_min_c = m.temperatura_min_c
-               and cc.temperatura_max_c = m.temperatura_max_c
-        group by e.almacen_id, cc.clase
+            SUM(e.cantidad_disponible) AS unidades
+        FROM corregido.existencias e
+        JOIN corregido.lotes l
+            ON l.id = e.lote_id
+        JOIN corregido.medicamentos m
+            ON m.id = l.medicamento_id
+        JOIN clases_conservacion cc
+            ON cc.temperatura_min_c = m.temperatura_min_c
+           AND cc.temperatura_max_c = m.temperatura_max_c
+        GROUP BY
+            e.almacen_id,
+            cc.clase
     ),
-    lecturas_evaluadas as (
+    lecturas_evaluadas AS
+    (
         -- CTE 3: confronto cada lectura contra cada clase de conservación.
         -- Con lag y lead ubico la lectura dentro de la serie del almacén.
-        select
+       SELECT
             lt.almacen_id,
             cc.clase,
             lt.fecha_hora,
             lt.temperatura_c,
             cc.temperatura_min_c,
             cc.temperatura_max_c,
-            case
-                when lt.temperatura_c < cc.temperatura_min_c
-                  or lt.temperatura_c > cc.temperatura_max_c then 1
-                else 0
-            end as fuera_de_rango,
-            lag(lt.fecha_hora) over (
-                partition by lt.almacen_id, cc.clase order by lt.fecha_hora
-            ) as lectura_anterior,
-            lead(lt.fecha_hora) over (
-                partition by lt.almacen_id, cc.clase order by lt.fecha_hora
-            ) as lectura_siguiente
-        from corregido.lecturas_temperatura lt
-            cross join clases_conservacion cc
-        where @p_clase_conservacion is null
-           or cc.clase = @p_clase_conservacion
+            CASE
+                WHEN lt.temperatura_c < cc.temperatura_min_c
+                  OR lt.temperatura_c > cc.temperatura_max_c
+                THEN 1
+                ELSE 0
+            END AS fuera_de_rango,
+            LAG(lt.fecha_hora) OVER
+            (
+                PARTITION BY lt.almacen_id, cc.clase
+                ORDER BY lt.fecha_hora
+            ) AS lectura_anterior,
+            LEAD(lt.fecha_hora) OVER
+            (
+                PARTITION BY lt.almacen_id, cc.clase
+                ORDER BY lt.fecha_hora
+            ) AS lectura_siguiente
+        FROM corregido.lecturas_temperatura lt
+        CROSS JOIN clases_conservacion cc
+        WHERE @p_clase_conservacion IS NULL
+           OR cc.clase = @p_clase_conservacion
     ),
-    islas as (
+    islas AS
+    (
         -- CTE 4: acá aplico huecos e islas. La diferencia entre las dos
         -- numeraciones se mantiene constante mientras el estado de
         -- cumplimiento no cambie, así identifico cada racha de lecturas
         -- consecutivas.
-        select
+        SELECT
             le.almacen_id,
             le.clase,
             le.fecha_hora,
@@ -134,73 +147,113 @@ return
             le.temperatura_max_c,
             le.fuera_de_rango,
             le.lectura_siguiente,
-            row_number() over (
-                partition by le.almacen_id, le.clase order by le.fecha_hora
+            ROW_NUMBER() OVER
+            (
+                PARTITION BY le.almacen_id, le.clase
+                ORDER BY le.fecha_hora
             )
-            - row_number() over (
-                partition by le.almacen_id, le.clase, le.fuera_de_rango
-                order by le.fecha_hora
-            ) as isla
-        from lecturas_evaluadas le
+            -
+            ROW_NUMBER() OVER
+            (
+                PARTITION BY le.almacen_id, le.clase, le.fuera_de_rango
+                ORDER BY le.fecha_hora
+            ) AS isla
+        FROM lecturas_evaluadas le
     ),
-    episodios as (
+    episodios AS
+    (
         -- CTE 5: agrego cada isla que corresponda a una racha fuera de rango.
-        select
+        SELECT
             i.almacen_id,
             i.clase,
             i.isla,
-            min(i.fecha_hora) as fecha_inicio,
-            max(i.fecha_hora) as fecha_fin,
-            count(*) as lecturas,
-            cast(datediff(second, min(i.fecha_hora), max(i.fecha_hora)) / 3600.0
-                 as decimal(12,2)) as duracion_horas,
-            cast(datediff(second, min(i.fecha_hora),
-                          coalesce(max(i.lectura_siguiente), max(i.fecha_hora))) / 3600.0
-                 as decimal(12,2)) as ventana_exposicion_horas,
-            max(greatest(i.temperatura_min_c - i.temperatura_c,
-                         i.temperatura_c - i.temperatura_max_c)) as desviacion_maxima_c
-        from islas i
-        where i.fuera_de_rango = 1
-        group by i.almacen_id, i.clase, i.isla
+            MIN(i.fecha_hora) AS fecha_inicio,
+            MAX(i.fecha_hora) AS fecha_fin,
+            COUNT(*) AS lecturas,
+            CAST(
+                DATEDIFF(
+                    SECOND,
+                    MIN(i.fecha_hora),
+                    MAX(i.fecha_hora)
+                ) / 3600.0
+                AS DECIMAL(12,2)
+            ) AS duracion_horas,
+            CAST(
+                DATEDIFF(
+                    SECOND,
+                    MIN(i.fecha_hora),
+                    COALESCE(
+                        MAX(i.lectura_siguiente),
+                        MAX(i.fecha_hora)
+                    )
+                ) / 3600.0
+                AS DECIMAL(12,2)
+            ) AS ventana_exposicion_horas,
+            MAX(
+                GREATEST(
+                    i.temperatura_min_c - i.temperatura_c,
+                    i.temperatura_c - i.temperatura_max_c
+                )
+            ) AS desviacion_maxima_c
+        FROM islas i
+        WHERE i.fuera_de_rango = 1
+        GROUP BY
+            i.almacen_id,
+            i.clase,
+            i.isla
     )
+
+
     -- Y en la consulta final numero los episodios, acumulo el tiempo de
     -- exposición y los ordeno por severidad dentro de cada almacén.
-    select
-        a.descripcion as almacen,
-        c.descripcion as ciudad,
-        ep.clase      as clase_conservacion,
-        row_number() over (
-            partition by ep.almacen_id, ep.clase order by ep.fecha_inicio
-        ) as episodio,
+    SELECT
+        a.descripcion AS almacen,
+        c.descripcion AS ciudad,
+        ep.clase AS clase_conservacion,
+        ROW_NUMBER() OVER
+        (
+            PARTITION BY ep.almacen_id, ep.clase
+            ORDER BY ep.fecha_inicio
+        ) AS episodio,
         ep.fecha_inicio,
         ep.fecha_fin,
         ep.lecturas,
         ep.duracion_horas,
         ep.ventana_exposicion_horas,
         ep.desviacion_maxima_c,
-        coalesce(ie.unidades, 0) as unidades_en_riesgo,
-        cast(sum(ep.duracion_horas) over (
-                 partition by ep.almacen_id, ep.clase
-                 order by ep.fecha_inicio
-                 rows between unbounded preceding and current row
-             ) as decimal(12,2)) as horas_acumuladas,
-        rank() over (
-            partition by ep.almacen_id
-            order by ep.duracion_horas desc, ep.desviacion_maxima_c desc
-        ) as severidad_en_almacen
-    from episodios ep
-        join corregido.almacenes a on a.id = ep.almacen_id
-        join corregido.ciudades c on c.id = a.ciudad_id
-        left join inventario_expuesto ie
-            on ie.almacen_id = ep.almacen_id and ie.clase = ep.clase
+        COALESCE(ie.unidades, 0) AS unidades_en_riesgo,
+        CAST(
+            SUM(ep.duracion_horas) OVER
+            (
+                PARTITION BY ep.almacen_id, ep.clase
+                ORDER BY ep.fecha_inicio
+                ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+            )
+            AS DECIMAL(12,2)
+        ) AS horas_acumuladas,
+        RANK() OVER
+        (
+            PARTITION BY ep.almacen_id
+            ORDER BY
+                ep.duracion_horas DESC,
+                ep.desviacion_maxima_c DESC
+        ) AS severidad_en_almacen
+    FROM episodios ep
+    JOIN corregido.almacenes a
+        ON a.id = ep.almacen_id
+    JOIN corregido.ciudades c
+        ON c.id = a.ciudad_id
+    LEFT JOIN inventario_expuesto ie
+        ON ie.almacen_id = ep.almacen_id
+       AND ie.clase = ep.clase
 );
-go
+
 
 -- Ahora la consulta que la invoca. Elegí ver los diez episodios más severos
 -- de toda la red para los medicamentos congelados, porque son los más
 -- frágiles de las tres clases.
 
-select top 10
+SELECT TOP 10
     almacen,
     ciudad,
     clase_conservacion,
@@ -214,13 +267,17 @@ select top 10
     unidades_en_riesgo,
     horas_acumuladas,
     severidad_en_almacen
-from corregido.f_episodios_riesgo_termico('Congelado')
-order by duracion_horas desc, desviacion_maxima_c desc;
-go
+FROM corregido.f_episodios_riesgo_termico('Congelado')
+ORDER BY
+    duracion_horas DESC,
+    desviacion_maxima_c DESC;
 
+-- CONSULTA COMPLETA DE VERIFICACIÓN:
 -- Y esta segunda consulta me da la vista completa, todos los episodios de
 -- todas las clases.
-select *
-from corregido.f_episodios_riesgo_termico(default)
-order by almacen, clase_conservacion, episodio;
-go
+SELECT *
+FROM corregido.f_episodios_riesgo_termico(DEFAULT)
+ORDER BY
+    almacen,
+    clase_conservacion,
+    episodio;
