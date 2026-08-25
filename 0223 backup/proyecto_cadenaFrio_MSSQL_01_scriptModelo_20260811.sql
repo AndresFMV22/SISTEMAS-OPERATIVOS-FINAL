@@ -24,17 +24,37 @@ docker run --name sqlsrv-cadenafrio -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=una
 
 -- Copio el archivo de datos al contenedor, lo necesito para el BULK INSERT
 --- Crear dentro del contenedor el directorio donde se almacenará el archivo CSV, -p para evitar conflictos 
-docker exec sqlsrv-cadenafrio mkdir -p /var/opt/mssql/datos
+docker exec sqlsrv-cadenafrio mkdir -p /tmp/bulkload/cadena_frio
 
 ---Copiar el CSV al contenedor para poder utilizarlo posteriormente con BULK INSERT.
-docker cp datos_cadena_frio/datos_cadena_frio.csv sqlsrv-cadenafrio:/var/opt/mssql/datos/datos_cadena_frio.csv
+    ---Aca la dirección tiene que ser de donde se quiera sacar el .csv en mi caso la dirección que yo use fue: "C:\Users\Usuario\Downloads\datos_cadena_frio\datos_cadena_frio.csv" 
+docker cp datos_cadena_frio/datos_cadena_frio.csv sqlsrv-cadenafrio:/tmp/bulkload/cadena_frio/datos_cadena_frio.csv
 
---- Verificar que el archivo fue copiado correctamente y que está disponible dentro del contenedor.
-docker exec sqlsrv-cadenafrio ls -lh /var/opt/mssql/datos/
+--- Ajustar los permisos del archivo como administrador del contenedor.
+docker exec -u 0 sqlsrv-cadenafrio chmod 644 /tmp/bulkload/cadena_frio/datos_cadena_frio.csv
 
+--- Verificar que el archivo fue copiado y tiene permisos de lectura.
+docker exec sqlsrv-cadenafrio ls -lh /tmp/bulkload/cadena_frio/
+
+--- Configurar la ruta permitida para operaciones de carga masiva de SQL Server.
+docker exec -u 0 sqlsrv-cadenafrio /opt/mssql/bin/mssql-conf set bulkadmin.allowedpathslist "/tmp/bulkload/cadena_frio"
+
+--- Verificar directamente la configuración guardada en mssql.conf.
+docker exec -u 0 sqlsrv-cadenafrio cat /var/opt/mssql/mssql.conf
+
+--- Instalar ACL porque el contenedor no disponía inicialmente de setfacl.
+docker exec -u 0 sqlsrv-cadenafrio bash -c "apt-get update && apt-get install -y acl"
+
+--- Dar al usuario mssql permiso explícito de lectura sobre el CSV.
+docker exec -u 0 sqlsrv-cadenafrio setfacl -m u:mssql:r /tmp/bulkload/cadena_frio/datos_cadena_frio.csv   
+
+--- Verificar que mssql tiene permiso de lectura mediante ACL.
+docker exec -u 0 sqlsrv-cadenafrio getfacl /tmp/bulkload/cadena_frio/datos_cadena_frio.csv
+
+--- Comprobar que el usuario mssql puede leer efectivamente el archivo.
+docker exec -u 10001 sqlsrv-cadenafrio bash -c "head -n 2 /tmp/bulkload/cadena_frio/datos_cadena_frio.csv"
     
--- Ahora creo la base de datos y el usuario de trabajo.
-    
+
 ----En Docker Desktop, la pestaña Exec del contenedor
 
 --- Primero hay que entrar a SQL Server como administrador mediante sqlcmd, como en NAC y acueducto solo que esto reemplaza el comando con psql
@@ -170,10 +190,13 @@ SELECT IS_SRVROLEMEMBER('sysadmin') AS es_sysadmin,
 -- Creamos esquema inicial
 CREATE SCHEMA inicial;
 
--- El archivo que me pasó Andrés es una sola tabla ancha y desnormalizada,
--- así que la recibo tal cual llega: todas las columnas como texto y sin
--- restricciones. Primero cargo el archivo completo acá y después reparto
--- los datos hacia el modelo normalizado.
+-----CREACIÓN DE TABLAS CORREGIDAS
+
+-- Primero se crean todas las tablas y sus restricciones; después se pueblan
+-- desde inicial.cadena_frio. Se hace así para separar la definición del modelo
+-- de la carga de datos y respetar el orden de las dependencias entre tablas.
+
+---- Fabricantes
 CREATE TABLE inicial.cadena_frio
 (
     fabricante_nombre              nvarchar(200),
@@ -239,263 +262,451 @@ WHERE fabricante_nombre LIKE '%ñ%'
    OR almacen_ciudad LIKE '%ó%'
    OR almacen_ciudad LIKE '%ú%';
 
--- De acá en adelante ya trabajo sobre el modelo normalizado.
-create schema corregido;
-go
 
--- Empiezo por fabricantes.
-create table corregido.fabricantes
+--- De acá en adelante ya trabajo sobre el modelo normalizado.
+---Creacion del esquema:
+CREATE SCHEMA corregido;
+
+---CREACIÓN DE TABLAS CORREGIDAS
+
+-- Primero se crean todas las tablas y sus restricciones; después se pueblan
+-- desde inicial.cadena_frio. Se hace así para separar la definición del modelo
+-- de la carga de datos y respetar el orden de las dependencias entre tablas.
+
+---- Fabricantes
+
+CREATE TABLE corregido.fabricantes
 (
-    id          int identity(1,1) constraint fabricantes_pk primary key,
-    descripcion nvarchar(150) not null constraint fabricantes_descripcion_uk unique
+    id          INT IDENTITY(1,1)
+        CONSTRAINT fabricantes_pk PRIMARY KEY,
+
+    descripcion NVARCHAR(150) NOT NULL
+        CONSTRAINT fabricantes_descripcion_uk UNIQUE
 );
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Laboratorios que fabrican los medicamentos',
-     'SCHEMA', 'corregido', 'TABLE', 'fabricantes';
-exec sp_addextendedproperty 'MS_Description', 'id del fabricante',
-     'SCHEMA', 'corregido', 'TABLE', 'fabricantes', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'razón social del laboratorio fabricante',
-     'SCHEMA', 'corregido', 'TABLE', 'fabricantes', 'COLUMN', 'descripcion';
-go
+--- Agregar metadatos descriptivos a la tabla y sus columnas.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Laboratorios que fabrican los medicamentos',
+    'SCHEMA', 'corregido',
+    'TABLE', 'fabricantes';
 
--- La lleno desde el esquema inicial
-insert into corregido.fabricantes (descripcion)
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Id del fabricante',
+    'SCHEMA', 'corregido',
+    'TABLE', 'fabricantes',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Razón social del laboratorio fabricante',
+    'SCHEMA', 'corregido',
+    'TABLE', 'fabricantes',
+    'COLUMN', 'descripcion';
+
+
+---- Formas farmacéuticas
+
+CREATE TABLE corregido.formas_farmaceuticas
 (
-    select distinct ltrim(rtrim(fabricante_nombre))
-    from inicial.cadena_frio
-);
-go
+    id          INT IDENTITY(1,1)
+        CONSTRAINT formas_farmaceuticas_pk PRIMARY KEY,
 
--- Sigo con formas farmacéuticas.
-create table corregido.formas_farmaceuticas
-(
-    id          int identity(1,1) constraint formas_farmaceuticas_pk primary key,
-    descripcion nvarchar(150) not null constraint formas_farmaceuticas_descripcion_uk unique
+    descripcion NVARCHAR(150) NOT NULL
+        CONSTRAINT formas_farmaceuticas_descripcion_uk UNIQUE
 );
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Presentaciones farmacéuticas de los medicamentos',
-     'SCHEMA', 'corregido', 'TABLE', 'formas_farmaceuticas';
-exec sp_addextendedproperty 'MS_Description', 'id de la forma farmacéutica',
-     'SCHEMA', 'corregido', 'TABLE', 'formas_farmaceuticas', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'descripción de la forma farmacéutica',
-     'SCHEMA', 'corregido', 'TABLE', 'formas_farmaceuticas', 'COLUMN', 'descripcion';
-go
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Presentaciones farmacéuticas de los medicamentos',
+    'SCHEMA', 'corregido',
+    'TABLE', 'formas_farmaceuticas';
 
-insert into corregido.formas_farmaceuticas (descripcion)
-(
-    select distinct ltrim(rtrim(forma_farmaceutica))
-    from inicial.cadena_frio
-);
-go
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la forma farmacéutica',
+    'SCHEMA', 'corregido',
+    'TABLE', 'formas_farmaceuticas',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'descripción de la forma farmacéutica',
+    'SCHEMA', 'corregido',
+    'TABLE', 'formas_farmaceuticas',
+    'COLUMN', 'descripcion';
+
+
+---- Ciudades
 
 -- Ciudades, para saber dónde queda cada almacén.
-create table corregido.ciudades
+CREATE TABLE corregido.ciudades
 (
-    id          int identity(1,1) constraint ciudades_pk primary key,
-    descripcion nvarchar(150) not null constraint ciudades_descripcion_uk unique
-);
-go
+    id          INT IDENTITY(1,1)
+        CONSTRAINT ciudades_pk PRIMARY KEY,
 
-exec sp_addextendedproperty 'MS_Description', 'Ciudades donde se ubican los almacenes',
-     'SCHEMA', 'corregido', 'TABLE', 'ciudades';
-exec sp_addextendedproperty 'MS_Description', 'id de la ciudad',
-     'SCHEMA', 'corregido', 'TABLE', 'ciudades', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'nombre de la ciudad',
-     'SCHEMA', 'corregido', 'TABLE', 'ciudades', 'COLUMN', 'descripcion';
-go
-
-insert into corregido.ciudades (descripcion)
-(
-    select distinct ltrim(rtrim(almacen_ciudad))
-    from inicial.cadena_frio
+    descripcion NVARCHAR(150) NOT NULL
+        CONSTRAINT ciudades_descripcion_uk UNIQUE
 );
-go
+
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Ciudades donde se ubican los almacenes',
+    'SCHEMA', 'corregido',
+    'TABLE', 'ciudades';
+
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la ciudad',
+    'SCHEMA', 'corregido',
+    'TABLE', 'ciudades',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'nombre de la ciudad',
+    'SCHEMA', 'corregido',
+    'TABLE', 'ciudades',
+    'COLUMN', 'descripcion';
+
+
+---- Tipos de almacén
 
 -- Y los tipos de almacén: solo son tres (Planta, Centro de distribución,
 -- Unidad de salud), pero igual los saco a su propia tabla catálogo.
-create table corregido.tipos_almacen
+CREATE TABLE corregido.tipos_almacen
 (
-    id          int identity(1,1) constraint tipos_almacen_pk primary key,
-    descripcion nvarchar(150) not null constraint tipos_almacen_descripcion_uk unique
+    id          INT IDENTITY(1,1)
+        CONSTRAINT tipos_almacen_pk PRIMARY KEY,
+
+    descripcion NVARCHAR(150) NOT NULL
+        CONSTRAINT tipos_almacen_descripcion_uk UNIQUE
 );
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Tipos de almacén de la red de distribución',
-     'SCHEMA', 'corregido', 'TABLE', 'tipos_almacen';
-exec sp_addextendedproperty 'MS_Description', 'id del tipo de almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'tipos_almacen', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'descripción del tipo de almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'tipos_almacen', 'COLUMN', 'descripcion';
-go
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Tipos de almacén de la red de distribución',
+    'SCHEMA', 'corregido',
+    'TABLE', 'tipos_almacen';
 
-insert into corregido.tipos_almacen (descripcion)
-(
-    select distinct ltrim(rtrim(almacen_tipo))
-    from inicial.cadena_frio
-);
-go
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del tipo de almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'tipos_almacen',
+    'COLUMN', 'id';
 
--- Con medicamentos tuve que decidir dónde poner el rango de temperatura.
--- Andrés ya lo había verificado en el archivo: cada medicamento siempre
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'descripción del tipo de almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'tipos_almacen',
+    'COLUMN', 'descripcion';
+
+
+---- Medicamentos
+
+-- Con medicamentos decidi  poner el rango de temperatura. cada medicamento siempre
 -- trae el mismo par (mínima, máxima) en las 1.000 filas, así que es un
 -- atributo del medicamento, no del lote ni de la lectura. Ponerlo acá me
 -- evita esa redundancia.
-create table corregido.medicamentos
-(
-    id                    int identity(1,1) constraint medicamentos_pk primary key,
-    descripcion           nvarchar(200) not null constraint medicamentos_descripcion_uk unique,
-    fabricante_id         int not null constraint medicamentos_fabricante_fk references corregido.fabricantes,
-    forma_farmaceutica_id int not null constraint medicamentos_forma_farmaceutica_fk references corregido.formas_farmaceuticas,
-    temperatura_min_c     decimal(5,2) not null,
-    temperatura_max_c     decimal(5,2) not null,
-    constraint medicamentos_rango_temperatura_ck check (temperatura_min_c < temperatura_max_c)
-);
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Medicamentos termosensibles distribuidos por la empresa',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos';
-exec sp_addextendedproperty 'MS_Description', 'id del medicamento',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'nombre comercial del medicamento',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'descripcion';
-exec sp_addextendedproperty 'MS_Description', 'id del laboratorio que fabrica el medicamento',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'fabricante_id';
-exec sp_addextendedproperty 'MS_Description', 'id de la forma farmacéutica del medicamento',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'forma_farmaceutica_id';
-exec sp_addextendedproperty 'MS_Description', 'temperatura mínima de conservación en grados celsius',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'temperatura_min_c';
-exec sp_addextendedproperty 'MS_Description', 'temperatura máxima de conservación en grados celsius',
-     'SCHEMA', 'corregido', 'TABLE', 'medicamentos', 'COLUMN', 'temperatura_max_c';
-go
-
-insert into corregido.medicamentos (descripcion, fabricante_id, forma_farmaceutica_id, temperatura_min_c, temperatura_max_c)
+CREATE TABLE corregido.medicamentos
 (
-    select distinct
-        ltrim(rtrim(cf.medicamento_nombre)),
-        f.id,
-        ff.id,
-        cast(cf.temperatura_min_c as decimal(5,2)),
-        cast(cf.temperatura_max_c as decimal(5,2))
-    from inicial.cadena_frio cf
-        join corregido.fabricantes f on f.descripcion = ltrim(rtrim(cf.fabricante_nombre))
-        join corregido.formas_farmaceuticas ff on ff.descripcion = ltrim(rtrim(cf.forma_farmaceutica))
+    id                    INT IDENTITY(1,1)
+        CONSTRAINT medicamentos_pk PRIMARY KEY,
+
+    descripcion           NVARCHAR(200) NOT NULL
+        CONSTRAINT medicamentos_descripcion_uk UNIQUE,
+
+    fabricante_id         INT NOT NULL
+        CONSTRAINT medicamentos_fabricante_fk
+        REFERENCES corregido.fabricantes,
+
+    forma_farmaceutica_id INT NOT NULL
+        CONSTRAINT medicamentos_forma_farmaceutica_fk
+        REFERENCES corregido.formas_farmaceuticas,
+
+    temperatura_min_c     DECIMAL(5,2) NOT NULL,
+
+    temperatura_max_c     DECIMAL(5,2) NOT NULL,
+
+    CONSTRAINT medicamentos_rango_temperatura_ck
+        CHECK (temperatura_min_c < temperatura_max_c)
 );
-go
+
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Medicamentos termosensibles distribuidos por la empresa',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos';
+
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del medicamento',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'nombre comercial del medicamento',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'descripcion';
+
+--- Agregar metadatos descriptivos a la columna fabricante_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del laboratorio que fabrica el medicamento',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'fabricante_id';
+
+--- Agregar metadatos descriptivos a la columna forma_farmaceutica_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la forma farmacéutica del medicamento',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'forma_farmaceutica_id';
+
+--- Agregar metadatos descriptivos a la columna temperatura_min_c.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'temperatura mínima de conservación en grados celsius',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'temperatura_min_c';
+
+--- Agregar metadatos descriptivos a la columna temperatura_max_c.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'temperatura máxima de conservación en grados celsius',
+    'SCHEMA', 'corregido',
+    'TABLE', 'medicamentos',
+    'COLUMN', 'temperatura_max_c';
+
+
+---- Lotes
 
 -- Para lotes uso la misma verificación que hizo Andrés sobre el archivo:
 -- ningún código de lote aparece asociado a dos medicamentos distintos, así
 -- que un lote pertenece siempre a uno solo.
-create table corregido.lotes
-(
-    id                int identity(1,1) constraint lotes_pk primary key,
-    codigo            nvarchar(50) not null constraint lotes_codigo_uk unique,
-    medicamento_id    int not null constraint lotes_medicamento_fk references corregido.medicamentos,
-    fecha_fabricacion date not null,
-    fecha_vencimiento date not null,
-    constraint lotes_vigencia_ck check (fecha_vencimiento > fecha_fabricacion)
-);
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Lotes de producción de cada medicamento',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes';
-exec sp_addextendedproperty 'MS_Description', 'id del lote',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'código del lote asignado por el fabricante',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes', 'COLUMN', 'codigo';
-exec sp_addextendedproperty 'MS_Description', 'id del medicamento al que pertenece el lote',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes', 'COLUMN', 'medicamento_id';
-exec sp_addextendedproperty 'MS_Description', 'fecha en la que se fabricó el lote',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes', 'COLUMN', 'fecha_fabricacion';
-exec sp_addextendedproperty 'MS_Description', 'fecha en la que vence el lote',
-     'SCHEMA', 'corregido', 'TABLE', 'lotes', 'COLUMN', 'fecha_vencimiento';
-go
-
-insert into corregido.lotes (codigo, medicamento_id, fecha_fabricacion, fecha_vencimiento)
+CREATE TABLE corregido.lotes
 (
-    select distinct
-        ltrim(rtrim(cf.lote_codigo)),
-        m.id,
-        cast(cf.lote_fecha_fabricacion as date),
-        cast(cf.lote_fecha_vencimiento as date)
-    from inicial.cadena_frio cf
-        join corregido.medicamentos m on m.descripcion = ltrim(rtrim(cf.medicamento_nombre))
+    id                INT IDENTITY(1,1)
+        CONSTRAINT lotes_pk PRIMARY KEY,
+
+    codigo            NVARCHAR(50) NOT NULL
+        CONSTRAINT lotes_codigo_uk UNIQUE,
+
+    medicamento_id    INT NOT NULL
+        CONSTRAINT lotes_medicamento_fk
+        REFERENCES corregido.medicamentos,
+
+    fecha_fabricacion DATE NOT NULL,
+
+    fecha_vencimiento DATE NOT NULL,
+
+    CONSTRAINT lotes_vigencia_ck
+        CHECK (fecha_vencimiento > fecha_fabricacion)
 );
-go
+
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Lotes de producción de cada medicamento',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes';
+
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del lote',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna codigo.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'código del lote asignado por el fabricante',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes',
+    'COLUMN', 'codigo';
+
+--- Agregar metadatos descriptivos a la columna medicamento_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del medicamento al que pertenece el lote',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes',
+    'COLUMN', 'medicamento_id';
+
+--- Agregar metadatos descriptivos a la columna fecha_fabricacion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'fecha en la que se fabricó el lote',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes',
+    'COLUMN', 'fecha_fabricacion';
+
+--- Agregar metadatos descriptivos a la columna fecha_vencimiento.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'fecha en la que vence el lote',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lotes',
+    'COLUMN', 'fecha_vencimiento';
+
+
+---- Almacenes
 
 -- Ahora los almacenes.
-create table corregido.almacenes
+CREATE TABLE corregido.almacenes
 (
-    id              int identity(1,1) constraint almacenes_pk primary key,
-    descripcion     nvarchar(200) not null constraint almacenes_descripcion_uk unique,
-    ciudad_id       int not null constraint almacenes_ciudad_fk references corregido.ciudades,
-    tipo_almacen_id int not null constraint almacenes_tipo_almacen_fk references corregido.tipos_almacen
-);
-go
+    id              INT IDENTITY(1,1)
+        CONSTRAINT almacenes_pk PRIMARY KEY,
 
-exec sp_addextendedproperty 'MS_Description', 'Almacenes de la red de distribución',
-     'SCHEMA', 'corregido', 'TABLE', 'almacenes';
-exec sp_addextendedproperty 'MS_Description', 'id del almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'almacenes', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'nombre del almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'almacenes', 'COLUMN', 'descripcion';
-exec sp_addextendedproperty 'MS_Description', 'id de la ciudad donde se ubica el almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'almacenes', 'COLUMN', 'ciudad_id';
-exec sp_addextendedproperty 'MS_Description', 'id del tipo de almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'almacenes', 'COLUMN', 'tipo_almacen_id';
-go
+    descripcion     NVARCHAR(200) NOT NULL
+        CONSTRAINT almacenes_descripcion_uk UNIQUE,
 
-insert into corregido.almacenes (descripcion, ciudad_id, tipo_almacen_id)
-(
-    select distinct
-        ltrim(rtrim(cf.almacen_nombre)),
-        c.id,
-        ta.id
-    from inicial.cadena_frio cf
-        join corregido.ciudades c on c.descripcion = ltrim(rtrim(cf.almacen_ciudad))
-        join corregido.tipos_almacen ta on ta.descripcion = ltrim(rtrim(cf.almacen_tipo))
+    ciudad_id       INT NOT NULL
+        CONSTRAINT almacenes_ciudad_fk
+        REFERENCES corregido.ciudades,
+
+    tipo_almacen_id INT NOT NULL
+        CONSTRAINT almacenes_tipo_almacen_fk
+        REFERENCES corregido.tipos_almacen
 );
-go
+
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Almacenes de la red de distribución',
+    'SCHEMA', 'corregido',
+    'TABLE', 'almacenes';
+
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'almacenes',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna descripcion.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'nombre del almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'almacenes',
+    'COLUMN', 'descripcion';
+
+--- Agregar metadatos descriptivos a la columna ciudad_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la ciudad donde se ubica el almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'almacenes',
+    'COLUMN', 'ciudad_id';
+
+--- Agregar metadatos descriptivos a la columna tipo_almacen_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del tipo de almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'almacenes',
+    'COLUMN', 'tipo_almacen_id';
+
+
+---- Existencias
 
 -- Con existencias entro a la parte que más me costó pensar del modelo.
 -- Un mismo lote se reparte entre varios almacenes y un mismo almacén guarda
 -- decenas de lotes distintos, así que la relación es de muchos a muchos y
 -- uso la pareja (lote, almacén) como su clave natural.
-create table corregido.existencias
-(
-    id                  int identity(1,1) constraint existencias_pk primary key,
-    lote_id             int not null constraint existencias_lote_fk references corregido.lotes,
-    almacen_id          int not null constraint existencias_almacen_fk references corregido.almacenes,
-    cantidad_disponible int not null,
-    constraint existencias_lote_almacen_uk unique (lote_id, almacen_id),
-    constraint existencias_cantidad_ck check (cantidad_disponible > 0)
-);
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Cantidad disponible de cada lote en cada almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'existencias';
-exec sp_addextendedproperty 'MS_Description', 'id de la existencia',
-     'SCHEMA', 'corregido', 'TABLE', 'existencias', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'id del lote almacenado',
-     'SCHEMA', 'corregido', 'TABLE', 'existencias', 'COLUMN', 'lote_id';
-exec sp_addextendedproperty 'MS_Description', 'id del almacén donde reposa el lote',
-     'SCHEMA', 'corregido', 'TABLE', 'existencias', 'COLUMN', 'almacen_id';
-exec sp_addextendedproperty 'MS_Description', 'cantidad de unidades disponibles del lote en el almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'existencias', 'COLUMN', 'cantidad_disponible';
-go
-
-insert into corregido.existencias (lote_id, almacen_id, cantidad_disponible)
+CREATE TABLE corregido.existencias
 (
-    select
-        l.id,
-        a.id,
-        cast(cf.existencia_cantidad_disponible as int)
-    from inicial.cadena_frio cf
-        join corregido.lotes l on l.codigo = ltrim(rtrim(cf.lote_codigo))
-        join corregido.almacenes a on a.descripcion = ltrim(rtrim(cf.almacen_nombre))
+    id                  INT IDENTITY(1,1)
+        CONSTRAINT existencias_pk PRIMARY KEY,
+
+    lote_id             INT NOT NULL
+        CONSTRAINT existencias_lote_fk
+        REFERENCES corregido.lotes,
+
+    almacen_id          INT NOT NULL
+        CONSTRAINT existencias_almacen_fk
+        REFERENCES corregido.almacenes,
+
+    cantidad_disponible INT NOT NULL,
+
+    CONSTRAINT existencias_lote_almacen_uk
+        UNIQUE (lote_id, almacen_id),
+
+    CONSTRAINT existencias_cantidad_ck
+        CHECK (cantidad_disponible > 0)
 );
-go
+
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Cantidad disponible de cada lote en cada almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'existencias';
+
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la existencia',
+    'SCHEMA', 'corregido',
+    'TABLE', 'existencias',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna lote_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del lote almacenado',
+    'SCHEMA', 'corregido',
+    'TABLE', 'existencias',
+    'COLUMN', 'lote_id';
+
+--- Agregar metadatos descriptivos a la columna almacen_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del almacén donde reposa el lote',
+    'SCHEMA', 'corregido',
+    'TABLE', 'existencias',
+    'COLUMN', 'almacen_id';
+
+--- Agregar metadatos descriptivos a la columna cantidad_disponible.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'cantidad de unidades disponibles del lote en el almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'existencias',
+    'COLUMN', 'cantidad_disponible';
+
+
+---- Lecturas de temperatura
 
 -- Y acá va la trampa del ejercicio: la existencia de un lote en un almacén
 -- y la lectura de temperatura de ese almacén comparten fila en el CSV, pero
@@ -504,251 +715,556 @@ go
 -- dejado juntas en una sola tabla, habría metido una dependencia que no
 -- existe en el dominio y me habría roto la tercera forma normal, así que
 -- las separo en dos tablas, igual que en la versión de Andrés.
-create table corregido.lecturas_temperatura
+
+CREATE TABLE corregido.lecturas_temperatura
 (
-    id            int identity(1,1) constraint lecturas_temperatura_pk primary key,
-    almacen_id    int not null constraint lecturas_temperatura_almacen_fk references corregido.almacenes,
-    fecha_hora    datetime2 not null,
-    temperatura_c decimal(5,2) not null,
-    constraint lecturas_temperatura_almacen_fecha_uk unique (almacen_id, fecha_hora)
+    id            INT IDENTITY(1,1)
+        CONSTRAINT lecturas_temperatura_pk PRIMARY KEY,
+
+    almacen_id    INT NOT NULL
+        CONSTRAINT lecturas_temperatura_almacen_fk
+        REFERENCES corregido.almacenes,
+
+    fecha_hora    DATETIME2 NOT NULL,
+
+    temperatura_c DECIMAL(5,2) NOT NULL,
+
+    CONSTRAINT lecturas_temperatura_almacen_fecha_uk
+        UNIQUE (almacen_id, fecha_hora)
 );
-go
 
-exec sp_addextendedproperty 'MS_Description', 'Serie de lecturas del sensor de temperatura de cada almacén',
-     'SCHEMA', 'corregido', 'TABLE', 'lecturas_temperatura';
-exec sp_addextendedproperty 'MS_Description', 'id de la lectura',
-     'SCHEMA', 'corregido', 'TABLE', 'lecturas_temperatura', 'COLUMN', 'id';
-exec sp_addextendedproperty 'MS_Description', 'id del almacén donde se tomó la lectura',
-     'SCHEMA', 'corregido', 'TABLE', 'lecturas_temperatura', 'COLUMN', 'almacen_id';
-exec sp_addextendedproperty 'MS_Description', 'fecha y hora en que se registró la lectura',
-     'SCHEMA', 'corregido', 'TABLE', 'lecturas_temperatura', 'COLUMN', 'fecha_hora';
-exec sp_addextendedproperty 'MS_Description', 'temperatura registrada en grados celsius',
-     'SCHEMA', 'corregido', 'TABLE', 'lecturas_temperatura', 'COLUMN', 'temperatura_c';
-go
+--- Agregar metadatos descriptivos a la tabla.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'Serie de lecturas del sensor de temperatura de cada almacén',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lecturas_temperatura';
 
-insert into corregido.lecturas_temperatura (almacen_id, fecha_hora, temperatura_c)
+--- Agregar metadatos descriptivos a la columna id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id de la lectura',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lecturas_temperatura',
+    'COLUMN', 'id';
+
+--- Agregar metadatos descriptivos a la columna almacen_id.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'id del almacén donde se tomó la lectura',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lecturas_temperatura',
+    'COLUMN', 'almacen_id';
+
+--- Agregar metadatos descriptivos a la columna fecha_hora.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'fecha y hora en que se registró la lectura',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lecturas_temperatura',
+    'COLUMN', 'fecha_hora';
+
+---Agregar metadatos descriptivos a la columna temperatura_c.
+EXEC sp_addextendedproperty
+    'MS_Description',
+    'temperatura registrada en grados celsius',
+    'SCHEMA', 'corregido',
+    'TABLE', 'lecturas_temperatura',
+    'COLUMN', 'temperatura_c';
+
+----Verificacion de creacion de tablas
+SELECT
+    s.name AS esquema,
+    t.name AS tabla
+FROM sys.tables t
+INNER JOIN sys.schemas s
+    ON t.schema_id = s.schema_id
+WHERE s.name = 'corregido'
+ORDER BY t.name;
+
+
+---Verificacion de metadatos
+SELECT
+    s.name AS esquema,
+    t.name AS tabla,
+    c.name AS columna,
+    ep.name AS propiedad,
+    CAST(ep.value AS NVARCHAR(4000)) AS descripcion
+FROM sys.extended_properties ep
+LEFT JOIN sys.tables t
+    ON ep.major_id = t.object_id
+LEFT JOIN sys.schemas s
+    ON t.schema_id = s.schema_id
+LEFT JOIN sys.columns c
+    ON ep.major_id = c.object_id
+   AND ep.minor_id = c.column_id
+WHERE s.name = 'corregido'
+ORDER BY t.name, c.column_id, ep.name;
+
+
+
+
+----POBLACIÓN DE LAS TABLAS CORREGIDAS
+
+-- Primero se llenan las tablas catálogo y después las tablas que dependen de ellas, respetando el orden de las claves foráneas del modelo.
+
+
+---- Fabricantes
+
+-- La lleno desde el esquema inicial.
+INSERT INTO corregido.fabricantes (descripcion)
 (
-    select
+    SELECT DISTINCT
+        LTRIM(RTRIM(fabricante_nombre))
+    FROM inicial.cadena_frio
+);
+
+
+---- Formas farmacéuticas
+
+INSERT INTO corregido.formas_farmaceuticas (descripcion)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(forma_farmaceutica))
+    FROM inicial.cadena_frio
+);
+
+
+---- Ciudades
+
+INSERT INTO corregido.ciudades (descripcion)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(almacen_ciudad))
+    FROM inicial.cadena_frio
+);
+
+
+---- Tipos de almacén
+
+INSERT INTO corregido.tipos_almacen (descripcion)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(almacen_tipo))
+    FROM inicial.cadena_frio
+);
+
+
+---- Medicamentos
+
+INSERT INTO corregido.medicamentos
+(
+    descripcion,
+    fabricante_id,
+    forma_farmaceutica_id,
+    temperatura_min_c,
+    temperatura_max_c
+)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(cf.medicamento_nombre)),
+        f.id,
+        ff.id,
+        CAST(cf.temperatura_min_c AS DECIMAL(5,2)),
+        CAST(cf.temperatura_max_c AS DECIMAL(5,2))
+    FROM inicial.cadena_frio cf
+        JOIN corregido.fabricantes f
+            ON f.descripcion = LTRIM(RTRIM(cf.fabricante_nombre))
+        JOIN corregido.formas_farmaceuticas ff
+            ON ff.descripcion = LTRIM(RTRIM(cf.forma_farmaceutica))
+);
+
+
+---- Lotes
+
+-- Para lotes uso la misma verificación que hizo Andrés sobre el archivo:
+-- ningún código de lote aparece asociado a dos medicamentos distintos, así
+-- que un lote pertenece siempre a uno solo.
+
+INSERT INTO corregido.lotes
+(
+    codigo,
+    medicamento_id,
+    fecha_fabricacion,
+    fecha_vencimiento
+)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(cf.lote_codigo)),
+        m.id,
+        CAST(cf.lote_fecha_fabricacion AS DATE),
+        CAST(cf.lote_fecha_vencimiento AS DATE)
+    FROM inicial.cadena_frio cf
+        JOIN corregido.medicamentos m
+            ON m.descripcion = LTRIM(RTRIM(cf.medicamento_nombre))
+);
+
+
+---- Almacenes
+
+INSERT INTO corregido.almacenes
+(
+    descripcion,
+    ciudad_id,
+    tipo_almacen_id
+)
+(
+    SELECT DISTINCT
+        LTRIM(RTRIM(cf.almacen_nombre)),
+        c.id,
+        ta.id
+    FROM inicial.cadena_frio cf
+        JOIN corregido.ciudades c
+            ON c.descripcion = LTRIM(RTRIM(cf.almacen_ciudad))
+        JOIN corregido.tipos_almacen ta
+            ON ta.descripcion = LTRIM(RTRIM(cf.almacen_tipo))
+);
+
+
+---- Existencias
+
+-- Un mismo lote puede aparecer en diferentes almacenes y un almacén puede
+-- contener diferentes lotes; por eso se relacionan mediante sus respectivas
+-- claves y se conserva la cantidad disponible de cada combinación.
+
+INSERT INTO corregido.existencias
+(
+    lote_id,
+    almacen_id,
+    cantidad_disponible
+)
+(
+    SELECT
+        l.id,
         a.id,
-        cast(cf.lectura_fecha_hora as datetime2),
-        cast(cf.lectura_temperatura_c as decimal(5,2))
-    from inicial.cadena_frio cf
-        join corregido.almacenes a on a.descripcion = ltrim(rtrim(cf.almacen_nombre))
+        CAST(cf.existencia_cantidad_disponible AS INT)
+    FROM inicial.cadena_frio cf
+        JOIN corregido.lotes l
+            ON l.codigo = LTRIM(RTRIM(cf.lote_codigo))
+        JOIN corregido.almacenes a
+            ON a.descripcion = LTRIM(RTRIM(cf.almacen_nombre))
 );
-go
+
+
+---- Lecturas de temperatura
+
+-- Las lecturas representan mediciones independientes realizadas en cada
+-- almacén, por lo que se cargan separadamente de las existencias.
+
+INSERT INTO corregido.lecturas_temperatura
+(
+    almacen_id,
+    fecha_hora,
+    temperatura_c
+)
+(
+    SELECT
+        a.id,
+        CAST(cf.lectura_fecha_hora AS DATETIME2),
+        CAST(cf.lectura_temperatura_c AS DECIMAL(5,2))
+    FROM inicial.cadena_frio cf
+        JOIN corregido.almacenes a
+            ON a.descripcion = LTRIM(RTRIM(cf.almacen_nombre))
+);
 
 -- Con las nueve tablas cargadas, valido que todo haya entrado bien.
 -- Los totales de referencia son los mismos que verificó Andrés en el
 -- análisis previo del archivo.
-select 'fabricantes' as tabla, count(*) as total from corregido.fabricantes
-union all
-select 'formas_farmaceuticas', count(*) from corregido.formas_farmaceuticas
-union all
-select 'ciudades', count(*) from corregido.ciudades
-union all
-select 'tipos_almacen', count(*) from corregido.tipos_almacen
-union all
-select 'medicamentos', count(*) from corregido.medicamentos
-union all
-select 'lotes', count(*) from corregido.lotes
-union all
-select 'almacenes', count(*) from corregido.almacenes
-union all
-select 'existencias', count(*) from corregido.existencias
-union all
-select 'lecturas_temperatura', count(*) from corregido.lecturas_temperatura;
-go
+SELECT 'fabricantes' AS tabla, COUNT(*) AS total
+FROM corregido.fabricantes
 
--- Esperado: fabricantes 18, formas_farmaceuticas 6, ciudades 10,
+UNION ALL
+
+SELECT 'formas_farmaceuticas', COUNT(*)
+FROM corregido.formas_farmaceuticas
+
+UNION ALL
+
+SELECT 'ciudades', COUNT(*)
+FROM corregido.ciudades
+
+UNION ALL
+
+SELECT 'tipos_almacen', COUNT(*)
+FROM corregido.tipos_almacen
+
+UNION ALL
+
+SELECT 'medicamentos', COUNT(*)
+FROM corregido.medicamentos
+
+UNION ALL
+
+SELECT 'lotes', COUNT(*)
+FROM corregido.lotes
+
+UNION ALL
+
+SELECT 'almacenes', COUNT(*)
+FROM corregido.almacenes
+
+UNION ALL
+
+SELECT 'existencias', COUNT(*)
+FROM corregido.existencias
+
+UNION ALL
+
+SELECT 'lecturas_temperatura', COUNT(*)
+FROM corregido.lecturas_temperatura;
+    
+-- Aqupi la salida es: fabricantes 18, formas_farmaceuticas 6, ciudades 10,
 --           tipos_almacen 3, medicamentos 67, lotes 259, almacenes 25,
 --           existencias 1000, lecturas_temperatura 1000
+
+    
+
+
+----VISTAS DEL MODELO CORREGIDO
 
 -- Ya con el modelo cargado, dejo tres vistas que uso seguido en las
 -- consultas de la Etapa 4.
 
-create view corregido.v_info_medicamentos as
-(
-select
-    m.id            as medicamento_id,
-    m.descripcion   as medicamento,
-    ff.descripcion  as forma_farmaceutica,
-    f.descripcion   as fabricante,
+---- Información de medicamentos
+
+CREATE VIEW corregido.v_info_medicamentos AS
+SELECT
+    m.id            AS medicamento_id,
+    m.descripcion   AS medicamento,
+    ff.descripcion  AS forma_farmaceutica,
+    f.descripcion   AS fabricante,
     m.temperatura_min_c,
     m.temperatura_max_c
-from corregido.medicamentos m
-    join corregido.formas_farmaceuticas ff on ff.id = m.forma_farmaceutica_id
-    join corregido.fabricantes f on f.id = m.fabricante_id
-);
-go
+FROM corregido.medicamentos m
+    JOIN corregido.formas_farmaceuticas ff
+        ON ff.id = m.forma_farmaceutica_id
+    JOIN corregido.fabricantes f
+        ON f.id = m.fabricante_id;
 
-create view corregido.v_info_lotes as
-(
-select
-    l.id          as lote_id,
-    l.codigo      as lote_codigo,
-    m.id          as medicamento_id,
-    m.descripcion as medicamento,
+
+---- Información de lotes
+
+CREATE VIEW corregido.v_info_lotes AS
+SELECT
+    l.id          AS lote_id,
+    l.codigo      AS lote_codigo,
+    m.id          AS medicamento_id,
+    m.descripcion AS medicamento,
     l.fecha_fabricacion,
     l.fecha_vencimiento
-from corregido.lotes l
-    join corregido.medicamentos m on m.id = l.medicamento_id
-);
-go
+FROM corregido.lotes l
+    JOIN corregido.medicamentos m
+        ON m.id = l.medicamento_id;
 
-create view corregido.v_info_almacenes as
-(
-select
-    a.id          as almacen_id,
-    a.descripcion as almacen,
-    c.descripcion as ciudad,
-    ta.descripcion as tipo_almacen
-from corregido.almacenes a
-    join corregido.ciudades c on c.id = a.ciudad_id
-    join corregido.tipos_almacen ta on ta.id = a.tipo_almacen_id
-);
-go
+
+---- Información de almacenes
+
+CREATE VIEW corregido.v_info_almacenes AS
+SELECT
+    a.id           AS almacen_id,
+    a.descripcion  AS almacen,
+    c.descripcion  AS ciudad,
+    ta.descripcion AS tipo_almacen
+FROM corregido.almacenes a
+    JOIN corregido.ciudades c
+        ON c.id = a.ciudad_id
+    JOIN corregido.tipos_almacen ta
+        ON ta.id = a.tipo_almacen_id;
+
+
+----RUTINAS DE APOYO PARA EL CRUD DEL MODELO
 
 -- Por último, cuatro rutinas de apoyo para el CRUD del modelo. Las hice
 -- para no escribir a mano el insert/update/delete cada vez, y para que
--- quien las use no necesite conocer los ids internos: resuelven las
+-- quien las use no necesite conocer los ids internos porque estas resuelven las
 -- claves por nombre.
 
--- Create / Update de una existencia
-create or alter procedure corregido.p_registrar_existencia
-    @p_lote_codigo    nvarchar(50),
-    @p_almacen_nombre nvarchar(200),
-    @p_cantidad       int
-as
-begin
-    set nocount on;
+---- Create / Update de una existencia
 
-    declare @v_lote_id int, @v_almacen_id int;
+CREATE OR ALTER PROCEDURE corregido.p_registrar_existencia
+    @p_lote_codigo    NVARCHAR(50),
+    @p_almacen_nombre NVARCHAR(200),
+    @p_cantidad       INT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-    select @v_lote_id = id from corregido.lotes where codigo = @p_lote_codigo;
-    select @v_almacen_id = id from corregido.almacenes where descripcion = @p_almacen_nombre;
+    DECLARE @v_lote_id INT, @v_almacen_id INT;
 
-    if @v_lote_id is null
-        throw 50001, 'No existe el lote con el código indicado', 1;
+    SELECT @v_lote_id = id
+    FROM corregido.lotes
+    WHERE codigo = @p_lote_codigo;
 
-    if @v_almacen_id is null
-        throw 50002, 'No existe el almacén indicado', 1;
+    SELECT @v_almacen_id = id
+    FROM corregido.almacenes
+    WHERE descripcion = @p_almacen_nombre;
 
-    if exists (select 1 from corregido.existencias
-               where lote_id = @v_lote_id and almacen_id = @v_almacen_id)
-        update corregido.existencias
-        set cantidad_disponible = @p_cantidad
-        where lote_id = @v_lote_id and almacen_id = @v_almacen_id;
-    else
-        insert into corregido.existencias (lote_id, almacen_id, cantidad_disponible)
-        values (@v_lote_id, @v_almacen_id, @p_cantidad);
-end;
-go
+    IF @v_lote_id IS NULL
+        THROW 50001, 'No existe el lote con el código indicado', 1;
 
--- Create de una lectura de temperatura
-create or alter procedure corregido.p_registrar_lectura
-    @p_almacen_nombre nvarchar(200),
-    @p_fecha_hora     datetime2,
-    @p_temperatura    decimal(5,2),
-    @p_lectura_id     int output
-as
-begin
-    set nocount on;
+    IF @v_almacen_id IS NULL
+        THROW 50002, 'No existe el almacén indicado', 1;
 
-    declare @v_almacen_id int;
-    select @v_almacen_id = id from corregido.almacenes where descripcion = @p_almacen_nombre;
+    IF EXISTS
+    (
+        SELECT 1
+        FROM corregido.existencias
+        WHERE lote_id = @v_lote_id
+          AND almacen_id = @v_almacen_id
+    )
+        UPDATE corregido.existencias
+        SET cantidad_disponible = @p_cantidad
+        WHERE lote_id = @v_lote_id
+          AND almacen_id = @v_almacen_id;
+    ELSE
+        INSERT INTO corregido.existencias
+        (
+            lote_id,
+            almacen_id,
+            cantidad_disponible
+        )
+        VALUES
+        (
+            @v_lote_id,
+            @v_almacen_id,
+            @p_cantidad
+        );
+END;
 
-    if @v_almacen_id is null
-        throw 50002, 'No existe el almacén indicado', 1;
 
-    insert into corregido.lecturas_temperatura (almacen_id, fecha_hora, temperatura_c)
-    values (@v_almacen_id, @p_fecha_hora, @p_temperatura);
+---- Create de una lectura de temperatura
 
-    set @p_lectura_id = scope_identity();
-end;
-go
+CREATE OR ALTER PROCEDURE corregido.p_registrar_lectura
+    @p_almacen_nombre NVARCHAR(200),
+    @p_fecha_hora     DATETIME2,
+    @p_temperatura    DECIMAL(5,2),
+    @p_lectura_id     INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
--- Delete de una existencia agotada
-create or alter procedure corregido.p_eliminar_existencia
-    @p_lote_codigo    nvarchar(50),
-    @p_almacen_nombre nvarchar(200)
-as
-begin
-    set nocount on;
+    DECLARE @v_almacen_id INT;
 
-    delete e
-    from corregido.existencias e
-        join corregido.lotes l on l.id = e.lote_id
-        join corregido.almacenes a on a.id = e.almacen_id
-    where l.codigo = @p_lote_codigo
-      and a.descripcion = @p_almacen_nombre;
+    SELECT @v_almacen_id = id
+    FROM corregido.almacenes
+    WHERE descripcion = @p_almacen_nombre;
 
-    if @@rowcount = 0
-        print 'No había existencia de ese lote en ese almacén';
-end;
-go
+    IF @v_almacen_id IS NULL
+        THROW 50002, 'No existe el almacén indicado', 1;
 
--- Read del total disponible de un lote en toda la red
-create or alter function corregido.f_disponible_por_lote(@p_lote_codigo nvarchar(50))
-returns int
-as
-begin
-    declare @total int;
+    INSERT INTO corregido.lecturas_temperatura
+    (
+        almacen_id,
+        fecha_hora,
+        temperatura_c
+    )
+    VALUES
+    (
+        @v_almacen_id,
+        @p_fecha_hora,
+        @p_temperatura
+    );
 
-    select @total = isnull(sum(e.cantidad_disponible), 0)
-    from corregido.existencias e
-        join corregido.lotes l on l.id = e.lote_id
-    where l.codigo = @p_lote_codigo;
+    SET @p_lectura_id = SCOPE_IDENTITY();
+END;
 
-    return @total;
-end;
-go
 
+---- Delete de una existencia agotada
+
+CREATE OR ALTER PROCEDURE corregido.p_eliminar_existencia
+    @p_lote_codigo    NVARCHAR(50),
+    @p_almacen_nombre NVARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DELETE e
+    FROM corregido.existencias e
+        JOIN corregido.lotes l
+            ON l.id = e.lote_id
+        JOIN corregido.almacenes a
+            ON a.id = e.almacen_id
+    WHERE l.codigo = @p_lote_codigo
+      AND a.descripcion = @p_almacen_nombre;
+
+    IF @@ROWCOUNT = 0
+        PRINT 'No había existencia de ese lote en ese almacén';
+END;
+
+
+---- Read del total disponible de un lote en toda la red
+
+CREATE OR ALTER FUNCTION corregido.f_disponible_por_lote
+(
+    @p_lote_codigo NVARCHAR(50)
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @total INT;
+
+    SELECT @total = ISNULL(SUM(e.cantidad_disponible), 0)
+    FROM corregido.existencias e
+        JOIN corregido.lotes l
+            ON l.id = e.lote_id
+    WHERE l.codigo = @p_lote_codigo;
+
+    RETURN @total;
+END;
 -- Para cerrar, dejo la evidencia de que trabajé con privilegios mínimos:
 -- no volví a tocar el usuario administrador después de crear la base de
 -- datos, el login y el usuario.
 
--- Evidencia 3: reviso quién quedó como propietario real de los objetos.
+-- Evidencia de quien quedó como propietario real de los objetos.
 
-select s.name                    as esquema,
-       t.name                    as tabla,
-       coalesce(dp.name, sp.name) as propietario
-from   sys.tables t
-    join sys.schemas s on s.schema_id = t.schema_id
-    left join sys.database_principals dp on dp.principal_id = t.principal_id
-    left join sys.database_principals sp on sp.principal_id = s.principal_id
-where  s.name in ('inicial', 'corregido')
-order by s.name, t.name;
-go
+SELECT
+    s.name AS esquema,
+    t.name AS tabla,
+    COALESCE(dp.name, sp.name) AS propietario
+FROM sys.tables t
+    JOIN sys.schemas s
+        ON s.schema_id = t.schema_id
+    LEFT JOIN sys.database_principals dp
+        ON dp.principal_id = t.principal_id
+    LEFT JOIN sys.database_principals sp
+        ON sp.principal_id = s.principal_id
+WHERE s.name IN ('inicial', 'corregido')
+ORDER BY s.name, t.name;
+-- |||||Aqui me sale cadena_frio_usr en las diez tablas, nunca dbo ni sa.
 
--- Me tiene que salir cadena_frio_usr en las diez tablas, nunca dbo ni sa.
 
--- Evidencia 4: lo que este usuario NO puede hacer. Corro las cuatro
+-- Evidencia lo que este usuario NO puede hacer. Corro las cuatro
 -- sentencias siguientes una por una y capturo el mensaje de error de cada
--- una, eso es lo que demuestra que no tiene privilegios administrativos.
+-- una, aca es donde se demuestra que no tiene privilegios administrativos.
 
--- use master;
---   El servidor principal "cadena_frio_login" no puede tener acceso a la base de datos "master"
-
--- create database base_intrusa;
 --   CREATE DATABASE permission denied in database 'master'
+CREATE DATABASE base_intrusa;
 
--- create login intruso with password = 'unaClav3';
---   El servidor principal actual no puede crear inicios de sesión
 
--- alter server role sysadmin add member cadena_frio_login;
+CREATE LOGIN intruso WITH PASSWORD = 'unaClav3';
+
 --   No se puede modificar el rol de servidor 'sysadmin'
+ALTER SERVER ROLE sysadmin ADD MEMBER cadena_frio_login;
 
--- Evidencia 5: confirmo que no me quedé trabajando sobre la base de datos
+
+-- Evidencia para confirmar que no me quedé trabajando sobre la base de datos
 -- del sistema.
 
-select db_name()                                             as base_de_datos_de_trabajo,
-       (select count(*) from sys.tables t join sys.schemas s
-        on s.schema_id = t.schema_id
-        where s.name in ('inicial','corregido'))              as tablas_del_modelo,
-       (select count(*) from sys.objects
-        where type in ('P','FN','IF','TF')
-          and schema_id = schema_id('corregido'))             as rutinas_del_modelo;
-go
+SELECT
+    DB_NAME() AS base_de_datos_de_trabajo,
 
--- Todo el modelo quedó en cadena_frio_db, dentro de los esquemas inicial y
--- corregido. No creé ningún objeto en master ni en el esquema dbo.
+    (
+        SELECT COUNT(*)
+        FROM sys.tables t
+        JOIN sys.schemas s
+            ON s.schema_id = t.schema_id
+        WHERE s.name IN ('inicial', 'corregido')
+    ) AS tablas_del_modelo,
+
+    (
+        SELECT COUNT(*)
+        FROM sys.objects
+        WHERE type IN ('P', 'FN', 'IF', 'TF')
+          AND schema_id = SCHEMA_ID('corregido')
+    ) AS rutinas_del_modelo;
+
