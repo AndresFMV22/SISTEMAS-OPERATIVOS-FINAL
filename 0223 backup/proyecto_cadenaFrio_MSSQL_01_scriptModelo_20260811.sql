@@ -227,10 +227,6 @@ WITH
     TABLOCK
 );
 
-
--- También lo puedo hacer con el asistente de importación de DBeaver,
--- indicando el mismo delimitador y la misma codificación.
-
 -- Reviso que hayan quedado los 1.000 registros
 SELECT COUNT(*) AS total_registros
 FROM inicial.cadena_frio;
