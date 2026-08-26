@@ -11,6 +11,8 @@
 -- Este script lo uso cuando necesito reiniciar el modelo desde cero durante
 -- las pruebas, antes de volver a correr el 01.
 
+---Debe correrse desde Docker Exec del contenedor
+
 use cadena_frio_db;
 go
 
